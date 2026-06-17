@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Epistemologia — Wykłady UKSW 2025/2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --c1:#0f4c75;--c2:#1b6ca8;--c3:#0d6e6e;--c4:#7b2d8b;
+  --c5:#b5451b;--c6:#1a6634;--c7:#6b3074;--c8:#8b2252;
+  --c9:#1a5276;--c10:#5d4037;--c11:#2e7d32;--c12:#4a148c;
+  --c13:#bf360c;--c14:#00695c;
+  --gray:#f3f4f6;--dark:#111827;--mid:#374151;--light:#6b7280;
+  --border:#e5e7eb;
+}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f0f4f8;color:var(--dark);font-size:14px;line-height:1.65}
+
+header{
+  background:linear-gradient(135deg,#0a1628,#1a3550,#0d3b6e);
+  color:#fff;padding:2.5rem 2rem 2rem;text-align:center;position:relative;overflow:hidden;
+}
+header::before{
+  content:'';position:absolute;inset:0;opacity:.04;
+  background-image:radial-gradient(circle at 25% 25%, white 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, white 1px, transparent 1px);
+  background-size:40px 40px;
+}
+header h1{font-size:2rem;font-weight:800;letter-spacing:-.5px;position:relative}
+header .sub{font-size:.9rem;opacity:.7;margin-top:.4rem;position:relative}
+header .meta{display:flex;justify-content:center;gap:1.2rem;margin-top:1rem;flex-wrap:wrap;position:relative}
+header .badge{background:rgba(255,255,255,.15);padding:.25rem .85rem;border-radius:20px;font-size:.77rem;backdrop-filter:blur(4px)}
+
+nav{
+  background:#fff;border-bottom:2px solid var(--border);
+  padding:.55rem 1rem;position:sticky;top:0;z-index:100;
+  display:flex;flex-wrap:wrap;gap:.3rem;box-shadow:0 2px 12px rgba(0,0,0,.08);
+}
+nav a{
+  color:#374151;text-decoration:none;font-size:.72rem;font-weight:600;
+  padding:.22rem .6rem;border-radius:14px;background:var(--gray);
+  transition:all .18s;white-space:nowrap;
+}
+nav a:hover{color:#fff}
+nav a[data-n="1"]:hover{background:var(--c1)}
+nav a[data-n="2"]:hover{background:var(--c2)}
+nav a[data-n="3"]:hover{background:var(--c3)}
+nav a[data-n="4"]:hover{background:var(--c4)}
+nav a[data-n="5"]:hover{background:var(--c5)}
+nav a[data-n="6"]:hover{background:var(--c6)}
+nav a[data-n="7"]:hover{background:var(--c7)}
+nav a[data-n="8"]:hover{background:var(--c8)}
+nav a[data-n="9"]:hover{background:var(--c9)}
+nav a[data-n="10"]:hover{background:var(--c10)}
+nav a[data-n="11"]:hover{background:var(--c11)}
+nav a[data-n="12"]:hover{background:var(--c12)}
+nav a[data-n="13"]:hover{background:var(--c13)}
+nav a[data-n="14"]:hover{background:var(--c14)}
+
+main{max-width:980px;margin:0 auto;padding:2rem 1.2rem 4rem;display:flex;flex-direction:column;gap:1.8rem}
+
+.card{border-radius:14px;overflow:hidden;box-shadow:0 3px 16px rgba(0,0,0,.09);border:1px solid var(--border)}
+.card-head{
+  padding:1.1rem 1.5rem;color:#fff;display:flex;align-items:center;gap:1rem;position:relative;overflow:hidden;
+}
+.card-head::after{content:'';position:absolute;right:-15px;bottom:-15px;width:90px;height:90px;border-radius:50%;background:rgba(255,255,255,.07)}
+.num{font-size:2.2rem;font-weight:900;opacity:.22;line-height:1;font-family:Georgia,serif;flex-shrink:0}
+.card-head h2{font-size:1rem;font-weight:700;line-height:1.3}
+.icon{font-size:1.8rem;flex-shrink:0}
+.body{background:#fff;padding:1.3rem 1.5rem}
+
+.s{margin-top:1.1rem}
+.s:first-child{margin-top:0}
+
+h3{
+  font-size:.81rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+  margin-bottom:.5rem;padding-bottom:.3rem;border-bottom:2px solid;
+  display:flex;align-items:center;gap:.4rem;
+}
+h4{font-size:.86rem;font-weight:700;margin-bottom:.3rem;color:var(--mid)}
+
+.hl{
+  padding:.6rem .9rem;border-radius:0 6px 6px 0;border-left:4px solid;
+  margin:.6rem 0;font-size:.87rem;line-height:1.58;
+}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:.7rem 0}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.8rem;margin:.7rem 0}
+
+.box{border-radius:8px;padding:.75rem;border:1px solid}
+.box h4{font-size:.79rem;margin-bottom:.3rem}
+.box p,.box li{font-size:.82rem;color:var(--mid)}
+
+ul{list-style:none;padding:0;margin:.2rem 0 .5rem}
+ul li{padding:.17rem 0 .17rem 1.1rem;position:relative;color:var(--mid);font-size:.87rem}
+ul li::before{content:"›";position:absolute;left:0;font-weight:700}
+ul li strong{color:var(--dark)}
+
+p{color:var(--mid);font-size:.87rem;margin-bottom:.4rem}
+p:last-child{margin-bottom:0}
+
+.tag{display:inline-block;font-size:.66rem;font-weight:700;padding:.08rem .42rem;border-radius:9px;margin:.1rem;text-transform:uppercase;color:#fff}
+.tags{margin:.4rem 0}
+
+hr{border:none;border-top:1px dashed var(--border);margin:.9rem 0}
+
+.def{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:.7rem .9rem;margin:.6rem 0;font-size:.86rem}
+.def strong{color:var(--dark)}
+
+.formula{
+  background:#1e293b;color:#e2e8f0;border-radius:6px;
+  padding:.55rem .9rem;font-family:monospace;font-size:.82rem;margin:.5rem 0;
+}
+
+/* PER-CARD COLORS */
+.w1 .card-head{background:linear-gradient(135deg,var(--c1),#1565c0)}
+.w1 h3{color:var(--c1);border-color:#bbdefb}
+.w1 .hl{background:#e3f2fd;border-color:var(--c1)}
+.w1 .box{background:#e3f2fd;border-color:#90caf9}.w1 .box h4{color:var(--c1)}
+.w1 ul li::before{color:var(--c1)}.w1 .tag{background:var(--c1)}
+
+.w2 .card-head{background:linear-gradient(135deg,var(--c2),#1976d2)}
+.w2 h3{color:var(--c2);border-color:#bbdefb}
+.w2 .hl{background:#e8f4fd;border-color:var(--c2)}
+.w2 .box{background:#e8f4fd;border-color:#90caf9}.w2 .box h4{color:var(--c2)}
+.w2 ul li::before{color:var(--c2)}.w2 .tag{background:var(--c2)}
+
+.w3 .card-head{background:linear-gradient(135deg,var(--c3),#00897b)}
+.w3 h3{color:var(--c3);border-color:#b2dfdb}
+.w3 .hl{background:#e0f2f1;border-color:var(--c3)}
+.w3 .box{background:#e0f2f1;border-color:#80cbc4}.w3 .box h4{color:var(--c3)}
+.w3 ul li::before{color:var(--c3)}.w3 .tag{background:var(--c3)}
+
+.w4 .card-head{background:linear-gradient(135deg,var(--c4),#9c27b0)}
+.w4 h3{color:var(--c4);border-color:#e1bee7}
+.w4 .hl{background:#f3e5f5;border-color:var(--c4)}
+.w4 .box{background:#f3e5f5;border-color:#ce93d8}.w4 .box h4{color:var(--c4)}
+.w4 ul li::before{color:var(--c4)}.w4 .tag{background:var(--c4)}
+
+.w5 .card-head{background:linear-gradient(135deg,var(--c5),#e64a19)}
+.w5 h3{color:var(--c5);border-color:#ffccbc}
+.w5 .hl{background:#fbe9e7;border-color:var(--c5)}
+.w5 .box{background:#fbe9e7;border-color:#ffab91}.w5 .box h4{color:var(--c5)}
+.w5 ul li::before{color:var(--c5)}.w5 .tag{background:var(--c5)}
+
+.w6 .card-head{background:linear-gradient(135deg,var(--c6),#388e3c)}
+.w6 h3{color:var(--c6);border-color:#c8e6c9}
+.w6 .hl{background:#e8f5e9;border-color:var(--c6)}
+.w6 .box{background:#e8f5e9;border-color:#a5d6a7}.w6 .box h4{color:var(--c6)}
+.w6 ul li::before{color:var(--c6)}.w6 .tag{background:var(--c6)}
+
+.w7 .card-head{background:linear-gradient(135deg,var(--c7),#8e24aa)}
+.w7 h3{color:var(--c7);border-color:#e8d5f5}
+.w7 .hl{background:#f9f0ff;border-color:var(--c7)}
+.w7 .box{background:#f9f0ff;border-color:#d1a3f5}.w7 .box h4{color:var(--c7)}
+.w7 ul li::before{color:var(--c7)}.w7 .tag{background:var(--c7)}
+
+.w8 .card-head{background:linear-gradient(135deg,var(--c8),#c2185b)}
+.w8 h3{color:var(--c8);border-color:#f8bbd0}
+.w8 .hl{background:#fce4ec;border-color:var(--c8)}
+.w8 .box{background:#fce4ec;border-color:#f48fb1}.w8 .box h4{color:var(--c8)}
+.w8 ul li::before{color:var(--c8)}.w8 .tag{background:var(--c8)}
+
+.w9 .card-head{background:linear-gradient(135deg,var(--c9),#1976d2)}
+.w9 h3{color:var(--c9);border-color:#b3d4f5}
+.w9 .hl{background:#e8f1fa;border-color:var(--c9)}
+.w9 .box{background:#e8f1fa;border-color:#90b8e8}.w9 .box h4{color:var(--c9)}
+.w9 ul li::before{color:var(--c9)}.w9 .tag{background:var(--c9)}
+
+.w10 .card-head{background:linear-gradient(135deg,var(--c10),#6d4c41)}
+.w10 h3{color:var(--c10);border-color:#d7ccc8}
+.w10 .hl{background:#efebe9;border-color:var(--c10)}
+.w10 .box{background:#efebe9;border-color:#bcaaa4}.w10 .box h4{color:var(--c10)}
+.w10 ul li::before{color:var(--c10)}.w10 .tag{background:var(--c10)}
+
+.w11 .card-head{background:linear-gradient(135deg,var(--c11),#43a047)}
+.w11 h3{color:var(--c11);border-color:#c8e6c9}
+.w11 .hl{background:#e8f5e9;border-color:var(--c11)}
+.w11 .box{background:#e8f5e9;border-color:#a5d6a7}.w11 .box h4{color:var(--c11)}
+.w11 ul li::before{color:var(--c11)}.w11 .tag{background:var(--c11)}
+
+.w12 .card-head{background:linear-gradient(135deg,var(--c12),#6a1b9a)}
+.w12 h3{color:var(--c12);border-color:#e1bee7}
+.w12 .hl{background:#f3e5f5;border-color:var(--c12)}
+.w12 .box{background:#f3e5f5;border-color:#ba68c8}.w12 .box h4{color:var(--c12)}
+.w12 ul li::before{color:var(--c12)}.w12 .tag{background:var(--c12)}
+
+.w13 .card-head{background:linear-gradient(135deg,var(--c13),#d84315)}
+.w13 h3{color:var(--c13);border-color:#ffccbc}
+.w13 .hl{background:#fbe9e7;border-color:var(--c13)}
+.w13 .box{background:#fbe9e7;border-color:#ffab91}.w13 .box h4{color:var(--c13)}
+.w13 ul li::before{color:var(--c13)}.w13 .tag{background:var(--c13)}
+
+.w14 .card-head{background:linear-gradient(135deg,var(--c14),#00796b)}
+.w14 h3{color:var(--c14);border-color:#b2dfdb}
+.w14 .hl{background:#e0f2f1;border-color:var(--c14)}
+.w14 .box{background:#e0f2f1;border-color:#80cbc4}.w14 .box h4{color:var(--c14)}
+.w14 ul li::before{color:var(--c14)}.w14 .tag{background:var(--c14)}
+
+@media(max-width:640px){.grid2,.grid3{grid-template-columns:1fr}header h1{font-size:1.4rem}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🧠 Epistemologia</h1>
+  <div class="sub">Wykłady 2025/2026 — Semestr letni</div>
+  <div class="meta">
+    <span class="badge">🎓 dr hab. Michał Piekarski, prof. ucz.</span>
+    <span class="badge">🏛 UKSW — Katedra Teorii Poznania i Kognitywistyki</span>
+    <span class="badge">📋 14 tematów</span>
+  </div>
+</header>
+
+<nav>
+  <a href="#w1" data-n="1">1. Podstawowe pojęcia</a>
+  <a href="#w2" data-n="2">2. Epistem. znaturalizowana</a>
+  <a href="#w3" data-n="3">3. Relacja epistemiczna</a>
+  <a href="#w4" data-n="4">4. Intencjonalność</a>
+  <a href="#w5" data-n="5">5. Percepcja</a>
+  <a href="#w6" data-n="6">6. Uzasadnianie percepcyjne</a>
+  <a href="#w7" data-n="7">7. Percepcja ucieleśniona</a>
+  <a href="#w8" data-n="8">8. Świadomość</a>
+  <a href="#w9" data-n="9">9. Odmienne stany</a>
+  <a href="#w10" data-n="10">10. Przekonania</a>
+  <a href="#w11" data-n="11">11. Racje i świadectwa</a>
+  <a href="#w12" data-n="12">12. Sceptycyzm</a>
+  <a href="#w13" data-n="13">13. Wiedza a priori</a>
+  <a href="#w14" data-n="14">14. Prawda</a>
+</nav>
+
+<main>
+
+<!-- W1 -->
+<article class="card w1" id="w1">
+  <div class="card-head">
+    <span class="icon">📚</span>
+    <div><h2>1. Podstawowe pojęcia epistemologiczne</h2></div>
+    <span class="num">01</span>
+  </div>
+  <div class="body">
+    <div class="s">
+      <h3>🔑 Co to jest epistemologia?</h3>
+      <div class="hl">Epistemologia bada <strong>prawdziwość i zasadność</strong> ludzkiego poznania. Określa ostateczne racje poznania i wskazuje kryteria oceny jego rezultatów. Nazwa pochodzi od gr. <em>episteme</em> — wiedza.</div>
+      <ul>
+        <li>Szeroko: wszelkie dociekania nad poznaniem (logika, metodologia, semiotyka, filozofia nauki, kognitywistyka)</li>
+        <li>Wąsko: autonomiczne badanie podstawowych kwestii dotyczących poznania i wiedzy</li>
+        <li>Jako dyscyplina ukształtowała się w XIX w. — istotne postacie: Kartezjusz, Locke, Berkeley, Hume, Kant</li>
+      </ul>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>❓ Dlaczego epistemologia istnieje?</h3>
+      <div class="grid2">
+        <div class="box"><h4>Złudzenia i błędy poznawcze</h4><p>Rozbieżności poznawcze prowadzą do rozróżnienia poznania prawdziwego i fałszywego. Rodzi pytania o przyczyny błędów i granice poznania.</p></div>
+        <div class="box"><h4>Dogmatyczność nauk</h4><p>Każda nauka przyjmuje założenia i metody, których w obrębie własnych założeń uzasadnić nie może. Epistemologia ocenia te założenia.</p></div>
+      </div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>📌 Przedmiot epistemologii</h3>
+      <div class="grid2">
+        <div class="box"><h4>Poznanie jako czynność</h4><p>Akt lub proces poznawczy — dynamiczny aspekt zdobywania wiedzy.</p></div>
+        <div class="box"><h4>Poznanie jako wytwór = Wiedza</h4><p>Rezultat czynności poznawania — to, co zostało poznane i utrwalone.</p></div>
+      </div>
+      <div class="tags">
+        <span class="tag">Gnozeologia</span>
+        <span class="tag">Kryteriologia</span>
+        <span class="tag">Noetyka</span>
+        <span class="tag">Teoria poznania</span>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- W2 -->
+<article class="card w2" id="w2">
+  <div class="card-head">
+    <span class="icon">🔬</span>
+    <div><h2>2. Epistemologia znaturalizowana i kognitywistyka</h2></div>
+    <span class="num">02</span>
+  </div>
+  <div class="body">
+    <div class="s">
+      <h3>🔗 Po co epistemologia kognitywistyce?</h3>
+      <div class="hl">Każda teoria kognitywistyczna zawiera <strong>ukryte założenia filozoficzne</strong> (czym jest wiedza, co uzasadnia przekonanie, gdzie kończy się podmiot). Bez epistemologii te założenia pozostają niewidoczne.</div>
+      <ul>
+        <li>Co znaczy, że system/podmiot „wie"?</li>
+        <li>Skąd percepcja bierze swoją moc uzasadniającą?</li>
+        <li>Gdzie kończy się umysł poznającego podmiotu?</li>
+        <li>Napięcie: <strong>autonomia filozofii</strong> vs. <strong>autonomia nauki</strong></li>
+      </ul>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>🌿 Główne stanowiska</h3>
+      <div class="grid3">
+        <div class="box">
+          <h4>Quine — Epistemologia znaturalizowana (1969)</h4>
+          <p>Wiedza jest zjawiskiem naturalnym — badamy ją metodami nauk. Odejście od pytań o uzasadnienie na rzecz: <em>jak faktycznie poznajemy?</em> Epistemologia powinna stać się działem psychologii.</p>
+        </div>
+        <div class="box">
+          <h4>Piaget — Epistemologia genetyczna</h4>
+          <p>Bada rozwój przekonań i wiedzy u dzieci. Pojęcia nabywamy przez aktywne doświadczenie zmysłowe i motoryczne. <strong>Ciało konstytuuje poznanie.</strong></p>
+        </div>
+        <div class="box">
+          <h4>Epistemologia ewolucyjna</h4>
+          <p>Lorenz (etologia), Von Uexküll (Umwelt), Popper (wiedza obiektywna jako proces ewolucyjny). Biologiczne uwarunkowania zdolności poznawczych.</p>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>🎯 Role epistemologii w kognitywistyce</h3>
+      <div class="grid2">
+        <div class="box"><h4>Rola heurystyczna</h4><p>Odkrywa pole problemowe i wskazuje założenia filozoficzne kryjące się w projektach kognitywistycznych.</p></div>
+        <div class="box"><h4>Rola krytyczna</h4><p>Ocenia teorie, wskazuje nadmierną ekstrapolację wyników empirycznych i dostrzega ontologiczne zobowiązania badań.</p></div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- W3 -->
+<article class="card w3" id="w3">
+  <div class="card-head">
+    <span class="icon">🔄</span>
+    <div><h2>3. Relacja epistemiczna. Rodzaje poznania</h2></div>
+    <span class="num">03</span>
+  </div>
+  <div class="body">
+    <div class="s">
+      <h3>🔑 Relacja epistemiczna</h3>
+      <div class="formula">„X poznaje Y" — podmiot X uzyskuje informację o przedmiocie Y</div>
+      <ul>
+        <li>Odróżnienie <strong>czynności</strong> (poznawania) od <strong>wytworów</strong> (poznanie) — Twardowski 1912</li>
+        <li>Poznanie wiąże się z <strong>receptywnością</strong> (momentem odbiorczości)</li>
+        <li>Otwarte pytanie: czy procesy poznawcze mogą zachodzić bez udziału świadomości?</li>
+      </ul>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>👁 Poznanie bezpośrednie</h3>
+      <div class="hl">Brak pośrednika, brak zmiany czasu, brak odniesienia do wcześniejszych aktów. Ujęcie przedmiotu <strong>naocznie i wprost</strong>.</div>
+      <div class="grid3">
+        <div class="box"><h4>Spostrzeżenie zmysłowe zewnętrzne</h4><p>Dotyczy konkretnych obiektów fizycznych. Dany aspektowo, nieadekwatnie. Spór: reprezentacjonizm vs. prezentacjonizm.</p></div>
+        <div class="box"><h4>Spostrzeżenie zmysłowe wewnętrzne</h4><p>Kinestezja, propriocepcja — wewnętrzne stany ciała.</p></div>
+        <div class="box"><h4>Poznanie własnej psychiki</h4><p>Samoświadomość: <em>przeżywanie</em> (bezrefleksyjne) i <em>spostrzeżenie wewnętrzne</em> (refleksyjne, introspekcja). Podatne na błędy.</p></div>
+        <div class="box"><h4>Spostrzeżenie cudzej psychiki</h4><p>Mentalizacja — mind reading. Oparte na spostrzeżeniu wyrazu ciała. Spór o bezpośredniość.</p></div>
+        <div class="box"><h4>Przypomnienie</h4><p>Aktowe ujęcie czegoś jako niegdyś istniejącego. Nie jest adekwatne, może być źródłem błędów.</p></div>
+      </div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>🔭 Kluczowe pojęcia</h3>
+      <div class="grid2">
+        <div class="box">
+          <h4>Doświadczenie / Obserwacja / Eksperyment</h4>
+          <ul>
+            <li><strong>Doświadczenie</strong> — poznanie bezpośrednie i naoczne</li>
+            <li><strong>Obserwacja</strong> — doświadczenie kierowane uwagą, w określonym celu</li>
+            <li><strong>Eksperyment</strong> — obserwacja czegoś wywołanego przez obserwatora</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>Pojęcie / Sąd / Uzasadnienie</h4>
+          <ul>
+            <li><strong>Pojęcie</strong> — odniesienie ogólne i nienaoczne</li>
+            <li><strong>Sąd</strong> — stwierdzenie zachodzenia/niezachodzenia czegoś (asertoryczny, modalny, egzystencjalny)</li>
+            <li><strong>Uzasadnienie</strong> — podanie racji rzetelności lub prawdziwości</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- W4 -->
+<article class="card w4" id="w4">
+  <div class="card-head">
+    <span class="icon">🎯</span>
+    <div><h2>4. Intencjonalność</h2></div>
+    <span class="num">04</span>
+  </div>
+  <div class="body">
+    <div class="s">
+      <h3>🔑 Co to jest intencjonalność?</h3>
+      <div class="hl"><strong>Intencjonalność</strong> = własność bycia o czymś (<em>aboutness</em>). Stany mentalne są zawsze skierowane na jakiś przedmiot — każda myśl jest myślą O CZYMŚ.</div>
+      <ul>
+        <li>Brentano: intencjonalność jest <strong>cechą wyróżniającą</strong> zjawiska psychiczne od fizycznych</li>
+        <li>Husserl: każdy akt świadomości ma <em>noezę</em> (akt) i <em>noemat</em> (sens / sposób dania przedmiotu)</li>
+        <li>Zdania intencjonalne tworzą <strong>konteksty nieprzezroczyste</strong> — nie dają się łatwo ekstensjonalizować</li>
+      </ul>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>📌 Teorie klasyczne</h3>
+      <div class="grid2">
+        <div class="box">
+          <h4>Teoria bytów zapośredniczających (Frege)</h4>
+          <p>Aby odnieść się do przedmiotu, ujmujemy jego <strong>sens</strong> (Sinn). Sens jest obiektywny i niezależny od podmiotu. Relacja <em>immanencji</em> (do sensu) + relacja <em>reprezentacji</em> (do przedmiotu realnego).</p>
+        </div>
+        <div class="box">
+          <h4>Teoria przedmiotu intencjonalnego (Brentano, Ingarden)</h4>
+          <p>Intencja kieruje się na <strong>przedmiot intencjonalny</strong> — tworzony przez podmiot lub istniejący niezależnie (Zalta). Reprezentacja przez opis identyfikujący.</p>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>🔬 Teorie naturalizujące</h3>
+      <div class="grid3">
+        <div class="box">
+          <h4>Semantyka kauzalna (Kripke, Putnam)</h4>
+          <p>Imiona własne to etykiety nabywane przyczynowo, nie opisy. <strong>„Znaczenia nie są w głowie"</strong> — eksternalizm semantyczny.</p>
+        </div>
+        <div class="box">
+          <h4>Funkcjonalizm</h4>
+          <p>Stany mentalne = stany funkcjonalne. Liczy się funkcja w przekształcaniu wejścia percepcyjnego na wyjście behawioralne. Krytyka: argument chińskiego pokoju (Searle).</p>
+        </div>
+        <div class="box">
+          <h4>Reprezentacjonizm (Dretske, Millikan)</h4>
+          <p>Reprezentacje mentalne posiadają własności odpowiadające własnościom otoczenia w sposób systematyczny i przyczynowy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- W5 -->
+<article class="card w5" id="w5">
+  <div class="card-head">
+    <span class="icon">👁</span>
+    <div><h2>5. Percepcja</h2></div>
+    <span class="num">05</span>
+  </div>
+  <div class="body">
+    <div class="s">
+      <h3>🔑 Charakter doświadczenia percepcyjnego</h3>
+      <div class="hl">Doświadczenia percepcyjne mają <strong>fenomenalny charakter</strong> (perspektywa pierwszoosobowa) i dotyczą przedmiotów danych bezpośrednio — cieleśnie samoobecnych.</div>
+      <ul>
+        <li><strong>Weredyczność percepcji</strong> — percepcja jest zorientowana na prawdę; zakłada istnienie zewnętrznego obiektywnego świata</li>
+        <li>Odróżnienie <strong>treści</strong> doświadczenia od jego <strong>przedmiotu</strong> (spostrzegać że vs. spostrzegać jak)</li>
+        <li>Halucynacje i złudzenia = doświadczenia <strong>niewerydyczne</strong> (treść niezgodna z faktycznym stanem świata)</li>
+      </ul>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>📋 Główne teorie percepcji</h3>
+      <div class="grid2">
+        <div class="box">
+          <h4>🟢 Realizm naiwny (bezpośredni)</h4>
+          <p>Mamy bezpośredni dostęp do przedmiotów fizycznych i ich własności. Percepcja = relacja podmiot–przedmiot. <br><em>Problemy:</em> iluzje, halucynacje, własności drugorzędne.</p>
+        </div>
+        <div class="box">
+          <h4>🔵 Realizm pośredni</h4>
+          <p>Postrzegamy pośrednio przez dane zmysłowe lub reprezentacje (Empiryzm Brytyjski, Russell). <br><em>Problemy:</em> veil of perception, sceptycyzm.</p>
+        </div>
+        <div class="box">
+          <h4>🔴 Idealizm (Berkeley)</h4>
+          <p><em>Esse est percipi</em> — być = być postrzeganym. Przedmioty = połączenia danych zmysłowych. <br><em>Problemy:</em> nieintuicyjność, problem intersubiektywności.</p>
+        </div>
+        <div class="box">
+          <h4>🟡 Dysjunktywizm</h4>
+          <p>Percepcja i halucynacja to fundamentalnie <strong>różne stany</strong> bez wspólnego czynnika. Wersje: metafizyczna, epistemiczna (McDowell), fenomenalna (Martin). <br><em>Problemy:</em> nieodróżnialność od wewnątrz.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- W6 -->
+<article class="card w6" id="w6">
+  <div class="card-head">
+    <span class="icon">⚖️</span>
+    <div><h2>6. Uzasadnianie percepcyjne</h2></div>
+    <span class="num">06</span>
+  </div>
+  <div class="body">
+    <div class="s">
+      <h3>🔑 Standardowa definicja wiedzy (post-Gettier)</h3>
+      <div class="def"><strong>S wie, że p</strong> wtedy i tylko wtedy, gdy: (1) p jest prawdziwe; (2) S wierzy, że p; (3) S jest uzasadnione w przekonaniu, że p; (4) + dodatkowy warunek.</div>
+      <p>Pytanie centralne: <strong>czy percepcja może spełniać warunek (3)?</strong></p>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>📌 Stanowiska w sporze</h3>
+      <div class="grid3">
+        <div class="box">
+          <h4>Fundacjonalizm</h4>
+          <p>Istnieją <strong>przekonania podstawowe</strong> — samouzasadniające się, bezpośrednio uzasadniane przez percepcję. Problem: dylemat Sellarsa, mit danych.</p>
+        </div>
+        <div class="box">
+          <h4>Koherentyzm</h4>
+          <p>Uzasadnienie przez spójność z systemem przekonań. Percepcja nie uzasadnia bezpośrednio. Problem: brak kontaktu z rzeczywistością.</p>
+        </div>
+        <div class="box">
+          <h4>Reliabilizm (Goldman)</h4>
+          <p>Przekonanie uzasadnione = powstałe w niezawodnym procesie. Percepcja uzasadnia bo jest niezawodna. Problem: zły demon.</p>
+        </div>
+        <div class="box">
+          <h4>Internalizm</h4>
+          <p>Uzasadnienie wymaga <strong>świadomego dostępu</strong> do racji. Nie wystarczy niezawodność procesu. Problem: percepcja dzieci i zwierząt.</p>
+        </div>
+        <div class="box">
+          <h4>Konceptualizm (McDowell)</h4>
+          <p>Cała treść percepcyjna jest pojęciowa — tylko treść konceptualna może uzasadniać. Problem: bogactwo percepcji.</p>
+        </div>
+        <div class="box">
+          <h4>Nonkonceptualizm</h4>
+          <p>Treść percepcyjna jest (częściowo) niekonceptualna. Problem: jak uzasadnia przekonania? Wraca dylemat Sellarsa.</p>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>🔗 Relacja percepcja–przekonanie</h3>
+      <div class="grid3">
+        <div class="box"><h4>Model przyczynowy</h4><p>Doświadczenie → PRZYCZYNA → Przekonanie. Przyczyna ≠ uzasadnienie.</p></div>
+        <div class="box"><h4>Model inferencyjny</h4><p>Doświadczenie → Wnioskowanie → Przekonanie. Percepcja jako nieświadomy proces wnioskowania (Helmholtz).</p></div>
+        <div class="box"><h4>Model bezpośredni</h4><p>Doświadczenie = Przekonanie. Relacja sui generis. Brak wnioskowania.</p></div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- W7 -->
+<article class="card w7" id="w7">
+  <div class="card-head">
+    <span class="icon">🏃</span>
+    <div><h2>7. Percepcja — podejścia ucieleśnione i ekologiczne</h2></div>
+    <span class="num">07</span>
+  </div>
+  <div class="body">
+    <div class="s">
+      <h3>🔑 Ciało i działanie w percepcji</h3>
+      <div class="hl">Działanie cielesne to sposób zdobywania percepcyjnych informacji o środowisku. Percepcja nie jest biernym odbiorem — jest aktywna, cielesna i sytuowana.</div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>📌 Główne stanowiska</h3>
+      <div class="grid2">
+        <div class="box">
+          <h4>Teoria sensomotoryczna (O'Regan, Noë)</h4>
+          <p>Percepcja zależy od zdolności <strong>przewidywania zmysłowych skutków ruchów ciała</strong>. „Wiedzieć jak widzieć" = znać reguły sensomotoryczne. Percepcja to nie stan, lecz czynność.</p>
+        </div>
+        <div class="box">
+          <h4>Enaktywizm (Varela, Thompson, Rosch)</h4>
+          <p>Poznanie = aktywne oddziaływanie autonomicznego systemu ze środowiskiem. Struktury poznawcze wyłaniają się z powtarzających się wzorców sensomotorycznych. Poznanie jest ucieleśnione, osadzone, aktywne.</p>
+        </div>
+        <div class="box">
+          <h4>Teoria ekologiczna — J. J. Gibson</h4>
+          <p>Organizmy aktywnie poszukują informacji w otoczeniu. Właściwym przedmiotem percepcji są <strong>afordancje</strong> — możliwości działania, które środowisko oferuje danemu zwierzęciu. <em>„To, co widzimy, to afordancje, nie własności."</em></p>
+        </div>
+        <div class="box">
+          <h4>Afordancja — kluczowe pojęcie</h4>
+          <p>Relacyjna własność środowiska i zwierzęcia. Na co można się wspiąć, co można chwycić — bez potrzeby wewnętrznej reprezentacji. Percepcja afordancji = bezpośrednie nabycie informacji praktycznej.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- W8 -->
+<article class="card w8" id="w8">
+  <div class="card-head">
+    <span class="icon">✨</span>
+    <div><h2>8. Świadomość</h2></div>
+    <span class="num">08</span>
+  </div>
+  <div class="body">
+    <div class="s">
+      <h3>🔑 Wieloznaczność terminu</h3>
+      <div class="grid3">
+        <div class="box"><h4>Filozofia</h4><p>Świadomość organizmów lub konkretnych stanów mentalnych. Strumień świadomości, akty, pole świadomości.</p></div>
+        <div class="box"><h4>Neuronauki</h4><p>Przytomność (zdolność do komunikowania). Pytanie o neuronalne korelaty stanów świadomych.</p></div>
+        <div class="box"><h4>AI / Kognitywistyka</h4><p>Zdolność systemu do operacji obliczeniowych. System = układ fizyczny opisany dynamicznie.</p></div>
+      </div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>💡 Świadomość fenomenalna</h3>
+      <div class="hl"><strong>Qualia</strong> — specyficzne jakości doznaniowe dostępne tylko danemu podmiotowi. „Mam doznanie czerwieni" — mówię o przeżyciu, nie o stanie świata. Świadomość fenomenalna = paradigmatyczny przykład świadomości.</div>
+      <ul>
+        <li><strong>Strumień świadomości</strong> — ciąg stanów przynależnych do Ja; faza teraźniejszości rozciągnięta w czasie (Husserl, James)</li>
+        <li><strong>Akty świadomości</strong> — fazy strumienia z momentem intencji; mają strukturę protencjonalno-retencjonalną</li>
+        <li><strong>Pole świadomości</strong> — centrum i peryferia (Gurwitsch)</li>
+      </ul>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>🎯 Chalmers — Trudny problem świadomości</h3>
+      <div class="grid2">
+        <div class="box"><h4>Łatwe problemy</h4><p>Rozwiązywalne metodami empirycznymi: rozpoznawanie informacji, wyjaśnianie stanów psychicznych, integracja danych. Dotyczą stanów <em>intencjonalnych</em>.</p></div>
+        <div class="box"><h4>Trudny problem</h4><p>Jak fizyczne procesy w mózgu wywołują <strong>subiektywne stany świadomości</strong>? Przepaść między trzecioosobową neurologią a pierwszoosobowym doznaniem (qualia).</p></div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- W9 -->
+<article class="card w9" id="w9">
+  <div class="card-head">
+    <span class="icon">🌀</span>
+    <div><h2>9. Epistemologia odmiennych stanów świadomości (ASC)</h2></div>
+    <span class="num">09</span>
+  </div>
+  <div class="body">
+    <div class="s">
+      <h3>🔑 Czym są ASC?</h3>
+      <div class="hl"><strong>ASC</strong> (Altered States of Consciousness) — stany różniące się jakościowo od zwykłej świadomości czuwania: sen, medytacja, trans, doświadczenia psychodeliczne, stany hipnotyczne, mistyczne, kliniczne.</div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>🤔 Pytania epistemiczne</h3>
+      <ul>
+        <li>Czy ASC dają dostęp do aspektów rzeczywistości niedostępnych normalnej świadomości?</li>
+        <li>Czy można im ufać jako źródłu uzasadnionych przekonań?</li>
+        <li>Jak zweryfikować informacje uzyskane przez ASC?</li>
+        <li>Relacja perspektywy pierwszoosobowej a trzecioosobowej (neuronauka)?</li>
+      </ul>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>📌 Stanowiska</h3>
+      <div class="grid3">
+        <div class="box">
+          <h4>Sceptycyzm (Dennett, neopozytywizm)</h4>
+          <p>ASC epistemicznie niewiarygodne: brak intersubiektywnej weryfikacji, niespójność między różnymi ASC, brak predykcyjnej mocy, dysfunkcja normalnych mechanizmów.</p>
+        </div>
+        <div class="box">
+          <h4>Uprzywilejowany dostęp (James, Metzinger)</h4>
+          <p>Niektóre ASC odsłaniają głębsze warstwy rzeczywistości. Wiedza niedostępna dyskursywnemu rozumowi. Jamesa „jakości noetyczne".</p>
+        </div>
+        <div class="box">
+          <h4>Neurofenomenologia (Varela, Petitmengin)</h4>
+          <p>Dane pierwszoosobowe i trzecioosobowe wzajemnie się ograniczają (<em>mutual constraining</em>). Trening introspekcji zwiększa wiarygodność raportów.</p>
+        </div>
+      </div>
+      <div class="hl" style="margin-top:.8rem"><strong>Psychodeliki i Model REBUS:</strong> osłabiają precyzję wysokopoziomowych przekonań, co pozwala na ich rewizję. Letheby: odróżnij <em>treść</em> (halucynacje — niewiarygodna) od <em>struktury</em> doświadczenia (może być wiarygodna).</div>
+    </div>
+  </div>
+</article>
+
+<!-- W10 -->
+<article class="card w10" id="w10">
+  <div class="card-head">
+    <span class="icon">💭</span>
+    <div><h2>10. Przekonania</h2></div>
+    <span class="num">10</span>
+  </div>
+  <div class="body">
+    <div class="s">
+      <h3>🔑 Czym są przekonania?</h3>
+      <div class="hl"><strong>Propositional attitude</strong> — nastawienie propozycjonalne wobec treści zdania. Forma: <em>„S φ, że p"</em> (Jan uważa, że pada deszcz). Przekonania są normatywne (prawdziwe/fałszywe) i mają stopnie wiarygodności [0,1].</div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>📌 Teorie natury przekonań</h3>
+      <div class="grid3">
+        <div class="box">
+          <h4>Reprezentacjonizm (Fodor)</h4>
+          <p>Przekonania = reprezentacje mentalne — zdania w wewnętrznym <strong>języku myśli</strong> (mentalese). Produktywność i systematyczność myśli wymagają struktury.</p>
+        </div>
+        <div class="box">
+          <h4>Dyspozycjonalizm (Ryle, Sellars)</h4>
+          <p>Przekonanie, że p = dyspozycja do zachowywania się w określony sposób. Zarzuty: osoby z tym samym przekonaniem zachowują się różnie; luźny związek z zachowaniem.</p>
+        </div>
+        <div class="box">
+          <h4>Interpretacjonizm (Dennett, Davidson)</h4>
+          <p>Przekonania to <strong>„realne wzorce"</strong> które przypisujemy podmiotom. Nastawienie intencjonalne — użyteczna fikcja. Niedookreśloność atrybucji.</p>
+        </div>
+        <div class="box">
+          <h4>Eliminatywizm (Churchland, Stich)</h4>
+          <p>Przekonania nie istnieją. Psychologia potoczna (<em>folk psychology</em>) jest przednaukowa i zostanie zastąpiona przez neurobiologię.</p>
+        </div>
+        <div class="box">
+          <h4>Funkcjonalizm (Putnam, Fodor)</h4>
+          <p>Przekonania definiowane przez związki przyczynowe ze stymulacją, zachowaniem i innymi stanami. Nie przez wewnętrzną strukturę.</p>
+        </div>
+        <div class="box">
+          <h4>Instrumentalizm (Quine, Dennett)</h4>
+          <p>Przypisywanie przekonań jest przydatne praktycznie. Przekonania jako „prawdziwe" w sensie wzorców zachowania, nie przechowywanych reprezentacji.</p>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>⚔️ Kluczowe spory</h3>
+      <div class="grid2">
+        <div class="box"><h4>Atomizm (Fodor) vs. Holizm (Davidson, Brandom)</h4><p>Czy treść przekonania zależy od innych przekonań? Atomizm: nie. Holizm: tak, w dużym stopniu — rzadko mamy <em>to samo</em> przekonanie.</p></div>
+        <div class="box"><h4>Internalizm (Fodor) vs. Eksternalizm (Kripke, Putnam)</h4><p>Czy treść zależy tylko od „głowy"? Internalizm: tak. Eksternalizm: nie — zależy też od faktów w świecie (eksperyment Ziemia Bliźniacza).</p></div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- W11 -->
+<article class="card w11" id="w11">
+  <div class="card-head">
+    <span class="icon">📜</span>
+    <div><h2>11. Racje i świadectwa epistemiczne</h2></div>
+    <span class="num">11</span>
+  </div>
+  <div class="body">
+    <div class="s">
+      <h3>🔑 Pojęcia podstawowe</h3>
+      <div class="hl"><strong>Świadectwo (evidence)</strong> — to, co uzasadnia przekonania i wykazuje ich prawdziwość. Wiąże się z <strong>autorytetem epistemicznym</strong> — osobą lub instytucją, która wiarygodnie poświadcza swoją wiedzę.</div>
+      <ul>
+        <li>Autorytet epistemiczny ≠ deontyczny (Bocheński)</li>
+        <li><strong>De facto</strong> — oparty na wiedzy; <strong>de iure</strong> — oparty na władzy</li>
+        <li>Subiektywne świadectwa (intuicja, poczucie oczywistości) — mało wiarygodne</li>
+        <li>Wiarygodne: akty percepcyjne, publiczne wyniki obserwacji, pomiary, eksperymenty</li>
+      </ul>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>🌐 Czynniki nieepistemiczne</h3>
+      <div class="hl">Foucault, Bourdieu: legitymizacja autorytetu epistemicznego zależy też od <strong>uwarunkowań społecznych, politycznych i symbolicznych</strong>. Wiedza jest interpretowana jako produkt publicznych procesów wytwarzania i dystrybucji.</div>
+      <div class="grid2">
+        <div class="box"><h4>Czynniki wpływające na epistemikę</h4><ul><li>Interesy osób, instytucji, grup</li><li>Uwarunkowania społeczne i kulturowe</li><li>Preferencje pojęciowe i metodologiczne</li><li>Trendy społeczno-polityczne</li></ul></div>
+        <div class="box"><h4>Socjologia wiedzy / STS</h4><p>Metody naukowe, normy epistemiczne i style badawcze mogą być traktowane jako historycznie przygodne obiekty badań społecznych.</p></div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- W12 -->
+<article class="card w12" id="w12">
+  <div class="card-head">
+    <span class="icon">❓</span>
+    <div><h2>12. Sceptycyzm</h2></div>
+    <span class="num">12</span>
+  </div>
+  <div class="body">
+    <div class="s">
+      <h3>🔑 Co to jest sceptycyzm epistemologiczny?</h3>
+      <div class="hl">Wiedza pewna jest niemożliwa lub nieosiągalna — uzasadnione przekonanie zawsze może okazać się fałszywe. Izostenia: dla każdego twierdzenia można skonstruować równie uzasadnione twierdzenie przeciwne.</div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>📌 Rodzaje sceptycyzmu</h3>
+      <div class="grid2">
+        <div class="box"><h4>Radykalny (pyrroński)</h4><p>Żadna wiedza nie jest możliwa. Zawieszenie sądu (epoché) = droga do spokoju ducha (ataraksja). Pirron, Sekstus Empiryk.</p></div>
+        <div class="box"><h4>Akademicki (Karneades)</h4><p>Wiedza pewna niemożliwa, ale możliwe są przekonania mniej lub bardziej prawdopodobne (pithanon).</p></div>
+        <div class="box"><h4>Metodyczny (Kartezjusz)</h4><p>Zwątpienie jako narzędzie, nie cel. Szukanie niezachwianego fundamentu wiedzy (<em>cogito ergo sum</em>).</p></div>
+        <div class="box"><h4>Lokalny / dziedzinowy</h4><p>Sceptycyzm ograniczony do określonych obszarów: moralny, wobec świata zewnętrznego, naukowy.</p></div>
+      </div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>⚔️ Argumenty sceptyczne i odpowiedzi</h3>
+      <div class="grid2">
+        <div>
+          <h4 style="margin-bottom:.4rem">Klasyczne argumenty</h4>
+          <ul>
+            <li>Argument ze złudzeń — zmysły systematycznie mylą</li>
+            <li>Argument z regresu — każde uzasadnienie wymaga kolejnego</li>
+            <li>Argument ze snu — nie możemy odróżnić jawy od snu</li>
+            <li>Argument ze złośliwego demona / mózgu w naczyniu (Kartezjusz, Putnam)</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="margin-bottom:.4rem">Odpowiedzi</h4>
+          <ul>
+            <li><strong>Autoobalający</strong>: „nic nie wiemy" = samo roszczenie do wiedzy</li>
+            <li><strong>Kontekstualizm</strong> (DeRose): sceptyk podnosi standardy uzasadnienia do nieosiągalnego poziomu</li>
+            <li><strong>Naturalizm</strong> (Quine): praktycznie bezsilny — przekonania są niezbędne dla działania</li>
+            <li><strong>Transcendentalna</strong> (Kant): aprioryczne formy zmysłowości konstytuują doświadczenie od wewnątrz</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- W13 -->
+<article class="card w13" id="w13">
+  <div class="card-head">
+    <span class="icon">🧮</span>
+    <div><h2>13. Wiedza a priori</h2></div>
+    <span class="num">13</span>
+  </div>
+  <div class="body">
+    <div class="s">
+      <h3>🔑 Definicja i podział Kanta</h3>
+      <div class="hl"><strong>A priori</strong> — wiedza konieczna, niezależna od doświadczenia. <strong>A posteriori</strong> — wiedza empiryczna, zależna od doświadczenia. Kluczowy spór: natywizm/racjonalizm vs. empiryzm/sensualizm.</div>
+      <div class="grid2" style="margin-top:.7rem">
+        <div class="box"><h4>Analityczne a priori</h4><p>„Trójkąt ma trzy boki." Predykat zawarty w podmiocie. Nie rozszerza wiedzy.</p></div>
+        <div class="box"><h4>Syntetyczne a priori ⭐</h4><p>„5+7=12." Rozszerza wiedzę I jest konieczne bez odwołania do doświadczenia. Fundament matematyki wg Kanta.</p></div>
+        <div class="box"><h4>Syntetyczne a posteriori</h4><p>„Drzewo jest zielone." Nowa treść, wymaga obserwacji. Typowa wiedza empiryczna.</p></div>
+        <div class="box"><h4>Analityczne a posteriori</h4><p>„Gwiazda Poranna to Wenus." Kant uważał za pustą. Frege: ilustracja problemu sens/referencja.</p></div>
+      </div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>📌 Rodzaje apriori</h3>
+      <div class="grid3">
+        <div class="box"><h4>Transcendentalne (Kant)</h4><p>Ahistoryczne, akulturowe, abiologiczne. Czas i przestrzeń + kategorie intelektu. Warunki możliwości jakiegokolwiek poznania.</p></div>
+        <div class="box"><h4>Biologiczne (ewolucyjne)</h4><p>W ontogenezie a priori, w filogenezie a posteriori. Wynik doboru naturalnego.</p></div>
+        <div class="box"><h4>Kulturowe / lingwistyczne</h4><p>Gadamer: rozumienie zapośredniczone przez tradycję językową. Chomsky: wrodzona gramatyka universalna.</p></div>
+        <div class="box"><h4>Bayesowskie (predykcyjne)</h4><p><strong>Prior</strong> = przekonanie zakodowane przed danymi zmysłowymi. Nie jest ahistoryczny — wynik wcześniejszego uczenia. Iteracyjna aktualizacja priorów przez dane.</p></div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- W14 -->
+<article class="card w14" id="w14">
+  <div class="card-head">
+    <span class="icon">✅</span>
+    <div><h2>14. Prawda: klasyczne i nieklasyczne definicje</h2></div>
+    <span class="num">14</span>
+  </div>
+  <div class="body">
+    <div class="s">
+      <h3>📌 Przegląd koncepcji prawdy</h3>
+      <div class="grid2">
+        <div class="box">
+          <h4>🏆 Korespondencyjna (klasyczna) — Arystoteles, Tomasz</h4>
+          <p><em>Adaequatio rei et intellectus</em> — zgodność myśli z rzeczywistością. Nośnik prawdy (myśl/zdanie) + uprawdziwiacz (rzeczywistość). Trudności: natura zgodności, identyfikacja faktów.</p>
+        </div>
+        <div class="box">
+          <h4>🔵 Koherencyjna — heglizm, neopozytywizm</h4>
+          <p>Sąd prawdziwy = element koherentnego systemu sądów. Prawda = spójność systemu. Trudność: można mieć spójny ale całkowicie fałszywy system.</p>
+        </div>
+        <div class="box">
+          <h4>⚡ Pragmatyczna — James, Peirce</h4>
+          <p>Myśl prawdziwa = działanie na jej podstawie okazuje się skuteczne. Prawda = zgodność myśli z doświadczeniem (działaniem). Kryterium praktyczne.</p>
+        </div>
+        <div class="box">
+          <h4>🗣 Konsensualna — Habermas</h4>
+          <p>Sąd prawdziwy = zaakceptowany w <strong>idealnej sytuacji komunikacyjnej</strong> (nikogo nie wykluczającej). Prawda jako wynik racjonalnego dyskursu.</p>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>🔬 Semantyczna teoria prawdy — Tarski</h3>
+      <div class="def"><strong>Schemat Tarskiego (T):</strong> „X jest prawdziwe wtedy i tylko wtedy, gdy s" — gdzie X jest nazwą zdania języka przedmiotowego, a s jego przekładem na metajęzyk.</div>
+      <div class="formula">"Śnieg jest biały" jest prawdą wtw, gdy śnieg jest biały.</div>
+      <ul>
+        <li><strong>Paradoks kłamcy</strong>: „To zdanie jest fałszywe" — powstaje gdy predykat prawdziwości orzeka się o zdaniach własnego języka</li>
+        <li>Rozwiązanie: rozróżnienie <strong>języka przedmiotowego</strong> (o którym mówimy) i <strong>metajęzyka</strong> (w którym mówimy)</li>
+        <li>Definicja prawdy zrelatywizowana do języka i interpretacji</li>
+        <li><strong>Realizm aletyczny</strong>: uprawdziwiaczem jest rzeczywistość (koncepcja klasyczna)</li>
+        <li><strong>Antyrealizm aletyczny</strong>: uprawdziwiaczem jest weryfikowalność lub skuteczność działań</li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+</main>
+
+<footer style="text-align:center;padding:2rem;color:#9ca3af;font-size:.78rem;background:#fff;border-top:1px solid var(--border)">
+  <p>Epistemologia 2025/2026 — dr hab. Michał Piekarski, prof. ucz. — UKSW Warszawa</p>
+  <p style="margin-top:.3rem">📌 Katedra Teorii Poznania i Kognitywistyki</p>
+</footer>
+
+</body>
+</html>

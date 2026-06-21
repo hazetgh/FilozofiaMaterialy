@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Historia Filozofii Współczesnej — Skrypt UKSW</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --c1:#1a472a;--c2:#0d3b6e;--c3:#6b21a8;--c4:#9d174d;--c5:#b45309;
+  --c6:#065f46;--c7:#1e3a5f;--c8:#4a1942;--c9:#7f1d1d;--c10:#164e63;
+  --c11:#14532d;--c12:#312e81;--c13:#78350f;--c14:#064e3b;--c15:#4c1d95;
+  --gray:#f3f4f6;--dark:#111827;--mid:#374151;--light:#6b7280;
+  --border:#e5e7eb;
+}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8f9fc;color:var(--dark);font-size:14px;line-height:1.6}
+
+/* HEADER */
+header{
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;padding:2.5rem 2rem 2rem;text-align:center;
+  position:relative;overflow:hidden;
+}
+header::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+header h1{font-size:2rem;font-weight:800;letter-spacing:-0.5px;position:relative}
+header .sub{font-size:.9rem;opacity:.7;margin-top:.4rem;position:relative}
+header .meta{display:flex;justify-content:center;gap:1.5rem;margin-top:1rem;position:relative}
+header .badge{background:rgba(255,255,255,.15);padding:.25rem .8rem;border-radius:20px;font-size:.78rem;backdrop-filter:blur(4px)}
+
+/* NAV */
+nav{
+  background:#fff;border-bottom:2px solid var(--border);
+  padding:.6rem 1rem;position:sticky;top:0;z-index:100;
+  display:flex;flex-wrap:wrap;gap:.3rem;
+  box-shadow:0 2px 10px rgba(0,0,0,.07);
+}
+nav a{
+  color:#374151;text-decoration:none;font-size:.73rem;font-weight:600;
+  padding:.25rem .6rem;border-radius:15px;background:var(--gray);
+  transition:all .2s;white-space:nowrap;border:1px solid transparent;
+}
+nav a:hover{color:#fff;border-color:transparent}
+nav a[data-n="1"]:hover{background:var(--c1)}
+nav a[data-n="2"]:hover{background:var(--c2)}
+nav a[data-n="3"]:hover{background:var(--c3)}
+nav a[data-n="4"]:hover{background:var(--c4)}
+nav a[data-n="5"]:hover{background:var(--c5)}
+nav a[data-n="6"]:hover{background:var(--c6)}
+nav a[data-n="7"]:hover{background:var(--c7)}
+nav a[data-n="8"]:hover{background:var(--c8)}
+nav a[data-n="9"]:hover{background:var(--c9)}
+nav a[data-n="10"]:hover{background:var(--c10)}
+nav a[data-n="11"]:hover{background:var(--c11)}
+nav a[data-n="12"]:hover{background:var(--c12)}
+nav a[data-n="13"]:hover{background:var(--c13)}
+nav a[data-n="14"]:hover{background:var(--c14)}
+nav a[data-n="15"]:hover{background:var(--c15)}
+
+/* MAIN */
+main{max-width:980px;margin:0 auto;padding:2rem 1.2rem 4rem;display:flex;flex-direction:column;gap:1.8rem}
+
+/* WYKŁAD CARD */
+.wyklad{border-radius:14px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,.08);border:1px solid var(--border)}
+
+.wyklad-head{
+  padding:1.1rem 1.5rem;color:#fff;display:flex;align-items:center;gap:1rem;
+  position:relative;overflow:hidden;
+}
+.wyklad-head::after{
+  content:'';position:absolute;right:-20px;top:-20px;
+  width:100px;height:100px;border-radius:50%;
+  background:rgba(255,255,255,.06);
+}
+.num{
+  font-size:2.2rem;font-weight:900;opacity:.25;line-height:1;
+  font-family:Georgia,serif;flex-shrink:0;
+}
+.wyklad-head h2{font-size:1rem;font-weight:700;line-height:1.3}
+.wyklad-head .icon{font-size:1.8rem;flex-shrink:0}
+
+.wyklad-body{background:#fff;padding:1.3rem 1.5rem}
+
+/* SECTIONS inside card */
+.s{margin-top:1.1rem}
+.s:first-child{margin-top:0}
+h3{
+  font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+  margin-bottom:.5rem;padding-bottom:.3rem;border-bottom:2px solid;
+  display:flex;align-items:center;gap:.4rem;
+}
+h4{font-size:.85rem;font-weight:700;margin-bottom:.3rem;color:var(--mid)}
+
+/* KEY BOXES */
+.highlight{
+  padding:.6rem .9rem;border-radius:6px 0 0 6px;border-left:4px solid;
+  margin:.6rem 0;font-style:italic;font-size:.88rem;line-height:1.55;
+}
+
+/* GRID */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:.7rem 0}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.8rem;margin:.7rem 0}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin:.7rem 0}
+
+/* CARDS */
+.card{border-radius:8px;padding:.75rem;border:1px solid}
+.card h4{font-size:.8rem;margin-bottom:.35rem}
+.card p, .card li{font-size:.82rem;color:var(--mid)}
+
+/* LISTS */
+ul{list-style:none;padding:0;margin:.2rem 0 .5rem}
+ul li{padding:.18rem 0 .18rem 1.1rem;position:relative;color:var(--mid);font-size:.88rem}
+ul li::before{content:"›";position:absolute;left:0;font-weight:700}
+ul li strong{color:var(--dark)}
+
+ol{padding-left:1.2rem;margin:.3rem 0}
+ol li{color:var(--mid);font-size:.88rem;padding:.1rem 0}
+ol li strong{color:var(--dark)}
+
+p{color:var(--mid);font-size:.88rem;margin-bottom:.4rem}
+p:last-child{margin-bottom:0}
+
+/* TAGS */
+.tag{
+  display:inline-block;font-size:.67rem;font-weight:700;
+  padding:.1rem .45rem;border-radius:10px;margin:.1rem;
+  text-transform:uppercase;letter-spacing:.03em;color:#fff;
+}
+.tags{margin:.5rem 0}
+
+/* PERSON */
+.person{display:flex;gap:.8rem;align-items:flex-start;margin:.5rem 0}
+.person-name{
+  font-weight:700;font-size:.82rem;color:#fff;
+  padding:.2rem .55rem;border-radius:4px;white-space:nowrap;flex-shrink:0;
+  font-style:italic;
+}
+.person-info{font-size:.82rem;color:var(--mid)}
+
+/* DIVIDER */
+hr{border:none;border-top:1px dashed var(--border);margin:.9rem 0}
+
+/* TERM */
+.term{
+  display:inline;background:rgba(0,0,0,.07);padding:.05rem .35rem;
+  border-radius:3px;font-family:monospace;font-size:.83rem;color:var(--dark);
+}
+
+/* BIG QUOTE */
+.quote{
+  background:var(--gray);border-radius:8px;padding:.8rem 1rem;
+  font-style:italic;color:var(--mid);font-size:.88rem;margin:.6rem 0;
+  position:relative;padding-left:2rem;
+}
+.quote::before{
+  content:'"';position:absolute;left:.4rem;top:-.2rem;
+  font-size:2.5rem;color:#d1d5db;font-family:Georgia,serif;line-height:1;
+}
+
+@media(max-width:640px){
+  .grid2,.grid3,.grid4{grid-template-columns:1fr}
+  header h1{font-size:1.4rem}
+  nav{gap:.2rem}
+}
+
+/* PER-WYKLAD COLORS */
+.w1 .wyklad-head{background:linear-gradient(135deg,var(--c1),#2d6a4f)}
+.w1 h3{color:var(--c1);border-color:#d1fae5}
+.w1 .highlight{background:#f0fdf4;border-color:var(--c1);color:#14532d}
+.w1 .card{background:#f0fdf4;border-color:#bbf7d0}
+.w1 .card h4{color:var(--c1)}
+.w1 ul li::before{color:var(--c1)}
+.w1 .tag{background:var(--c1)}
+
+.w2 .wyklad-head{background:linear-gradient(135deg,var(--c2),#1a5aad)}
+.w2 h3{color:var(--c2);border-color:#dbeafe}
+.w2 .highlight{background:#eff6ff;border-color:var(--c2);color:#1e3a5f}
+.w2 .card{background:#eff6ff;border-color:#bfdbfe}
+.w2 .card h4{color:var(--c2)}
+.w2 ul li::before{color:var(--c2)}
+.w2 .tag{background:var(--c2)}
+
+.w3 .wyklad-head{background:linear-gradient(135deg,var(--c3),#7c3aed)}
+.w3 h3{color:var(--c3);border-color:#ede9fe}
+.w3 .highlight{background:#f5f3ff;border-color:var(--c3);color:#4c1d95}
+.w3 .card{background:#f5f3ff;border-color:#ddd6fe}
+.w3 .card h4{color:var(--c3)}
+.w3 ul li::before{color:var(--c3)}
+.w3 .tag{background:var(--c3)}
+
+.w4 .wyklad-head{background:linear-gradient(135deg,var(--c4),#be185d)}
+.w4 h3{color:var(--c4);border-color:#fce7f3}
+.w4 .highlight{background:#fdf2f8;border-color:var(--c4);color:#9d174d}
+.w4 .card{background:#fdf2f8;border-color:#fbcfe8}
+.w4 .card h4{color:var(--c4)}
+.w4 ul li::before{color:var(--c4)}
+.w4 .tag{background:var(--c4)}
+
+.w5 .wyklad-head{background:linear-gradient(135deg,var(--c5),#d97706)}
+.w5 h3{color:var(--c5);border-color:#fef3c7}
+.w5 .highlight{background:#fffbeb;border-color:var(--c5);color:#78350f}
+.w5 .card{background:#fffbeb;border-color:#fde68a}
+.w5 .card h4{color:var(--c5)}
+.w5 ul li::before{color:var(--c5)}
+.w5 .tag{background:var(--c5)}
+
+.w6 .wyklad-head{background:linear-gradient(135deg,var(--c6),#059669)}
+.w6 h3{color:var(--c6);border-color:#d1fae5}
+.w6 .highlight{background:#ecfdf5;border-color:var(--c6);color:#064e3b}
+.w6 .card{background:#ecfdf5;border-color:#a7f3d0}
+.w6 .card h4{color:var(--c6)}
+.w6 ul li::before{color:var(--c6)}
+.w6 .tag{background:var(--c6)}
+
+.w7 .wyklad-head{background:linear-gradient(135deg,var(--c7),#2563eb)}
+.w7 h3{color:var(--c7);border-color:#dbeafe}
+.w7 .highlight{background:#eff6ff;border-color:var(--c7);color:#1e3a8a}
+.w7 .card{background:#eff6ff;border-color:#bfdbfe}
+.w7 .card h4{color:var(--c7)}
+.w7 ul li::before{color:var(--c7)}
+.w7 .tag{background:var(--c7)}
+
+.w8 .wyklad-head{background:linear-gradient(135deg,var(--c8),#7e22ce)}
+.w8 h3{color:var(--c8);border-color:#f3e8ff}
+.w8 .highlight{background:#faf5ff;border-color:var(--c8);color:#581c87}
+.w8 .card{background:#faf5ff;border-color:#e9d5ff}
+.w8 .card h4{color:var(--c8)}
+.w8 ul li::before{color:var(--c8)}
+.w8 .tag{background:var(--c8)}
+
+.w9 .wyklad-head{background:linear-gradient(135deg,var(--c9),#dc2626)}
+.w9 h3{color:var(--c9);border-color:#fee2e2}
+.w9 .highlight{background:#fef2f2;border-color:var(--c9);color:#7f1d1d}
+.w9 .card{background:#fef2f2;border-color:#fecaca}
+.w9 .card h4{color:var(--c9)}
+.w9 ul li::before{color:var(--c9)}
+.w9 .tag{background:var(--c9)}
+
+.w10 .wyklad-head{background:linear-gradient(135deg,var(--c10),#0891b2)}
+.w10 h3{color:var(--c10);border-color:#cffafe}
+.w10 .highlight{background:#ecfeff;border-color:var(--c10);color:#164e63}
+.w10 .card{background:#ecfeff;border-color:#a5f3fc}
+.w10 .card h4{color:var(--c10)}
+.w10 ul li::before{color:var(--c10)}
+.w10 .tag{background:var(--c10)}
+
+.w11 .wyklad-head{background:linear-gradient(135deg,var(--c11),#16a34a)}
+.w11 h3{color:var(--c11);border-color:#dcfce7}
+.w11 .highlight{background:#f0fdf4;border-color:var(--c11);color:#14532d}
+.w11 .card{background:#f0fdf4;border-color:#bbf7d0}
+.w11 .card h4{color:var(--c11)}
+.w11 ul li::before{color:var(--c11)}
+.w11 .tag{background:var(--c11)}
+
+.w12 .wyklad-head{background:linear-gradient(135deg,var(--c12),#4f46e5)}
+.w12 h3{color:var(--c12);border-color:#e0e7ff}
+.w12 .highlight{background:#eef2ff;border-color:var(--c12);color:#312e81}
+.w12 .card{background:#eef2ff;border-color:#c7d2fe}
+.w12 .card h4{color:var(--c12)}
+.w12 ul li::before{color:var(--c12)}
+.w12 .tag{background:var(--c12)}
+
+.w13 .wyklad-head{background:linear-gradient(135deg,var(--c13),#d97706)}
+.w13 h3{color:var(--c13);border-color:#fef3c7}
+.w13 .highlight{background:#fffbeb;border-color:var(--c13);color:#78350f}
+.w13 .card{background:#fffbeb;border-color:#fde68a}
+.w13 .card h4{color:var(--c13)}
+.w13 ul li::before{color:var(--c13)}
+.w13 .tag{background:var(--c13)}
+
+.w14 .wyklad-head{background:linear-gradient(135deg,var(--c14),#10b981)}
+.w14 h3{color:var(--c14);border-color:#d1fae5}
+.w14 .highlight{background:#ecfdf5;border-color:var(--c14);color:#064e3b}
+.w14 .card{background:#ecfdf5;border-color:#a7f3d0}
+.w14 .card h4{color:var(--c14)}
+.w14 ul li::before{color:var(--c14)}
+.w14 .tag{background:var(--c14)}
+
+.w15 .wyklad-head{background:linear-gradient(135deg,var(--c15),#7c3aed)}
+.w15 h3{color:var(--c15);border-color:#ede9fe}
+.w15 .highlight{background:#f5f3ff;border-color:var(--c15);color:#4c1d95}
+.w15 .card{background:#f5f3ff;border-color:#ddd6fe}
+.w15 .card h4{color:var(--c15)}
+.w15 ul li::before{color:var(--c15)}
+.w15 .tag{background:var(--c15)}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📚 Historia Filozofii Współczesnej</h1>
+  <div class="sub">Skrypt do wykładów — rok akademicki 2025/2026</div>
+  <div class="meta">
+    <span class="badge">🎓 Prof. dr hab. Witold Płotka</span>
+    <span class="badge">🏛 UKSW Warszawa</span>
+    <span class="badge">📋 15 wykładów</span>
+  </div>
+</header>
+
+<nav>
+  <a href="#w1" data-n="1">I. Neokantyzm</a>
+  <a href="#w2" data-n="2">II. Fil. życia</a>
+  <a href="#w3" data-n="3">III. Analityczna I</a>
+  <a href="#w4" data-n="4">IV. SLW</a>
+  <a href="#w5" data-n="5">V. Język potoczny</a>
+  <a href="#w6" data-n="6">VI. Fenomenologia I</a>
+  <a href="#w7" data-n="7">VII. Fenomen. PL</a>
+  <a href="#w8" data-n="8">VIII. Fenomen. dziś</a>
+  <a href="#w9" data-n="9">IX. Pragmatyzm</a>
+  <a href="#w10" data-n="10">X. Hermeneutyka</a>
+  <a href="#w11" data-n="11">XI. Person./Egzyst.</a>
+  <a href="#w12" data-n="12">XII. Szk. Frankfurcka</a>
+  <a href="#w13" data-n="13">XIII. Strukturalizm</a>
+  <a href="#w14" data-n="14">XIV. Poststrukturalizm</a>
+  <a href="#w15" data-n="15">XV. Feminizm</a>
+</nav>
+
+<main>
+
+<!-- W1 -->
+<article class="wyklad w1" id="w1">
+  <div class="wyklad-head">
+    <span class="icon">🧭</span>
+    <div>
+      <h2>WYKŁAD I — Zagadnienia wstępne. Neokantyzm</h2>
+    </div>
+    <span class="num">I</span>
+  </div>
+  <div class="wyklad-body">
+
+    <div class="s">
+      <h3>🔑 Tezy kursu</h3>
+      <div class="highlight">Filozofia współczesna jest rozwinięciem projektu <strong>oświecenia</strong> — albo podejmuje i rozwija jego wątki, albo głosi jego wyczerpanie. Wszelkie „nowe początki" w filozofii były w ostateczności jakimiś „powrotami".</div>
+      <ul>
+        <li>Filozofia współczesna jest <strong>procesem</strong> — nie ma ściśle ustalonego początku</li>
+        <li>Lejtmotywy: <strong>Idea Nauki, Rozum, Inny</strong></li>
+        <li>Cechy charakterystyczne: antysystemowość, paradoksy, dialog, zaangażowanie polityczne</li>
+      </ul>
+    </div>
+
+    <hr>
+    <div class="s">
+      <h3>🏫 Szkoła marburska — nurt logiczno-lingwistyczny</h3>
+      <p>Radykalnie negatywny stosunek wobec Kantowskiej „rzeczy samej w sobie". Absolutyzacja metody transcendentalnej na wzór matematycznej.</p>
+      <div class="grid3">
+        <div class="card">
+          <h4>Hermann Cohen</h4>
+          <ul>
+            <li>Kant odkrył nowe pojęcie doświadczenia</li>
+            <li>Idealizm transcendentalny — cel: obiektywny charakter aprioryczności</li>
+            <li>Krytykował psychologizm</li>
+            <li>Filozofia analizuje <em>fakt nauki</em></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Paul Natorp</h4>
+          <ul>
+            <li>Poznanie jako zadanie; przedmiot = „x"</li>
+            <li>Obowiązywanie i ważność (<em>Geltung</em>)</li>
+            <li>Przekroczenie dualizmu myślenie–byt</li>
+            <li>Nie pyta o byt, lecz o <strong>sens</strong></li>
+            <li>Wpływ na Husserla i Heideggera</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Ernst Cassirer</h4>
+          <ul>
+            <li>Kultura ma status <strong>apriori</strong> — jak czas i przestrzeń u Kanta</li>
+            <li>Człowiek konstytuuje kulturę; świat symbolicznych form</li>
+            <li>Częściami tego świata: <em>język, mit, sztuka, religia</em></li>
+          </ul>
+          <div style="font-size:.78rem;font-style:italic;margin-top:.4rem;color:#555">"Człowiek nie żyje już w świecie jedynie fizycznym, żyje także w świecie symbolicznym"</div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    <div class="s">
+      <h3>🏫 Szkoła badeńska — nurt aksjologiczny</h3>
+      <p>Reakcja przeciwko biologizmowi, psychologizmowi, historyzmowi i pozytywizmowi. Centrum: <strong>wartości</strong>.</p>
+      <div class="grid3">
+        <div class="card">
+          <h4>Wilhelm Windelband</h4>
+          <ul>
+            <li>Filozofia to „krytyczna nauka o powszechnie obowiązujących wartościach"</li>
+            <li>Historia filozofii = historia problemów i pojęć</li>
+            <li>Odczytuje Kanta w kontekście aksjologii</li>
+            <li>Wartości nie istnieją — one <strong>obowiązują</strong></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Heinrich Rickert</h4>
+          <ul>
+            <li>System jako dedukcja całej nauki z zasad naczelnych</li>
+            <li>Temat ugruntowania poznania = problem ważności</li>
+            <li>Prymat rozumu praktycznego</li>
+            <li>Podmiot poznania: ogólna i bezosobowa świadomość</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Emil Lask</h4>
+          <ul>
+            <li>W centrum pojęcie <strong>prawdy</strong> i logika</li>
+            <li>Dualizm: to, co jest vs. to, co obowiązuje</li>
+            <li>Formalizm: rozum ma strukturę logiki</li>
+            <li>Dalszy wpływ: Heidegger (teoria bytu)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</article>
+
+<!-- W2 -->
+<article class="wyklad w2" id="w2">
+  <div class="wyklad-head">
+    <span class="icon">🌱</span>
+    <div><h2>WYKŁAD II — Filozofia życia</h2></div>
+    <span class="num">II</span>
+  </div>
+  <div class="wyklad-body">
+    <div class="s">
+      <h3>📌 Charakterystyka nurtu</h3>
+      <div class="highlight">Koniec XIX w. Niemcy, Francja, Hiszpania, Polska. Polemika z pozytywizmem i materializmem. Diagnoza kryzysu kultury.</div>
+      <div class="grid2">
+        <ul>
+          <li><strong>Aktywizm</strong> — jedynie życie, ruch, stawanie się</li>
+          <li><strong>Organiczne ujęcie</strong> — biologia adekwatnie opisuje świat</li>
+          <li><strong>Irracjonalizm</strong> — intuicja jako właściwa metoda</li>
+        </ul>
+        <ul>
+          <li><strong>Wyróżnienie historii</strong> (Dilthey)</li>
+          <li><strong>Odrzucenie subiektywizmu</strong> — obiektywna realność</li>
+          <li><strong>Pluralizm i personalizm</strong></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <div class="grid2">
+      <div class="s">
+        <h3>🇫🇷 Henri Bergson (1859–1941)</h3>
+        <ul>
+          <li>Nobel literacki 1927</li>
+          <li>Filozofia używa języka potocznego — pokazuje, nie definiuje</li>
+          <li><strong>Intuicja</strong> = zerwanie z ustalonymi ideami; poznanie całościowe; „wnika" we wnętrze przedmiotu</li>
+        </ul>
+        <div class="card" style="margin-top:.5rem">
+          <h4>Czas i trwanie</h4>
+          <ul>
+            <li>Czas obiektywny (mierzony) vs. czas <strong>przeżywany</strong> (wewnętrzny)</li>
+            <li>Istnieć = zmieniać się; ewolucja twórcza, nie mechaniczna</li>
+          </ul>
+        </div>
+        <div class="card" style="margin-top:.5rem">
+          <h4>Świadomość</h4>
+          <ul>
+            <li>Pamięć mechaniczna vs. pamięć <strong>wyobrażająca</strong></li>
+            <li>Świadomość jak stożek — punkt <em>teraz</em> na podstawie pamięci</li>
+          </ul>
+        </div>
+      </div>
+      <div class="s">
+        <h3>🇪🇸 Ortega y Gasset (1883–1955)</h3>
+        <ul>
+          <li>Filozofia = sposób życia ku prawdzie (nie nauka!)</li>
+          <li><strong>Perspektywizm</strong> — prawda umiejscowiona w wymiarze witalnym/historycznym, ma charakter relacyjny (nie relatywny)</li>
+          <li>Życie indywidualne jako siła dążąca do ekspansji</li>
+          <li>Życie = współżycie (z innymi osobami); wolność jest istotą życia</li>
+        </ul>
+        <div class="highlight" style="margin-top:.5rem">
+          <strong>Bunt mas:</strong> produkt cywilizacji techniczno-liberalnej — człowiek masowy dryfuje bezwolnie, jest intelektualnie miałki, lecz narzuca swoją wizję światu.
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="grid2">
+      <div class="s">
+        <h3>🌅 Oswald Spengler (1880–1936)</h3>
+        <ul>
+          <li>Główne dzieło: <em>Zmierzch Zachodu</em> (1918)</li>
+          <li>Kultury się rodzą, rozwijają i umierają (analogia do organizmu)</li>
+          <li>Kultura = twórczy impuls; cywilizacja = utrwalona forma bez twórczości</li>
+          <li>Refleksja nad historią odsłania cel: <em>samospełnienie</em></li>
+          <li>Wpływ na teorię „zderzenia cywilizacji" Huntingtona</li>
+        </ul>
+      </div>
+      <div class="s">
+        <h3>🇵🇱 Stanisław Brzozowski (1878–1911)</h3>
+        <ul>
+          <li>Życie = pierwotny pęd; dynamizm, wolność, otwartość na przyszłość</li>
+          <li>Krytyka pozytywizmu: redukuje podmiotowość człowieka do rangi faktu przyrodniczego</li>
+          <li><strong>Filozofia pracy</strong>: praca poprzedza wszelkie systemy myślowe</li>
+          <li>Praca = narzędzie poznania; podmiot wchodzi w kontakt z rzeczywistością</li>
+          <li>Opozycja <em>praca–rzeczywistość</em> zamiast myśl–rzeczywistość</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- W3 -->
+<article class="wyklad w3" id="w3">
+  <div class="wyklad-head">
+    <span class="icon">🔬</span>
+    <div><h2>WYKŁAD III — Filozofia analityczna I. Pierwsze sformułowania</h2></div>
+    <span class="num">III</span>
+  </div>
+  <div class="wyklad-body">
+    <div class="s">
+      <h3>📌 Cechy ogólne filozofii analitycznej</h3>
+      <div class="grid2">
+        <ul>
+          <li><strong>Antymetafizyczność</strong> — zamiast bytu badamy nazwę „byt"</li>
+          <li><strong>Analiza</strong>, nie spekulacja</li>
+          <li><strong>Antysystemowość</strong> — badanie konkretnych problemów</li>
+        </ul>
+        <ul>
+          <li><strong>Naukowość i intersubiektywność</strong> (scjentyzm)</li>
+          <li><strong>Logicyzacja</strong> lub formalizacja</li>
+          <li>Późniejszy zwrot do języka potocznego</li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <div class="grid2">
+      <div class="s">
+        <h3>👤 Bertrand Russell (1872–1970)</h3>
+        <div class="tags">
+          <span class="tag">Nobel 1950</span>
+          <span class="tag">Logik</span>
+          <span class="tag">Pacyfista</span>
+        </div>
+        <ul>
+          <li><strong>Paradoks Russella</strong>: zbiór wszystkich zbiorów — czy może być swoim elementem?</li>
+          <li><strong>Teoria typów</strong> — hierarchia typów (zbiorów) jako rozwiązanie</li>
+          <li>Język potoczny = źródło niejasności; postulat matematyzacji języka</li>
+          <li>Teoria deskrypcji: analiza wyrażeń pustych przez rachunek predykatów</li>
+          <li>Filozofia porządkuje języki nauk</li>
+        </ul>
+      </div>
+      <div class="s">
+        <h3>👤 G.E. Moore (1873–1958)</h3>
+        <ul>
+          <li>Twórca filozofii analitycznej (obok Russella)</li>
+          <li>Analiza dot. sądów logicznych; refleksja nad doświadczeniem (<em>sense-data</em>)</li>
+          <li><strong>Błąd naturalistyczny</strong> — rozumienie dobra w kategoriach naturalnych (np. dobro = przyjemność); dobro jest <strong>niedefiniowalne</strong></li>
+          <li><strong>Zdrowy rozsądek</strong> — obrona przed pozornymi problemami filozoficznymi; truizmy i zdania prima facie prawdziwe</li>
+        </ul>
+        <div class="highlight">Paradoks analizy: jeśli analiza poprawna → nieinformatywna; jeśli informatywna → niepoprawna.</div>
+      </div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>🔵 Atomizm logiczny (Russell + „wczesny" Wittgenstein)</h3>
+      <div class="grid2">
+        <ul>
+          <li>Język ma trwałą gramatykę (formę) logiczną</li>
+          <li>Język i rzeczywistość w relacji <strong>izomorficznej</strong></li>
+          <li>Istnieją tylko fakty; analiza języka = analiza świata</li>
+        </ul>
+        <ul>
+          <li><em>Tractatus logico-philosophicus</em> (1921)</li>
+          <li>Teza izomorfizmu pochodzi od Wittgensteina</li>
+          <li>Logika jest podstawą matematyki</li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>🔵 Koło Wiedeńskie — neopozytywizm</h3>
+      <p>Wiedeń, lata 20–30 XX w. Dążenie do odnowienia empirycyzmu.</p>
+      <div class="grid3">
+        <div class="card"><h4>Antimetafizyczność</h4><p>Problemy bytu i wiedzy to złudzenia wypływające z użycia języka.</p></div>
+        <div class="card"><h4>Zasada weryfikacji</h4><p>Jeśli czegoś nie da się sprawdzić metodami nauk pozytywnych — jest pozbawione <strong>sensu</strong>.</p></div>
+        <div class="card"><h4>Manifest (1929)</h4><p>Naukowy humanizm: człowiek sam może przekroczyć cierpienie. Edukacja kluczem do lepszego świata.</p></div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- W4 -->
+<article class="wyklad w4" id="w4">
+  <div class="wyklad-head">
+    <span class="icon">🇵🇱</span>
+    <div><h2>WYKŁAD IV — Filozofia analityczna II. Szkoła Lwowsko-Warszawska</h2></div>
+    <span class="num">IV</span>
+  </div>
+  <div class="wyklad-body">
+    <div class="s">
+      <h3>🏛 Kim jest SLW?</h3>
+      <div class="highlight">Założona przez <strong>Kazimierza Twardowskiego</strong> pod koniec XIX w. we Lwowie. Najbardziej znacząca szkoła w historii filozofii polskiej. Rozkwit w dwudziestoleciu międzywojennym.</div>
+      <p>Cechy wg Ajdukiewicza: <span class="tag">Antyirracjonalizm</span> <span class="tag">Jasność pojęciowa</span> <span class="tag">Logiczny aparat</span> <span class="tag">Badanie poznania naukowego</span></p>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>👥 Kluczowi członkowie</h3>
+      <div class="grid4">
+        <div class="card"><h4>Twardowski</h4><p>Twórca, 1866–1938. Rozdział treść–przedmiot przedstawienia.</p></div>
+        <div class="card"><h4>Łukasiewicz</h4><p>1878–1956. Logiki wielowartościowe.</p></div>
+        <div class="card"><h4>Tarski</h4><p>1901–1983. Definicja prawdy semantycznej.</p></div>
+        <div class="card"><h4>Kotarbiński</h4><p>1886–1981. Reizm, ontologia.</p></div>
+        <div class="card"><h4>Tatarkiewicz</h4><p>1886–1980. Historia filozofii, estetyka.</p></div>
+        <div class="card"><h4>Ajdukiewicz</h4><p>1890–1963. Logika, metodologia.</p></div>
+        <div class="card"><h4>Ossowska</h4><p>1896–1974. Etyka opisowa.</p></div>
+        <div class="card"><h4>Leśniewski</h4><p>1886–1939. Logika, ontologia.</p></div>
+      </div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>🔑 Program Twardowskiego</h3>
+      <ul>
+        <li>Metoda filozofii = metoda nauk empirycznych (jasność i uzasadnienie)</li>
+        <li>Podstawa: <strong>psychologia deskryptywna</strong> — bada treść zjawisk psychicznych</li>
+        <li>Intencjonalność: zjawiska psychiczne kierują się na przedmiot</li>
+        <li>Rozdział <strong>treści</strong> i <strong>przedmiotu</strong> przedstawienia (białość tablicy ≠ biała tablica)</li>
+        <li>Filozofia neutralna wobec światopoglądów</li>
+      </ul>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>🔑 Główne koncepcje logiczne</h3>
+      <div class="grid3">
+        <div class="card">
+          <h4>Tarski — Definicja prawdy</h4>
+          <p>Semantyczna teoria prawdy: zdanie p jest prawdziwe wtedy i tylko wtedy gdy p. Oddziela język od meta-języka.</p>
+        </div>
+        <div class="card">
+          <h4>Łukasiewicz — Logika wielowartościowa</h4>
+          <p>Poza prawdą i fałszem: trzecia wartość logiczna (indeterminizm). Logika trójwartościowa.</p>
+        </div>
+        <div class="card">
+          <h4>Kotarbiński — Reizm</h4>
+          <p>Istnieją tylko rzeczy (ciała). Zdania o abstrakcjach i właściwościach to skrótowe formy zdań o rzeczach.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- W5 -->
+<article class="wyklad w5" id="w5">
+  <div class="wyklad-head">
+    <span class="icon">💬</span>
+    <div><h2>WYKŁAD V — Filozofia analityczna III. Język potoczny</h2></div>
+    <span class="num">V</span>
+  </div>
+  <div class="wyklad-body">
+    <div class="s">
+      <h3>🔄 Linguistic Turn</h3>
+      <p>Termin ukuty przez Richarda Rorty'ego (1967). Dwojakie znaczenie: język <strong>idealny</strong> (matematyka) vs. język <strong>potoczny</strong> (<em>ordinary language</em>).</p>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>👤 „Późny" Wittgenstein (1889–1951)</h3>
+      <div class="grid2">
+        <div>
+          <div class="highlight">Tractatus (1921): atomizm logiczny. <br>Dociekania filozoficzne (1953): całkowita zmiana optyki — znaczenie jako <strong>użycie</strong>, nie jako referencja.</div>
+          <ul>
+            <li><strong>Gra językowa</strong> — języka nie da się zdefiniować zewnętrznie; realizuje się w formie różnych „gier" z podobieństwami rodzinnymi</li>
+            <li>„Gry" = powiązanie wyrażeń z działaniami; <em>języka uczymy się używając go!</em></li>
+            <li>Gry są różnymi <strong>formami życia</strong></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Argument przeciwko językowi prywatnemu</h4>
+          <p>Język nie może być używany czysto subiektywnie i prywatnie. Znaczenie jest zawsze zakorzenione w publicznej praktyce językowej. Nie ma sensu „oznaczać coś" dla siebie jedynie.</p>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="grid2">
+      <div class="s">
+        <h3>👤 J.L. Austin — Działanie słowami</h3>
+        <ul>
+          <li>Twórca teorii aktów mowy (<em>speech acts</em>)</li>
+          <li>Zdania performatywne — wypowiedź <em>jest</em> działaniem (np. „Obiecuję...")</li>
+          <li>3 rodzaje aktów: lokucyjny, illokucyjny, perlokucyjny</li>
+          <li>Metoda: badanie potocznego użycia języka (nie jego uściślanie)</li>
+        </ul>
+      </div>
+      <div class="s">
+        <h3>👤 G.E.M. Anscombe — Działanie</h3>
+        <ul>
+          <li>Edytorka Dociekań Wittgensteina</li>
+          <li>Kluczowe dzieło: <em>Intention</em> (1957)</li>
+          <li>Działanie celowe vs. niecelowe — analiza pojęcia intencji</li>
+          <li>Przekonanie że filozofia musi brać pod uwagę <strong>praktykę</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- W6 -->
+<article class="wyklad w6" id="w6">
+  <div class="wyklad-head">
+    <span class="icon">🔍</span>
+    <div><h2>WYKŁAD VI — Fenomenologia I. Husserl</h2></div>
+    <span class="num">VI</span>
+  </div>
+  <div class="wyklad-body">
+    <div class="s">
+      <h3>📌 Czym jest fenomenologia?</h3>
+      <div class="highlight">„Ku rzeczom samym!" — opisowa analiza tego, czym są i jak się kształtują świadome doświadczenia. <strong>Neutralność ontologiczna</strong>: niezależnie od tego, czy istnieje przedmiot doświadczenia — doświadczenie jest autentyczne.</div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>👤 Franz Brentano — źródło</h3>
+      <div class="grid2">
+        <div class="card">
+          <h4>Fenomen naturalny</h4>
+          <p>Przedmiot lub rzecz; istnieje niezależnie od życia psychicznego; do niczego się nie odnosi.</p>
+        </div>
+        <div class="card">
+          <h4>Fenomen psychiczny</h4>
+          <p>Odnosi się (tajemniczo) do czegoś; realizuje się wyłącznie w życiu psychicznym. Kluczowa cecha: <strong>intencjonalność</strong> — skierowanie na przedmiot.</p>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>👤 Edmund Husserl — filozofia</h3>
+      <div class="grid2">
+        <div>
+          <ul>
+            <li><strong>Nastawienie ejdetyczne</strong> — badanie istot (ejdosów), nie faktów jednostkowych</li>
+            <li><strong>Redukcja (epoché)</strong> — zawieszenie generalnej tezy naturalnego nastawienia; wzięcie w nawias pytania o istnienie</li>
+            <li>Po redukcji zostaje <strong>czysta świadomość</strong> = pole badań fenomenologicznych</li>
+            <li><strong>Intencjonalność</strong>: każdy akt świadomości jest skierowany na coś (noemat i noeza)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Odmiany fenomenologii klasycznej</h4>
+          <ul>
+            <li><em>Fenomenologia statyczna</em> — analiza struktury przeżycia</li>
+            <li><em>Fenomenologia genetyczna</em> — geneza przeżycia w czasie immanentnym</li>
+            <li><em>Fenomenologia intersubiektywna</em> — konstytucja innych i świata wspólnego</li>
+          </ul>
+        </div>
+      </div>
+      <div class="highlight">Krytyka psychologizmu: prawa logiki mają charakter <strong>idealny</strong> — nie są prawami psychologii; są niezależne od indywidualnych aktów myślenia.</div>
+    </div>
+  </div>
+</article>
+
+<!-- W7 -->
+<article class="wyklad w7" id="w7">
+  <div class="wyklad-head">
+    <span class="icon">🇵🇱</span>
+    <div><h2>WYKŁAD VII — Fenomenologia II. Fenomenologia w Polsce</h2></div>
+    <span class="num">VII</span>
+  </div>
+  <div class="wyklad-body">
+    <div class="s">
+      <h3>📌 Periodyzacja</h3>
+      <ul>
+        <li>Pierwsza recenzja Husserla w Polsce: <strong>W. Heinrich</strong> (1895)</li>
+        <li>Twardowski bezpośrednio wpłynął na Husserla: odrzucenie psychologizmu</li>
+        <li>Ajdukiewicz studiował pod Husserlem w Getyndze</li>
+      </ul>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>🌟 Roman Ingarden (1893–1970) — centrum</h3>
+      <div class="grid2">
+        <div>
+          <ul>
+            <li>Uczeń Husserla, ale <strong>realista</strong> — odrzucał idealizm transcendentalny</li>
+            <li><em>Spór o istnienie świata</em> — główne dzieło ontologiczne</li>
+            <li>Ontologia: 4 sfery bytu (realny, idealny, intencjonalny, absolutny)</li>
+            <li>Dzieło literackie jako byt <strong>intencjonalny</strong> — wielowarstwowa struktura</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Warstwy dzieła literackiego</h4>
+          <ul>
+            <li>Warstwa brzmień słownych</li>
+            <li>Warstwa jednostek znaczeniowych</li>
+            <li>Warstwa przedmiotów przedstawionych</li>
+            <li>Warstwa wyglądów uschematyzowanych</li>
+          </ul>
+        </div>
+      </div>
+      <div class="highlight">Spór z Husserlem: Ingarden uważa że Husserl nie dowiódł idealizmu — pozostawia pytanie o istnienie świata otwarte i domaga się ontologicznego gruntu.</div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>👥 Inni polscy fenomenolodzy</h3>
+      <div class="grid3">
+        <div class="card"><h4>Leopold Blaustein</h4><p>Pierwsza książka o fenomenologii w Polsce (1928). Krytyka Husserla: błędne rozpoznanie funkcji dat wrażeniowych.</p></div>
+        <div class="card"><h4>Andrzej Półtawski</h4><p>Uczeń Ingardena. Realistyczna koncepcja świadomości. Świadomość nie jest wolna od związków przyczynowych z otoczeniem.</p></div>
+        <div class="card"><h4>Władysław Stróżewski</h4><p>Słuchacz Ingardena na UJ od 1957. Kontynuacja fenomenologii realistycznej w Polsce.</p></div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- W8 -->
+<article class="wyklad w8" id="w8">
+  <div class="wyklad-head">
+    <span class="icon">🔭</span>
+    <div><h2>WYKŁAD VIII — Fenomenologia III. Fenomenologia dzisiaj</h2></div>
+    <span class="num">VIII</span>
+  </div>
+  <div class="wyklad-body">
+    <div class="s">
+      <h3>📌 „Historia fenomenologii jako historia herezji wobec Husserla" (Ricoeur)</h3>
+    </div>
+    <div class="grid2">
+      <div class="s">
+        <h3>🇩🇪 Koło monachijskie</h3>
+        <ul>
+          <li>Fenomenologia = psychologia opisowa</li>
+          <li>Cecha wyróżniająca: <strong>realizm</strong></li>
+          <li><strong>Theodor Lipps</strong>: u podstaw każdego aktu leżą uczucia; w sztuce — <em>wczucie</em></li>
+          <li><strong>Alexander Pfänder</strong>: wola jako podstawowa charakterystyka podmiotu; wychodzi od przedrefleksyjnej wiary</li>
+        </ul>
+      </div>
+      <div class="s">
+        <h3>🇩🇪 Koło z Getyngi</h3>
+        <ul>
+          <li>Hasło: „powrót do rzeczy"</li>
+          <li>Fenomenologia = opis istotowy tego, co w rzeczy</li>
+          <li><strong>Adolf Reinach</strong>: odrzucił idealizm Husserla; zastosowania w filozofii prawa</li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>🇫🇷 Fenomenologia we Francji</h3>
+      <div class="grid2">
+        <div class="card">
+          <h4>Maurice Merleau-Ponty — filozofia ciała</h4>
+          <ul>
+            <li>Ciało nie jest przedmiotem wśród przedmiotów — jest <strong>podmiotem percepcji</strong></li>
+            <li>Fenomenologia percepcji — interpretacja badań psychologicznych i psychopatologicznych</li>
+            <li>Ciało-podmiot jako sposób bycia-w-świecie</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Zwrot teologiczny i estetyczny</h4>
+          <ul>
+            <li>Jean-Luc Marion: fenomenologia nasycona (<em>phénomène saturé</em>)</li>
+            <li>Aplikacja fenomenologii do analizy doświadczenia religijnego i estetycznego</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>🧠 Fenomenologia w kognitywistyce</h3>
+      <ul>
+        <li><strong>Neurofenomenologia</strong> — połączenie fenomenologii z neurologią i teorią dynamicznych systemów</li>
+        <li><em>Front-loading</em>: fenomenolog obecny przy projektowaniu eksperymentu od początku</li>
+        <li>Metoda Marbachua: formalizacja pierwszoosobowych raportów (PER, REM, itp.)</li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<!-- W9 -->
+<article class="wyklad w9" id="w9">
+  <div class="wyklad-head">
+    <span class="icon">⚡</span>
+    <div><h2>WYKŁAD IX — Pragmatyzm</h2></div>
+    <span class="num">IX</span>
+  </div>
+  <div class="wyklad-body">
+    <div class="s">
+      <h3>📌 Czym jest pragmatyzm?</h3>
+      <div class="highlight">Nurt filozofii <strong>amerykańskiej</strong>. Reakcja na idealizm. Wyróżnienie: fakt, doświadczenie, konkret. Przekonania są dyspozycjami do działania — nie odtworzeniem rzeczywistości.</div>
+      <p>Geneza: „Klub metafizyczny" w Harvardzie (1872). Twórca: <strong>Charles S. Peirce</strong>. Pierwszy artykuł: <em>Jak uczynić nasze myśli jasnymi?</em> (1878).</p>
+    </div>
+    <hr>
+    <div class="grid3">
+      <div class="s">
+        <h3>👤 Charles S. Peirce</h3>
+        <ul>
+          <li>Absolutyzacja doświadczenia: świat dany tylko w doświadczeniu</li>
+          <li>Odrzucenie intuicji jako źródła poznania</li>
+          <li>Poznanie ma charakter <strong>znakowy</strong></li>
+          <li>Fallibilizm: poznanie zawiera wątpienie</li>
+          <li>Semiotyka: teoria znaku</li>
+        </ul>
+      </div>
+      <div class="s">
+        <h3>👤 William James</h3>
+        <ul>
+          <li>Prawda = to, co <strong>użyteczne</strong> w praktyce</li>
+          <li>Pluralizm — rzeczywistość jest różnorodna</li>
+          <li>Pragmatyzm jako metoda rozstrzygania sporów metafizycznych</li>
+          <li>Wola wiary — uzasadnienie przekonań religijnych</li>
+        </ul>
+      </div>
+      <div class="s">
+        <h3>👤 John Dewey</h3>
+        <ul>
+          <li>Instrumentalizm: pojęcia to narzędzia do rozwiązywania problemów</li>
+          <li>Synteza pragmatyzmu z filozofią edukacji i demokracji</li>
+          <li>Doświadczenie jako transakcja między organizmem a środowiskiem</li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>🔄 Pragmatyzm dzisiaj</h3>
+      <div class="grid3">
+        <div class="card">
+          <h4>Quine — filozofia języka</h4>
+          <ul>
+            <li>Krytyka analityczność–syntetyczność</li>
+            <li>Holizm semantyczny</li>
+            <li>Naturalizacja epistemologii</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Hilary Putnam</h4>
+          <ul>
+            <li>Realizm wewnętrzny</li>
+            <li>Prawda jako idealna akceptowalność racjonalna</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Richard Rorty</h4>
+          <ul>
+            <li>Relatywizm językowy; świat jako korelat schematu pojęciowego</li>
+            <li>Obiektywność ma charakter <strong>lokalny</strong></li>
+            <li>Filozofia ma znaczenie polityczne; solidarność</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- W10 -->
+<article class="wyklad w10" id="w10">
+  <div class="wyklad-head">
+    <span class="icon">📖</span>
+    <div><h2>WYKŁAD X — Hermeneutyka. Główne pojęcia i metody</h2></div>
+    <span class="num">X</span>
+  </div>
+  <div class="wyklad-body">
+    <div class="s">
+      <h3>📌 Czym jest hermeneutyka?</h3>
+      <div class="highlight">Od greckiego <em>hermeneuein</em> = wyrażenie, wykładnia, przekładanie. Teoria interpretacji. Schleiermacher: „Zrozumieć najpierw tekst tak dobrze, jak rozumiał go sam autor, a następnie zrozumieć go <strong>lepiej od niego</strong>".</div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>👤 Martin Heidegger — entre hermeneutykę a egzystencjalizm</h3>
+      <div class="grid2">
+        <div>
+          <ul>
+            <li>Odrzuca pojęcie człowieka jako <em>subiectum</em></li>
+            <li>Proponuje <strong>Dasein</strong> — „tu-oto-bycie" (jestestwo); Dasein nie jest człowiekiem!</li>
+            <li>Dasein jest <em>rzucone w świat</em> i odnosi się do niego na sposób <strong>rozumiejący</strong></li>
+            <li>Egzystencja: Dasein jest na sposób odnoszenia się do własnego bycia</li>
+            <li>Istotą egzystencji jest <strong>czas</strong></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Hermeneutyka faktyczności (1923)</h4>
+          <p>Hermeneutyka = interpretacja sposobu odnoszenia się do świata (wykładnia, przed-rozumienie). Fenomen = to, co ukazuje się samo z siebie. Opis musi być niemedyfizyczny.</p>
+          <br>
+          <h4>Bycie i czas (1927)</h4>
+          <p>Ontologia fundamentalna. Dasein jako możność-bycia. Troskliwość, narzędziowość, śmierć jako własna możność.</p>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="grid3">
+      <div class="s">
+        <h3>👤 Hans-Georg Gadamer</h3>
+        <ul>
+          <li><em>Prawda i metoda</em> (1960)</li>
+          <li>Hermeneutyka jako ontologia, nie metodologia</li>
+          <li><strong>Koło hermeneutyczne</strong> — rozumienie całości przez części i odwrotnie</li>
+          <li>Tradycja i przedsąd są warunkami rozumienia, nie przeszkodą</li>
+          <li>Synteza horyzontów: czytelnik i tekst</li>
+        </ul>
+      </div>
+      <div class="s">
+        <h3>👤 Paul Ricoeur</h3>
+        <ul>
+          <li>Hermeneutyka tekstu i narracji</li>
+          <li>Czas i opowiadanie: sensy wyłaniają się z narracji</li>
+          <li>Medytacja nad ikoną i symbolem</li>
+          <li>Hermeneutyka podejrzeń (Marx, Nietzsche, Freud) vs. odzyskania</li>
+        </ul>
+      </div>
+      <div class="s">
+        <h3>👤 Gianni Vattimo</h3>
+        <ul>
+          <li>Hermeneutyczny nihilizm — wszystko jest interpretacją</li>
+          <li>Nihilizm a chrześcijaństwo (<em>kenoza</em>)</li>
+          <li>Hermeneutyka dotyczy dialektyki samoobalającej się gry interpretacji</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- W11 -->
+<article class="wyklad w11" id="w11">
+  <div class="wyklad-head">
+    <span class="icon">🫂</span>
+    <div><h2>WYKŁAD XI — Personalizm, filozofia dialogu i egzystencjalizm</h2></div>
+    <span class="num">XI</span>
+  </div>
+  <div class="wyklad-body">
+    <div class="s">
+      <h3>🧍 Personalizm</h3>
+      <div class="highlight">Nurt filozofii francuskiej podkreślający <strong>nieredukowalność bytu ludzkiego</strong>. Centralne pojęcia: godność osoby ludzkiej, wewnętrzność, samo-określenie.</div>
+      <div class="grid3">
+        <div class="card">
+          <h4>Emmanuel Mounier</h4>
+          <p>„Co to jest personalizm?" (1947). Pojęcie rewolucji duchowej. Najważniejszą cnotą chrześcijanina jest heroiczne świadectwo.</p>
+        </div>
+        <div class="card">
+          <h4>Jacques Maritain</h4>
+          <p>Rozróżnienie człowieka jako <em>jednostki</em> (część porządku społecznego) i jako <em>osoby</em> (cel sam w sobie, z przeznaczeniem transcendentnym).</p>
+        </div>
+        <div class="card">
+          <h4>Gabriel Marcel</h4>
+          <p>Filozofia konkretna. Człowiek jako <em>homo viator</em> — pielgrzym. Osoba dąży do transcendencji bez gotowych wskazówek.</p>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>💬 Filozofia dialogu</h3>
+      <div class="grid2">
+        <div>
+          <h4 style="margin-bottom:.4rem">Martin Buber — <em>Ja i Ty</em> (1922)</h4>
+          <ul>
+            <li><strong>Ja–Ty</strong>: relacja osobowa, bezpośrednia, pozajęzykowa</li>
+            <li><strong>Ja–Ono</strong>: relacja przedmiotowa</li>
+            <li>Człowiek pierwotnie rozszerza sferę Ono</li>
+            <li>Ostateczne Ty = Bóg</li>
+            <li>Małżeństwo jako najdoskonalsza forma Ja-Ty</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="margin-bottom:.4rem">Emmanuel Levinas — Nieskończoność</h4>
+          <ul>
+            <li>Inny jest transcendentny i nieredukowalny</li>
+            <li>Twarz (<em>visage</em>) Innego wzywa do odpowiedzialności</li>
+            <li>Etyka jako filozofia pierwsza (przed ontologią)</li>
+            <li>Nieskończoność Innego nie może być zsumowana</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>😰 Egzystencjalizm</h3>
+      <div class="grid3">
+        <div class="card">
+          <h4>Søren Kierkegaard — podstawy</h4>
+          <ul>
+            <li>3 stadia egzystencji: estetyczne, etyczne, religijne</li>
+            <li>Skok wiary — przekroczenie rozumu</li>
+            <li>Jednostka przed Bogiem; paradoks wiary</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Jean-Paul Sartre</h4>
+          <ul>
+            <li>„Egzystencja poprzedza esencję" — człowiek sam się definiuje</li>
+            <li>Wolność absolutna i odpowiedzialność</li>
+            <li>Byt-w-sobie vs. byt-dla-siebie (świadomość)</li>
+            <li>Inny jako zagrożenie: „Piekło to inni"</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Albert Camus — absurd</h4>
+          <ul>
+            <li>Absurd = starcie człowieka z milczeniem świata</li>
+            <li>Nie: samobójstwo — <strong>bunt</strong> jako odpowiedź</li>
+            <li>Mit Syzyfa: heroizm wobec beznadziei</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- W12 -->
+<article class="wyklad w12" id="w12">
+  <div class="wyklad-head">
+    <span class="icon">⚙️</span>
+    <div><h2>WYKŁAD XII — Marksizm dzisiaj: Szkoła Frankfurcka</h2></div>
+    <span class="num">XII</span>
+  </div>
+  <div class="wyklad-body">
+    <div class="s">
+      <h3>📌 Geneza</h3>
+      <p>Instytut Badań Społecznych we Frankfurcie nad Menem (1923). Integracja socjologii, ekonomii, filozofii i psychologii. Krytyczny — ale niekomunistyczny — wątek marksizmu.</p>
+      <div class="highlight">Teoria krytyczna traktuje siebie jako formę <strong>praktyki społecznej</strong>: myśl zmieni w przyszłości rzeczywistość. Krytykuje „totalność" z jej wnętrza.</div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>🔍 Pojęcie i krytyka „oświecenia" (Horkheimer + Adorno)</h3>
+      <ul>
+        <li>„Oświecenie" = „postępowe myślenie" — cel: uwolnić ludzi od strachu i ustanowić ich panowanie</li>
+        <li><strong>Paradoks</strong>: emancypacja rozumu obróciła się we własne przeciwieństwo — irracjonalny rdzeń oświecenia</li>
+        <li>Przemysł kulturowy nie wyzwala — tworzy bezpostaciową masę niezdolną do ekspresji</li>
+        <li>„Oświecenie" przemyciło ciche zwycięstwo totalności nad różnicami</li>
+      </ul>
+      <div class="highlight">Dialektyka negatywna (Adorno): myśl nie może być tożsama z pojęciem — zawsze pozostaje <strong>reszta</strong>, która opiera się pojęciom. Myślenie przez negację.</div>
+    </div>
+    <hr>
+    <div class="grid2">
+      <div class="s">
+        <h3>🔧 Krytyka Heideggera (Adorno)</h3>
+        <ul>
+          <li>Filozofia, która udziwnia język = złudzenie panowania nad rzeczywistością</li>
+          <li>Egzystencjalizm buduje uniżenie wobec zastanej rzeczywistości</li>
+          <li>Pod hasłem „autentycznego bycia" wyklucza się wszystko nieautentyczne (cały „Się")</li>
+        </ul>
+      </div>
+      <div class="s">
+        <h3>👤 Jürgen Habermas — rozum komunikacyjny</h3>
+        <ul>
+          <li><strong>Teoria działania komunikacyjnego</strong> — racjonalność zakorzeniona w praktykach językowych</li>
+          <li>Rozróżnienie: działanie instrumentalne vs. <em>komunikacyjne</em></li>
+          <li><strong>Etyka dyskursu</strong>: norma moralna jest ważna, gdy może być zaaprobowana przez wszystkich uczestników dyskursu</li>
+          <li>Demokratyczna sfera publiczna jako przestrzeń racjonalnego dyskursu</li>
+          <li>Ostateczne uzasadnienie jest niemożliwe</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- W13 -->
+<article class="wyklad w13" id="w13">
+  <div class="wyklad-head">
+    <span class="icon">🧩</span>
+    <div><h2>WYKŁAD XIII — Varia i strukturalizm</h2></div>
+    <span class="num">XIII</span>
+  </div>
+  <div class="wyklad-body">
+    <div class="grid2">
+      <div class="s">
+        <h3>👤 Hannah Arendt (1906–1975)</h3>
+        <div class="tags">
+          <span class="tag">Korzenie totalitaryzmu</span>
+          <span class="tag">Kondycja ludzka</span>
+        </div>
+        <ul>
+          <li><strong>Krytyka nowoczesności</strong>: utrata świata, społeczeństwo masowe, biurokracja</li>
+          <li>Totalitaryzmy XX w. przerwały historię myśli i systemów moralnych</li>
+          <li><em>Vita activa</em>: praca, robota, <strong>działanie</strong></li>
+          <li>Przez działanie człowiek realizuje siebie i wolność</li>
+          <li><strong>Wolność</strong> = zdolność rozpoczynania (nowego)</li>
+          <li>Pluralizm — warunek polityczności</li>
+        </ul>
+      </div>
+      <div class="s">
+        <h3>👤 Jan Patočka (1907–1977)</h3>
+        <div class="tags"><span class="tag">Karta 77</span><span class="tag">„Heretycka" filozofia</span></div>
+        <ul>
+          <li><strong>Fenomenologia asubiektywna</strong>: redukcja ma kierunek ekstatyczny — ku światu, nie ku świadomości</li>
+          <li>Epoché = wstrząs egzystencji, zniszczenie nastawienia naturalnego</li>
+          <li><strong>3 ruchy egzystencji</strong>: (a) Akceptacji, (b) Obrony, (c) Prawdy</li>
+          <li><strong>Troska o duszę</strong> = troska o prawdę; kształtowanie człowieczeństwa</li>
+          <li>Epoché prowadzi ku wolności — przekroczenie naiwnej oczywistości</li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>🔵 Strukturalizm (jako punkt odniesienia)</h3>
+      <div class="grid3">
+        <div class="card">
+          <h4>Saussure — język jako system</h4>
+          <p>Langue (system) vs. parole (użycie). Znak = signifiant + signifié. Relacje między znakami, nie substancja znaków.</p>
+        </div>
+        <div class="card">
+          <h4>Lévi-Strauss — struktury kultury</h4>
+          <p>Mity mają strukturę binarną. Kultura jest systemem relacji jak język.</p>
+        </div>
+        <div class="card">
+          <h4>Lacan — nieświadomość</h4>
+          <p>Nieświadomość zorganizowana jak język. Podmiot rozdzielony: Wyobraźnia, Symboliczne, Realne.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- W14 -->
+<article class="wyklad w14" id="w14">
+  <div class="wyklad-head">
+    <span class="icon">💥</span>
+    <div><h2>WYKŁAD XIV — Poststrukturalizm</h2></div>
+    <span class="num">XIV</span>
+  </div>
+  <div class="wyklad-body">
+    <div class="s">
+      <h3>📌 Wspólny mianownik</h3>
+      <div class="highlight">Myślenie <strong>anty-tożsamościowe</strong>. Rzeczywistość wymaga ciągłego wysiłku odejścia od tego, co się narzuca. Nie ma substancji, bytu lub stałej rzeczywistości jako fundamentu.</div>
+    </div>
+    <hr>
+    <div class="grid2">
+      <div class="s">
+        <h3>👤 Jacques Derrida (1930–2004)</h3>
+        <ul>
+          <li>Radykalizacja fenomenologii: to, co dane jest zawsze <strong>zapośredniczone</strong></li>
+          <li><strong>Logocentryzm</strong>: mowa wyróżniona w filozofii jako obecność (nad pismem)</li>
+          <li><strong>Dekonstrukcja</strong>: immanentna krytyka — wskazanie pominiętych elementów; oparcie na zapomnianym piśmie (gramatologia)</li>
+          <li>Różnia (<em>différance</em>): różnica i odroczenie; tożsamość jest efektem różnicy</li>
+          <li>Obecność zawiera nieobecność; doświadczenie = zdarzenie + powtarzalność</li>
+        </ul>
+      </div>
+      <div class="s">
+        <h3>👤 Michel Foucault — dyskurs</h3>
+        <ul>
+          <li>Metoda <strong>genealogii</strong>: historia jako historia walk i przypadków (contra postęp)</li>
+          <li>Dyskurs bez podmiotu i reguł — ma „realny" sposób istnienia</li>
+          <li><strong>Dyskurs jest dyskursem władzy</strong></li>
+          <li>Archeologia wiedzy: systemy myślowe jako <em>episteme</em> epoki</li>
+          <li>Biopower: władza nad życiem populacji</li>
+          <li>Krytyka pojęcia reprezentacji — wiedza konstytutywna wobec przedmiotu</li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <div class="grid2">
+      <div class="s">
+        <h3>👤 Gilles Deleuze — filozofia różnicy</h3>
+        <ul>
+          <li>Różnica i powtórzenie: filozofia anty-tożsamościowa</li>
+          <li>Naturalizacja transcendentalizmu</li>
+          <li><em>Kapitalizm i schizofrenia</em> (z Guattarim): kapitalizm jako maszyny pożądania</li>
+          <li>Kłącze (<em>rhizome</em>) jako model myślenia bez centrum</li>
+        </ul>
+      </div>
+      <div class="s">
+        <h3>👤 Jean Baudrillard — symulakry</h3>
+        <ul>
+          <li><strong>Symulakrum</strong> = symulacja bez wzoru; obraz bez oryginału</li>
+          <li><strong>Hiperrzeczywistość</strong>: symulakry zastępują rzeczywistość</li>
+          <li>Media tworzą własną rzeczywistość bardziej realną niż realna</li>
+          <li>Zanik referencjału — koniec rozróżnienia prawda/pozór</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- W15 -->
+<article class="wyklad w15" id="w15">
+  <div class="wyklad-head">
+    <span class="icon">✊</span>
+    <div><h2>WYKŁAD XV — Myśl feministyczna i postkolonialna</h2></div>
+    <span class="num">XV</span>
+  </div>
+  <div class="wyklad-body">
+    <div class="s">
+      <h3>📌 Feminizm — główne pojęcia</h3>
+      <div class="highlight">Feminizm nie jest zwartym kierunkiem — to ruch polityczno-ideologiczny i nurt myśli krytycznej. Kluczowe rozróżnienie: <strong>sex</strong> (płeć biologiczna) vs. <strong>gender</strong> (płeć kulturowa).</div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>🌊 Fale feminizmu</h3>
+      <div class="grid2">
+        <div class="card">
+          <h4>Feminizm liberalny (XVIII w.)</h4>
+          <ul>
+            <li>Równa edukacja i prawa polityczne</li>
+            <li>Wpływ oświecenia: racjonalność i autonomia</li>
+            <li>Słabość: równość rozumiana ilościowo</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Feminizm radykalny (lata 60.)</h4>
+          <ul>
+            <li>Sex/gender = podstawowa przyczyna opresji</li>
+            <li>Dystrybucja ról płciowych służy relacjom władzy</li>
+            <li>Krytyka: determinizm kulturowy (zastępuje biologiczny)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Feminizm marksistowski</h4>
+          <ul>
+            <li>Kapitalizm + rodzina + role płciowe = opresja</li>
+            <li>Cel: zniesienie płciowego podziału pracy</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Feminizm egzystencjalny</h4>
+          <ul>
+            <li>Simone de Beauvoir — <em>Druga płeć</em> (1949)</li>
+            <li>„Nikt nie rodzi się kobietą — staje się nią"</li>
+            <li>Kobieta jako Inny w oczach mężczyzny</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>🌍 Myśl postkolonialna</h3>
+      <div class="grid2">
+        <div>
+          <ul>
+            <li>Cel: krytyka tożsamości ukształtowanych przez kolonializm</li>
+            <li><strong>Achille Mbembe</strong> (inspiracje): afrykański byt i polityczność</li>
+            <li>Edward Said — <em>Orientalizm</em>: wyobrażenie Wschodu jako konstrukcja zachodnia</li>
+            <li>Homi Bhabha — hybrydyczność, pomiędzy, naśladownictwo (<em>mimicry</em>)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Kluczowe pojęcia</h4>
+          <ul>
+            <li><strong>Subaltern</strong> — wykluczony, niereprezentowany</li>
+            <li><strong>Dekolonizacja wiedzy</strong> — podważenie eurocentryzmu</li>
+            <li><strong>Epistemologia Południa</strong> — inne formy wiedzy</li>
+            <li>Splecenie ras, płci, klasy → intersectionality</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="s">
+      <h3>🏳️‍🌈 Feminizm postmodernistyczny i queer</h3>
+      <ul>
+        <li><strong>Judith Butler</strong> — płeć jako performatywność: nie ma esencji płci, jest tylko powtarzane odgrywanie ról</li>
+        <li>Dekonstrukcja heteronormatywności</li>
+        <li>Teoria queer: tożsamość seksualna jako niestabilna, zmienna</li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+</main>
+
+<footer style="text-align:center;padding:2rem;color:#9ca3af;font-size:.78rem;background:#fff;border-top:1px solid var(--border)">
+  <p>Historia Filozofii Współczesnej — Skrypt UKSW 2025/2026 — Prof. dr hab. Witold Płotka</p>
+  <p style="margin-top:.3rem">📌 Tylko do użytku wewnętrznego</p>
+</footer>
+
+</body>
+</html>

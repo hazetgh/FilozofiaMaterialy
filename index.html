@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiedza Online z Filozofii - UKSW</title>
+    <style>
+        /* --- BAZOWY DESIGN --- */
+        :root {
+            --bg-color: #f4f7f6;
+            --text-main: #2c3e50;
+            --text-muted: #7f8c8d;
+            --card-bg: #ffffff;
+            --primary-color: #2980b9;
+            --hover-color: #3498db;
+            --shadow: 0 8px 20px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
+            color: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            margin-top: 15px;
+            font-size: 1.2em;
+            color: #bdc3c7;
+            font-weight: 300;
+        }
+
+        .header-badge {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            backdrop-filter: blur(5px);
+        }
+
+        /* --- MAIN CONTAINER --- */
+        main {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 40px;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- KARTY PRZEDMIOTÓW --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            border-top: 5px solid transparent;
+        }
+
+        /* Akcenty kolorystyczne dla poszczególnych kart */
+        .card.emocje { border-top-color: #e74c3c; }
+        .card.epistemologia { border-top-color: #2980b9; }
+        .card.hfw { border-top-color: #27ae60; }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+        }
+
+        .card-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.5em;
+            color: var(--text-main);
+        }
+
+        .card p.lecturer {
+            margin: 0 0 15px 0;
+            font-size: 0.9em;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .card p.description {
+            font-size: 0.95em;
+            color: #555;
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+
+        .card-footer {
+            font-size: 0.85em;
+            color: var(--primary-color);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-footer span {
+            background-color: #ecf0f1;
+            padding: 4px 10px;
+            border-radius: 12px;
+            color: var(--text-muted);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #ffffff;
+            border-top: 1px solid #e0e0e0;
+            color: var(--text-muted);
+            font-size: 0.9em;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            .grid-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Wiedza Online z Filozofii</h1>
+        <p>Twoje cyfrowe centrum notatek i materiałów akademickich</p>
+        <div class="header-badge">Uniwersytet Kardynała Stefana Wyszyńskiego (UKSW) • 2025/2026</div>
+    </header>
+
+    <main>
+        <h2 class="section-title">Wybierz przedmiot</h2>
+        
+        <div class="grid-container">
+            
+            <a href="Emocje_notatki.html" class="card emocje">
+                <div class="card-icon">🎭</div>
+                <h2>Filozofia Emocji</h2>
+                <p class="lecturer">Semestr Letni</p>
+                <p class="description">Kompletne notatki analizujące naturę afektów, ujęcia historyczne (od Platona po współczesność) oraz opracowania tekstów źródłowych.</p>
+                <div class="card-footer">
+                    Przejdź do notatek &rarr;
+                    <span>Wykłady + Ćw.</span>
+                </div>
+            </a>
+
+            <a href="epistemologia_notatki.html" class="card epistemologia">
+                <div class="card-icon">🧠</div>
+                <h2>Epistemologia</h2>
+                <p class="lecturer">dr hab. Michał Piekarski, prof. ucz.</p>
+                <p class="description">Materiały z Katedry Teorii Poznania i Kognitywistyki. Obejmują teorie percepcji, świadomości, intencjonalności i uzasadniania przekonań.</p>
+                <div class="card-footer">
+                    Przejdź do notatek &rarr;
+                    <span>14 Wykładów</span>
+                </div>
+            </a>
+
+            <a href="HFW_notatki.html" class="card hfw">
+                <div class="card-icon">📚</div>
+                <h2>Historia Filozofii Współczesnej</h2>
+                <p class="lecturer">Prof. dr hab. Witold Płotka</p>
+                <p class="description">Skrypt badający ewolucję myśli współczesnej: neokantyzm, filozofię analityczną, fenomenologię, pragmatyzm oraz postmodernizm.</p>
+                <div class="card-footer">
+                    Przejdź do notatek &rarr;
+                    <span>15 Wykładów</span>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Wiedza Online z Filozofii. Projekt ułatwiający przygotowania do egzaminów.</p>
+    </footer>
+
+</body>
+</html>

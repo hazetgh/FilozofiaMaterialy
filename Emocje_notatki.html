@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filozofia Emocji - Kompletne Notatki (2025/2026)</title>
+    <style>
+        /* --- DESIGN SYSTEM & BAZA --- */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #2c3e50;
+            background-color: #f7f9fa;
+            line-height: 1.65;
+        }
+
+        /* --- STICKY NAVIGATION BAR --- */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #1a252f;
+            padding: 12px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .nav-title {
+            color: #95a5a6;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+        }
+        .nav-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+        }
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 5px 9px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: 600;
+            transition: all 0.2s ease-in-out;
+        }
+        nav a:hover {
+            background-color: #34495e;
+            color: #3498db;
+            transform: translateY(-1px);
+        }
+        .nav-divider {
+            width: 80%;
+            height: 1px;
+            background-color: #34495e;
+            margin: 4px 0;
+        }
+
+        /* --- HEADER --- */
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #f1f2f6 100%);
+            border-bottom: 3px solid #dcdde1;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #2c3e50;
+            letter-spacing: -1px;
+        }
+        header p {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+
+        /* --- SEKCJE METODOLOGICZNE --- */
+        main {
+            padding: 40px 20px;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+        .section-main-title {
+            margin: 60px 0 30px 0;
+            font-size: 2.4em;
+            color: #2c3e50;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 4px solid #2980b9;
+            padding-bottom: 12px;
+        }
+        .card-section {
+            padding: 45px;
+            margin-bottom: 45px;
+            border-radius: 14px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+            border-left: 8px solid #2c3e50;
+            background-color: #ffffff;
+        }
+        .card-section h2 {
+            margin-top: 0;
+            font-size: 2.1em;
+            color: #111;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        .card-section h3 {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        
+        /* TYPOGRAFIA WEWNĘTRZNA */
+        ul, ol {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        blockquote {
+            border-left: 4px solid #3498db;
+            margin: 25px 0;
+            padding: 15px 25px;
+            background-color: rgba(255,255,255,0.6);
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* BLOKI SPECJALNE */
+        .extra-material {
+            background-color: rgba(255, 255, 255, 0.7);
+            border: 1px dashed #bdc3c7;
+            padding: 20px 25px;
+            border-radius: 8px;
+            margin-top: 25px;
+            font-size: 0.95em;
+        }
+        .extra-material h4 {
+            margin-top: 0;
+            color: #c0392b;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+        .references {
+            font-size: 0.85em;
+            color: #7f8c8d;
+            margin-top: 15px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 8px;
+        }
+        .term-badge {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+
+        /* --- PALETA PASTELOWA DLA SEKĆJI --- */
+        .w1-color  { background-color: #ebf5fb; border-left-color: #2980b9; }
+        .w2-color  { background-color: #e8f8f5; border-left-color: #1abc9c; }
+        .w3-color  { background-color: #fef9e7; border-left-color: #f1c40f; }
+        .w4-color  { background-color: #fdf2e9; border-left-color: #e67e22; }
+        .w5-color  { background-color: #f4ecf7; border-left-color: #9b59b6; }
+        .w6-color  { background-color: #f5eeeb; border-left-color: #e74c3c; }
+        .w7-color  { background-color: #eaf2f8; border-left-color: #5499c7; }
+        .w8-color  { background-color: #e8f4f8; border-left-color: #48c9b0; }
+        .w9-color  { background-color: #fcf3cf; border-left-color: #f4d03f; }
+        .w10-color { background-color: #f5ebf2; border-left-color: #a569bd; }
+        .w11-color { background-color: #eafaf1; border-left-color: #58d68d; }
+        .w12-color { background-color: #fbf5f3; border-left-color: #dc7633; }
+        .w13-color { background-color: #f2f4f4; border-left-color: #bdc3c7; }
+        .w14-color { background-color: #eef2f7; border-left-color: #34495e; }
+		
+        .cw0-color { background-color: #f2f4f4; border-left-color: #bdc3c7; }
+        .cw1-color { background-color: #fcf3f2; border-left-color: #cd6155; }
+        .cw2-color { background-color: #f5eef8; border-left-color: #af7ac5; }
+        .cw3-color { background-color: #eaf2f8; border-left-color: #5dade2; }
+        .cw4-color { background-color: #e8f8f5; border-left-color: #48c9b0; }
+        .cw5-color { background-color: #fef9e7; border-left-color: #f5b041; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <span class="nav-title">Wykłady (W1 - W14)</span>
+        <div class="nav-group">
+            <a href="#w1">W1: Wprowadzenie</a>
+            <a href="#w2">W2: Platon</a>
+            <a href="#w3">W3: Arystoteles</a>
+            <a href="#w4">W4: Stoicyzm</a>
+            <a href="#w5">W5: Epikureizm</a>
+            <a href="#w6">W6: Neoplatonizm</a>
+            <a href="#w7">W7: Augustyn</a>
+            <a href="#w8">W8: Anzelm/Bernard</a>
+            <a href="#w9">W9: Cystersi</a>
+            <a href="#w10">W10: Franciszkanie</a>
+            <a href="#w11">W11: Tomasz z Akwinu</a>
+            <a href="#w12">W12: Szkot/Ockham/Burydan</a>
+            <a href="#w13">W13: Mistycyzm</a>
+            <a href="#w14">W14: Kartezjusz/Spinoza</a>
+        </div>
+        <div class="nav-divider"></div>
+        <span class="nav-title">Ćwiczenia (Teksty Źródłowe)</span>
+        <div class="nav-group">
+            <a href="#cw1">Ćw 2: Platon (Fileb)</a>
+            <a href="#cw2">Ćw 3: Arystoteles (Retoryka)</a>
+			<a href="#cw0">Ćw 4: Epiktet (Diatryby)</a>
+            <a href="#cw3">Ćw 5: Augustyn (Nawrócenie)</a>
+            <a href="#cw4">Ćw 6: Tomasz (Gniew)</a>
+            <a href="#cw5">Ćw 7: Spinoza (Etyka)</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Filozofia Emocji</h1>
+        <p>Wykłady i Ćwiczenia 2025/2026 – Semestr Letni</p>
+    </header>
+
+    <main>
+
+        <h2 class="section-main-title" id="wyklady-sekcja">Opracowania Wykładów</h2>
+
+        <!-- WYKŁAD 1 -->
+		<section id="w1" class="card-section w1-color">
+            <h2>W1. Wprowadzenie do filozofii emocji</h2>
+            
+            <h3>Fundamentalne pytania o naturę afektów</h3>
+            <p>Filozofia emocji próbuje odpowiedzieć na kluczowe dylematy dotyczące naszej psychiki i moralności. Na etapie wprowadzającym do kursu formułuje się następujące pytania:</p>
+            <ul>
+                <li>Czy emocje są jedynie subiektywnymi odczuciami, czy też posiadają realną wartość poznawczą i moralną?</li>
+                <li>Czy uczucia stanowią chaotyczne siły, które trzeba okiełznać, czy może są to „mądre” oceny otaczającej nas rzeczywistości?</li>
+                <li>Czy są one wyłącznie reakcjami fizjologicznymi ciała, aktami umysłu, ocenami świata, czy może siłami bezpośrednio motywującymi nas do działania?</li>
+            </ul>
+
+            <h3>Ewolucja pojęciowa: od namiętności do emocji</h3>
+            <p>Termin „emocja” w swoim obecnym znaczeniu ukształtował się stosunkowo niedawno, bo dopiero w XIX wieku. Jego wejście do powszechnego użycia zastąpiło znacznie bogatszy i bardziej wielowymiarowy system pojęć, w którym funkcjonowały takie określenia jak namiętności, afekty i sentymenty. W tradycji starożytnej i średniowiecznej operowano technicznymi terminami: greckim <em>pathē</em> oraz łacińskimi <em>passiones</em> i <em>affectus</em>.</p>
+            <p>Dawniej używane pojęcia były nierozerwalnie związane z szerokimi systemami filozoficznymi, etyką i teologią. Obejmowały one spektrum doświadczeń od czysto cielesnych impulsów po najwyższe, moralne i duchowe aspekty życia psychicznego. Oznacza to, że w ujęciu historycznym emocje nie były traktowane po prostu jako neutralny fakt psychologiczny, lecz jako głęboka kategoria interpretacyjna, zależna od odmiennych modeli metafizycznych i etycznych. Każdy z dawnych modeli uczuciowości odpowiadał na inne pytania dotyczące racjonalności afektów, ich podatności na wychowanie oraz ich roli w kształtowaniu ludzkiej wolności.</p>
+
+            <h3>Dziedzictwo trzech wątków – główne modele interpretacyjne</h3>
+            <p>Śledząc rozwój myśli od starożytności aż po współczesność, można wyróżnić trzy główne sposoby rozumienia fenomenu emocji:</p>
+            <ul>
+                <li><strong>Emocje jako ocena (od Arystotelesa i stoików po współczesną psychologię poznawczą):</strong> Emocje traktowane są tutaj jako sygnały o świecie, które mówią nam, co jest dla nas ważne, a co może zagrażać naszym celom. To podejście uczy, że refleksja nad własnymi emocjami pozwala modyfikować nasze decyzje i działania.</li>
+                <li><strong>Emocje jako motywacja (od Platona i Tomasza z Akwinu po Freuda i Damasio):</strong> Model ten zakłada, że emocje mają ogromną moc napędową. Stany takie jak gniew, radość czy pożądanie mogą stawać się potężną siłą do działania, pod warunkiem, że nauczymy się nimi kierować w sposób rozumny i etyczny.</li>
+                <li><strong>Emocje jako energia duchowa i moralna (od św. Augustyna i mistyków po psychologię humanistyczną i transpersonalną):</strong> Zgodnie z tym ujęciem (szczególnie rozwiniętym w średniowieczu) emocje nie tylko motywują i informują, ale pozwalają również na doświadczanie głębokiej więzi z wartościami, duchowością i ostatecznym sensem życia. To chrześcijaństwo w dużej mierze przekształciło emocje w narzędzie moralnego i duchowego rozwoju, gdzie afekty służą zarówno relacjom międzyludzkim, jak i transcendencji.</li>
+            </ul>
+
+            <div class="extra-material">
+                <h4>Materiał dodatkowy: Paralele ze współczesną nauką</h4>
+                <p>Warto zauważyć, w jaki sposób podział zarysowany w wykładzie wprowadzającym rezonuje z dzisiejszymi dyscyplinami badawczymi. <strong>Model poznawczy (oceny)</strong> jest absolutnym fundamentem Terapii Poznawczo-Behawioralnej (CBT), która zakłada, że to nie same zdarzenia generują nasze afekty, ale sposób, w jaki je interpretujemy (nasze przekonania). <strong>Model motywacyjny</strong> znajduje doskonałe potwierdzenie we współczesnej neurobiologii afektywnej – m.in. w pracach Jaaka Pankseppa, który wyizolował podkorowe systemy motywacyjne (np. system poszukiwania/oczekiwania, system strachu czy system opieki). Z kolei <strong>model duchowy/moralny</strong> koresponduje z założeniami logoterapii Viktora Frankla, w której autentyczne uczucia wyższe są drogowskazem w odnajdywaniu egzystencjalnego sensu w obliczu cierpienia.</p>
+                <div class="references">Źródła dodatkowe: A. Ellis, <em>Terapia racjonalno-emotywna</em>; J. Panksepp, <em>Affective Neuroscience</em>; V. Frankl, <em>Człowiek w poszukiwaniu sensu</em>.</div>
+            </div>
+        </section>
+
+        <!-- WYKŁAD 2 -->
+		<section id="w2" class="card-section w2-color">
+            <h2>W2. Platon – Emocje jako namiętności (Pathē)</h2>
+            
+            <h3>Trójpodział duszy i metafora rydwanu</h3>
+            <p>Platon (427–347 p.n.e.) był jednym z pierwszych myślicieli, którzy podjęli próbę systematycznego opisu ludzkiej psychiki i towarzyszących jej namiętności. W swojej filozofii przedstawia duszę jako trójdzielną strukturę, w skład której wchodzą: <em>logos</em> (rozum), <em>thymos</em> (wola, odwaga) oraz <em>epithymia</em> (pożądania, emocje). </p>
+            <p>Aby zilustrować tę wewnętrzną dynamikę, Platon posługuje się słynną metaforą rydwanu (obecną m.in. w dialogu <em>Fajdros</em>). W tym obrazie woźnica symbolizuje pierwiastek rozumny (logos), którego zadaniem jest kierowanie całym pojazdem. Woźnica musi okiełznać dwa konie. Jeden z nich jest posłuszny i szlachetny (odpowiadający za thymos, czyli wyższe uczucia, takie jak honor czy gniew w obronie sprawiedliwości), drugi zaś to dziki, narowisty rumak, symbolizujący epithymię – bazowe popędy, żądze i irracjonalne namiętności.</p>
+
+            <h3>Wstyd jako moralny hamulec</h3>
+            <p>Niezwykle ważną emocją w systemie Platona, sprzężoną ze szlachetną częścią duszy (<em>thymos</em>), jest <strong>wstyd</strong>. W przeciwieństwie do współczesnego, często negatywnego rozumienia tej emocji, Platon traktuje wstyd jako pozytywny i niezbędny mechanizm ochronny i wychowawczy. </p>
+            <p>Wstyd jest formą lęku – konkretnie lęku przed niesławą, złą opinią i dopuszczeniem się czynu niegodnego. Stanowi on naturalny "hamulec" powstrzymujący człowieka przed uleganiem niskim żądzom (<em>epithymia</em>). Kiedy "dziki koń" rwie się do czynów niemoralnych, to właśnie wstyd obok rozumu pomaga utrzymać go w ryzach. Platon uważał, że człowiek niezdolny do odczuwania wstydu staje się jednostką całkowicie zepsutą i niebezpieczną dla polis (państwa), ponieważ brakuje mu fundamentalnego szacunku dla prawa i opinii publicznej.</p>
+
+            <h3>Emocje: od sabotażu do harmonizacji</h3>
+            <p>Według Platona namiętności (greckie <span class="term-badge">pathē</span>) posiadają ogromną siłę i pozostawione same sobie mogą sabotować życie rozumne człowieka. Gwałtowne porywy „dzikiego konia” ciągną rydwan w dół, w stronę uciech zmysłowych i chaosu. </p>
+            <p>Nie chodzi jednak wyłącznie o bezwzględne tłumienie emocji. Uczucia pełnią bowiem istotną funkcję psychologiczną – są sygnałami o naszych bieżących potrzebach. Głównym celem moralnym jest ich właściwa interpretacja oraz ścisłe zharmonizowanie z rozumiem. Tylko wtedy, gdy rozum trzyma mocno cugle i współpracuje z wolą w celu opanowania pożądań, dusza może osiągnąć wewnętrzną sprawiedliwość.</p>
+
+            <h3>Rola Erosa jako duchowego napędu</h3>
+            <p>W filozofii platońskiej afekt ma swój wyższy, konstruktywny wymiar. W dialogu <em>Uczta</em> Platon opisuje miłość (Eros) jako potężną siłę napędową. Eros, odpowiednio ukierunkowany, nie poprzestaje na fizycznym pożądaniu, lecz staje się metafizycznym silnikiem, który popycha duszę do poszukiwania absolutnego Dobra i Piękna, stając się nieodłącznym elementem poznania.</p>
+
+            <div class="extra-material">
+                <h4>Materiał dodatkowy: Koncepcja Platona a współczesna neuronauka</h4>
+                <p>Intuicje Platona znajdują interesujące odzwierciedlenie we współczesnych badaniach nad mózgiem:</p>
+                <ul>
+                    <li><strong>Trójjedyny mózg:</strong> Platonowski trójpodział duszy wyraźnie rezonuje z teorią Paula MacLeana. W jego modelu ewolucyjnym „stary mózg” (popędy) oraz „mózg limbiczny” (emocje) mogą działać impulsywnie, zanim zdąży interweniować najmłodsza ewolucyjnie kora nowa (racjonalność).</li>
+                    <li><strong>Rola Wstydu w socjologii:</strong> Platońskie rozumienie wstydu wyprzedza koncepcje socjologiczne (np. u Norberta Eliasa w "O procesie cywilizacji"), gdzie kształtowanie się silnego poczucia wstydu jest postrzegane jako fundament cywilizowania się ludzkości i budowania złożonych struktur społecznych.</li>
+					<li><strong>„Niska droga” strachu:</strong> Wybitny amerykański neurobiolog Joseph LeDoux, badając ciało migdałowate, odkrył istnienie tzw. „niskiej drogi” strachu. Jest to bezpośredni, podkorowy szlak, który wyzwala bardzo szybkie, zautomatyzowane reakcje emocjonalne na długo przed tym, zanim sygnał dotrze do kory mózgowej i nastąpi jego świadoma, racjonalna ocena. Odpowiada to dokładnie sytuacji, w której „dziki koń” z platońskiego rydwanu wyrywa do przodu przed wydaniem komendy przez woźnicę.</li>
+                </ul>
+                </ul>
+                <div class="references">Źródła dodatkowe: J. LeDoux, <em>Mózg emocjonalny</em>, Poznań 2000; N. Elias, <em>O procesie cywilizacji</em>, Warszawa 1980; Platon, <em>Fajdros</em>; Platon, <em>Uczta</em>.</div>
+            </div>
+        </section>
+
+        <!-- WYKŁAD 3 -->
+		<section id="w3" class="card-section w3-color">
+            <h2>W3. Arystoteles – Emocje jako oceny i stany psychosomatyczne</h2>
+
+            <h3>Hylemorficzna definicja afektu</h3>
+            <p>Arystoteles (384–322 p.n.e.) diametralnie zmienia podejście do ludzkiej psychiki, odrzucając platoński dualizm duszy i ciała. Proponuje koncepcję <span class="term-badge">hylemorfizmu</span>, w której człowiek stanowi nierozerwalną jedność materii (ciała) i formy (duszy). W związku z tym definiuje afekty (namiętności) jako zjawiska wybitnie psychosomatyczne.</p>
+            <p>Każda emocja, zdaniem Stagiryty, posiada dwa nieodłączne komponenty:</p>
+            <ul>
+                <li><strong>Aspekt materialny (fizjologiczny):</strong> Obejmuje reakcję samego organizmu. Na przykładzie gniewu Arystoteles określa to jako "gotowanie się krwi wokół serca".</li>
+                <li><strong>Aspekt formalny (kognitywno-psychologiczny):</strong> Stanowi intencjonalne ukierunkowanie i ocenę sytuacji, np. pragnienie zemsty za doznaną zniewagę.</li>
+            </ul>
+            <p>W ujęciu arystotelesowskim nie da się zrozumieć emocji, izolując jeden z tych elementów od drugiego.</p>
+
+            <h3>Złoty środek i etyka emocji</h3>
+            <p>W dziedzinie etyki Arystoteles uważa, że emocje (takie jak gniew, strach czy pożądanie) nie są same w sobie ani dobre, ani złe – nie podlegają z góry bezwzględnemu potępieniu moralnemu. O ich ostatecznej wartości decyduje nasz stosunek do nich oraz to, czy i jak nad nimi panujemy.</p>
+            <p>Doskonałość moralna (cnota) polega w tym ujęciu na osiągnięciu <span class="term-badge">mesotēs</span> (złotego środka). Oznacza to mądrość afektywną: posiadanie umiejętności odczuwania emocji we właściwym czasie, wobec właściwych osób, z właściwego powodu i we właściwym, proporcjonalnym stopniu. Zarówno skrajny nadmiar afektu (np. niekontrolowana furia), jak i jego całkowity brak lub niedobór (np. apatyczna niewrażliwość na rażącą niesprawiedliwość) są uznawane za błędy i wady.</p>
+
+            <h3>Kognitywna struktura emocji w Retoryce</h3>
+            <p>Najbardziej wnikliwą analizę mechanizmów powstawania emocji Arystoteles przeprowadza w <em>Retoryce</em>. Wskazuje tam, że afekty potrafią silnie modyfikować nasze procesy poznawcze – definiuje je jako stany, pod wpływem których ludzie zmieniają swoje sądy i decyzje. Większości emocji towarzyszy także silne uczucie przyjemności lub bólu (przykrości).</p>
+            <p>Arystoteles uczy retorów, że aby w pełni zrozumieć konkretną emocję audytorium (oraz umieć ją celowo wzbudzić), należy przeanalizować jej trzy nieodłączne wektory:</p>
+            <ol>
+                <li><strong>Stan dyspozycyjny podmiotu:</strong> W jakim stanie wewnętrznym znajduje się osoba, która odczuwa daną emocję?</li>
+                <li><strong>Obiekt emocji:</strong> Wobec kogo lub czego konkretnie emocja jest skierowana?</li>
+                <li><strong>Przyczyna (powód):</strong> Z jakiego konkretnego powodu (w opinii odczuwającego) dana emocja się rodzi?</li>
+            </ol>
+            <p>Takie podejście kładzie solidne fundamenty pod traktowanie emocji nie jako ślepych popędów, lecz jako niezwykle złożonych struktur poznawczych, służących do "oceny" sytuacji, w której się znajdujemy.</p>
+
+            <div class="extra-material">
+                <h4>Materiał dodatkowy: Arystoteles a współczesna psychologia poznawcza</h4>
+                <p>Perspektywa zaproponowana przez Arystotelesa, w której afekt wymaga uprzedniego sądu oceniającego sytuację, czyni z niego bezpośredniego prekursora współczesnych <strong>kognitywnych teorii emocji</strong> (tzw. <em>appraisal theories</em>). Twórcy tych koncepcji (jak Magda Arnold czy Richard Lazarus) udowodnili w XX wieku, że to nasza kognitywna ocena znaczenia bodźca dla naszego bezpieczeństwa i celów życiowych wyzwala lawinę reakcji fizjologicznych i psychicznych. Z kolei arystotelesowska koncepcja umiaru ("złotego środka") we właściwym przeżywaniu i ukierunkowywaniu gniewu jest dziś powszechnie uznawana za filozoficzny fundament pojęcia <strong>inteligencji emocjonalnej</strong>.</p>
+                <div class="references">Źródła dodatkowe: Arystoteles, <em>O duszy</em>; Arystoteles, <em>Etyka nikomachejska</em>; R. Lazarus, <em>Emotion and Adaptation</em>, Nowy Jork 1991.</div>
+            </div>
+        </section>
+
+        <!-- WYKŁAD 4 -->
+		<section id="w4" class="card-section w4-color">
+            <h2>W4. Stoicyzm – Afekty jako błędne sądy rozumu</h2>
+
+            <h3>1. Intelektualistyczna teoria afektów (Główna Teza)</h3>
+            <p>Stoicy (reprezentowani przez Epikteta, Senekę i Marka Aureliusza) dokonali radykalnego zwrotu w starożytnej psychologii, odrzucając platoński podział na niezależne, irracjonalne części duszy. Sformułowali oni skrajnie <strong>intelektualistyczną teorię emocji</strong>, twierdząc, że afekt nie jest autonomiczną siłą biologiczną, lecz jest bezpośrednio **rezultatem błędnych sądów wartościujących** rozumu (<span class="term-badge">doxa</span>).</p>
+            <p>Afekt (<span class="term-badge">pathē</span>) rodzi się w momencie, gdy człowiek przypisuje rzeczom zewnętrznym, obiektywnie obojętnym (<span class="term-badge">adiaphora</span>) – takim jak zdrowie, choroba, bogactwo, ubóstwo czy opinia innych ludzi – status absolutnego dobra lub zła. Dla stoika jedynym prawdziwym dobrem jest cnota, a jedynym prawdziwym złem – występek.</p>
+
+            <h3>2. Cztery afekty pierwotne (Klasyfikacja Egzaminacyjna)</h3>
+            <p>Stoicy stworzyli symetryczną matrycę klasyfikacji afektów na podstawie dwóch kryteriów: czasu (teraźniejszość vs przyszłość) oraz domniemanego statusu wartości (dobro vs zło). Wyróżnia się cztery afekty pierwotne:</p>
+            
+            <table style="width:100%; border-collapse: collapse; margin: 20px 0; background: rgba(255,255,255,0.5); border-radius: 8px; overflow: hidden;">
+                <thead>
+                    <tr style="background-color: #e67e22; color: white; text-align: left;">
+                        <th style="padding: 12px;">Perspektywa czasowa</th>
+                        <th style="padding: 12px;">Mniemane DOBRO (rzeczy zewnętrzne)</th>
+                        <th style="padding: 12px;">Mniemane ZŁO (rzeczy zewnętrzne)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 12px; font-weight: bold;">Teraźniejszość</td>
+                        <td style="padding: 12px;"><span class="term-badge">hēdonē</span> – Rozkosz (błędne cieszenie się z rzeczy przemijających)</td>
+                        <td style="padding: 12px;"><span class="term-badge">lypē</span> – Ból / Smutek (cierpienie z powodu utraty adiaphora)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; font-weight: bold;">Przyszłość</td>
+                        <td style="padding: 12px;"><span class="term-badge">epithymia</span> – Pożądanie (nienasycona chęć zdobycia rzeczy zewnętrznych)</td>
+                        <td style="padding: 12px;"><span class="term-badge">phobos</span> – Lęk (paraliżująca obawa przed utratą zdrowia, statusu lub życia)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>3. Koncepcja Przed-afektów (Propatheia) – Kluczowy niuans</h3>
+            <p>Jednym z najczęstszych błędów na egzaminie jest twierdzenie, że stoik to bezduszny robot, który nic nie czuje. Stoicy wprowadzają pojęcie przed-afektów (<span class="term-badge">propatheia</span>). Są to niezależne od naszej woli, czysto fizjologiczne, automatyczne reakcje organizmu na bodziec.</p>
+            <ul>
+                <li><strong>Przykłady propatheia:</strong> Bladość skóry ze strachu, gwałtowne przyspieszenie bicia serca podczas huku, nagłe uronienie łzy po stracie bliskiego.</li>
+                <li><strong>Status moralny:</strong> Przed-afekty są całkowicie **neutralne moralnie** (nie są grzechem ani słabością). </li>
+                <li><strong>Moment narodzin afektu:</strong> Afekt w pełnym tego słowa znaczeniu konstytuuje się dopiero wtedy, gdy rozum wydaje wewnętrzną **zgodę** (<span class="term-badge">synkatathesis</span>) na to poruszenie, sankcjonując je sądem intelektualnym (np.: <em>„Spotkało mnie absolutne, ostateczne nieszczęście, mój świat się zawalił”</em>). Mędrzec doświadcza propatheia, ale nigdy nie udziela im aprobaty swojego rozumu.</li>
+            </ul>
+
+            <h3>4. Cel: Apatheia oraz Eupatheiai</h3>
+            <p>Celem życia stoickiego jest osiągnięcie stanu <span class="term-badge">apatheia</span> – czyli całkowitej wolności od destrukcyjnych, irracjonalnych poruszeń duszy. Wolność ta pozwala człowiekowi żyć w całkowitej harmonii z kosmicznym Rozumem (Logosem) i Naturą.</p>
+            <p>Miejsce wygaszonych afektów biernych zajmują u mędrca tzw. <span class="term-badge">eupatheiai</span>, czyli racjonalne, głębokie i dobre emocje, do których zalicza się:</p>
+            <ul>
+                <li><strong>Chara (Radość):</strong> Racjonalne wesele wynikające z faktu posiadania cnoty (zastępuje hēdonē).</li>
+                <li><strong>Boulesis (Chcenie/Wola):</strong> Rozumne dążenie ku dobru moralnemu (zastępuje epithymia).</li>
+                <li><strong>Eulabeia (Ostrożność):</strong> Rozumne unikanie zła i moralnego zepsucia (zastępuje phobos). Smutek (lypē) nie posiada swojego dobrego odpowiednika, ponieważ mędrzec nigdy nie czuje się wewnętrznie zdegradowany.</li>
+            </ul>
+
+            <div class="extra-material">
+                <h4>Materiał dodatkowy: Stoicyzm we współczesnym świecie</h4>
+                <p>Klasyczna psychologia stoicka przeżywa obecnie spektakularny renesans i stanowi bezpośredni punkt odniesienia w dwóch obszarach:</p>
+                <ul>
+                    <li><strong>Rewolucja poznawcza w psychoterapii:</strong> Twórca Racjonalno-Emotywnej Terapii Zachowania (REBT) Albert Ellis oraz współtwórca Terapii Poznawczo-Behawioralnej (CBT) Aaron Beck wprost powoływali się na stoicyzm. Główny paradygmat CBT – że neuroza i cierpienie psychiczne nie wynikają z obiektywnych wydarzeń, ale z automatycznych, zniekształconych myśli i przekonań na ich temat – to przełożenie stoickiej definicji afektu na język współczesnej kliniki.</li>
+                    <li><strong>Modern Stoicism i Resilience (Odporność psychiczna):</strong> Współczesny nurt „nowego stoicyzmu” (rozpropagowany m.in. przez Massimo Pigliucciego i Ryana Holiday'a) adaptuje narzędzia stoickie do zarządzania stresem i budowania odporności psychicznej w korporacjach, sporcie wyczynowym oraz wojskowości. Kluczowym elementem jest tu tzw. <strong>dychotomia kontroli</strong> Epikteta – umiejętność radykalnego oddzielenia rzeczy zależnych od nas (nasze myśli, intencje, działania) od rzeczy całkowicie niezależnych (pogoda, rynki finansowe, zachowania innych ludzi) i inwestowanie energii emocjonalnej wyłącznie w te pierwsze.</li>
+                </ul>
+                <div class="references">Źródła dodatkowe: Epiktet, <em>Enchiridion (Podręcznik)</em>; Marek Aureliusz, <em>Rozmyślania</em>; M. Pigliucci, <em>Jak być stoikiem?</em>, Warszawa 2018; A. Beck, <em>Terapia poznawcza i zaburzenia emocjonalne</em>, Kraków 2005.</div>
+            </div>
+        </section>
+
+        <!-- WYKŁAD 5 -->
+        <section id="w5" class="card-section w5-color">
+            <h2>W5. Epikureizm i inne szkoły hellenistyczne – Filozofia jako terapia</h2>
+
+            <h3>1. Cel filozofii: Terapia duszy</h3>
+            <p>W epoce hellenistycznej filozofia przestała być czysto teoretyczną spekulacją, a stała się przede wszystkim sztuką życia i "medycyną dla duszy". Głównym problemem, z którym mierzyły się szkoły takie jak epikureizm, sceptycyzm czy cynizm, było wszechobecne ludzkie cierpienie, lęk i emocjonalny niepokój. Ostatecznym celem każdej z tych szkół było osiągnięcie <span class="term-badge">ataraksji</span> – niewzruszonego spokoju ducha, choć prowadziły do niego zupełnie różne drogi.</p>
+
+            <h3>2. Epikureizm: Rachunek przyjemności (Kalkulacja afektywna)</h3>
+            <p>Epikur (341–270 p.n.e.) był hedonistą, jednak jego definicja przyjemności (<span class="term-badge">hēdonē</span>) radykalnie różniła się od potocznego rozumienia tego słowa. Najwyższym dobrem nie są zmysłowe ekscesy, lecz brak cierpienia fizycznego (<span class="term-badge">aponia</span>) oraz wolność od lęków i niepokojów psychicznych (<span class="term-badge">ataraksja</span>).</p>
+            
+            <p>Kluczem do egzaminu jest <strong>epikurejski podział pragnień</strong>, który służy racjonalnemu zarządzaniu emocjami:</p>
+            <ul>
+                <li><strong>Pragnienia naturalne i konieczne:</strong> Np. głód, pragnienie, potrzeba snu, podstawowe bezpieczeństwo i przyjaźń. Są łatwe do zaspokojenia, a ich realizacja przynosi trwały spokój i oddala ból. Na nich powinien skupić się mędrzec.</li>
+                <li><strong>Pragnienia naturalne, lecz niekonieczne:</strong> Np. chęć jedzenia wykwintnych potraw zamiast chleba, picie drogiego wina zamiast wody. Należy korzystać z nich z umiarem, gdy się nadarzają, ale nie wolno się do nich przywiązywać, by ich brak nie wywołał frustracji i smutku.</li>
+                <li><strong>Pragnienia czcze (puste) – nienaturalne i niekonieczne:</strong> Np. żądza władzy, sławy, nieśmiertelności czy ogromnego bogactwa. Są one głównym źródłem destrukcyjnych emocji, ponieważ nigdy nie da się ich w pełni zaspokoić, a pogoń za nimi generuje nieustanny lęk i zawiść. Epikur bezwzględnie nakazuje ich odrzucenie.</li>
+            </ul>
+
+            <h3>3. Tetrapharmakos: Czwórmian leczniczy</h3>
+            <p>Epikur zdiagnozował, że fundamentem ludzkich negatywnych afektów są cztery wielkie lęki. Odpowiedzią na nie jest "czwórmian leczniczy" (Tetrapharmakos) – zestaw racjonalnych argumentów, które mają uspokoić duszę:</p>
+            <ol>
+                <li><strong>Nie bój się bogów:</strong> Bogowie (jeśli istnieją) są doskonali, żyją w przestrzeniach międzyświatowych i zupełnie nie interesują się ludzkimi sprawami; nie zsyłają kar ani nieszczęść.</li>
+                <li><strong>Nie bój się śmierci:</strong> Śmierć nas nie dotyczy. Dopóki jesteśmy, nie ma śmierci; gdy przychodzi śmierć, nie ma już nas (świadomość znika wraz z rozpadem atomów ciała i duszy).</li>
+                <li><strong>To, co dobre, jest łatwe do zdobycia:</strong> Naturalne i konieczne potrzeby można łatwo zaspokoić przy minimalnym wysiłku.</li>
+                <li><strong>To, co straszne, jest łatwe do zniesienia:</strong> Ból, jeśli jest niezwykle intensywny, zazwyczaj trwa krótko (kończy się śmiercią i brakiem czucia); z kolei jeśli jest długotrwały, jest zazwyczaj znośny i można z nim funkcjonować.</li>
+            </ol>
+
+            <h3>4. Inne szkoły: Sceptycyzm i Cynizm</h3>
+            <ul>
+                <li><strong>Sceptycyzm (Pirron):</strong> Sceptycy twierdzili, że cierpienie emocjonalne wynika z naszego dogmatyzmu – z tego, że upieramy się, iż wiemy na pewno, co jest dobre, a co złe. Narzędziem wyzwolenia jest <span class="term-badge">epochē</span> (powstrzymanie się od wydawania sądów). Gdy przestajemy kategoryzować świat, znika frustracja, a ataraksja podąża za nami jak "cień za ciałem".</li>
+                <li><strong>Cynizm (Diogenes z Synopy):</strong> Cynicy odrzucali wszelkie konwencje społeczne, upatrując źródła złych emocji w przywiązaniu do kultury i dóbr materialnych. Afirmowali <span class="term-badge">autarkeia</span> (samowystarczalność) oraz <span class="term-badge">anaideia</span> (bezwstyd), udowadniając, że człowiek może być szczęśliwy niezależnie od oceny innych ludzi.</li>
+            </ul>
+
+            <div class="extra-material">
+                <h4>Materiał dodatkowy: Dziedzictwo hellenistyczne dziś</h4>
+                <p>Koncepcje epikurejskie i innych szkół hellenistycznych mają niezwykle silne przełożenie na współczesność:</p>
+                <ul>
+                    <li><strong>Minimalizm i Slow Life:</strong> Współczesne ruchy antykonsumpcjonistyczne oraz filozofia minimalizmu są wprost oparte na epikurejskiej klasyfikacji pragnień – udowadniają, że odcięcie "pragnień pustych" (nadmiaru ubrań, gadżetów, prestiżu) radykalnie obniża poziom stresu i lęku przed oceną.</li>
+                    <li><strong>Paradoks wyboru:</strong> Sceptycka zasada <em>epochē</em> znajduje psychologiczne potwierdzenie w badaniach nad "paradoksem wyboru" (Barry Schwartz). Rezygnacja z ciągłego oceniania (czy wybrałem na pewno najlepszą możliwą opcję) i zaakceptowanie wystarczająco dobrego rozwiązania dramatycznie obniża poziom frustracji.</li>
+                    <li><strong>Psychologia pozytywna:</strong> W przeciwieństwie do stoików, którzy skupiali się na uodparnianiu na ciosy, epikureizm rezonuje ze współczesnymi badaniami nad wdzięcznością i docenianiem małych, codziennych przyjemności (np. tzw. <em>savoring</em> – smakowanie chwili) jako kluczem do podniesienia dobrostanu (ang. well-being).</li>
+                </ul>
+                <div class="references">Źródła dodatkowe: Epikur, <em>List do Menoikeusa</em>; Sekstus Empiryk, <em>Zarysy Pirrońskie</em>; B. Schwartz, <em>Paradoks wyboru</em>, Warszawa 2013; D. Gilbert, <em>Na tropie szczęścia</em>, Poznań 2007.</div>
+            </div>
+        </section>
+
+        <!-- WYKŁAD 6 -->
+        <section id="w6" class="card-section w6-color">
+            <h2>W6. Neoplatonizm i Galen – Emocje między medycyną a metafizyką</h2>
+
+            <h3>1. Podejście medyczne: Klaudiusz Galen i biologia emocji</h3>
+            <p>Klaudiusz Galen (ok. 129–200 n.e.) dokonał wielkiej syntezy starożytnej wiedzy medycznej (w tym nauk Hipokratesa), tworząc ścisły związek między biologią ludzkiego ciała a psychologią i stanami emocjonalnymi. Galen uważał, że to, jak odczuwamy afekty, jest bezpośrednio zdeterminowane przez naszą fizjologię.</p>
+            <p>Fundamentem jego psychologii była <strong>teoria humoralna</strong>, zakładająca, że w ciele człowieka krążą cztery podstawowe płyny (humory, soki ustrojowe). Zdrowie fizyczne i emocjonalne zależy od ich równowagi (<span class="term-badge">eukrazja</span>), natomiast dominacja jednego z nich (lub zepsucie) prowadzi do chorób i zaburzeń emocjonalnych (<span class="term-badge">dyskrazja</span>).</p>
+
+            <h3>2. Teoria 4 Temperamentów (Pigułka Egzaminacyjna)</h3>
+            <p>Na podstawie przewagi konkretnego płynu ustrojowego wyodrębniono cztery podstawowe temperamenty, które warunkują stałe predyspozycje emocjonalne człowieka:</p>
+            <ul>
+                <li><strong>Krew (łac. sanguis): Sangwinik.</strong> Cechuje go przewaga optymizmu, wesołość, towarzyskość i duża, choć często krótkotrwała, reaktywność emocjonalna.</li>
+                <li><strong>Żółć (gr. chole): Choleryk.</strong> Dominacja żółci wywołuje pobudliwość, gwałtowność, łatwe wpadanie w gniew oraz silną skłonność do agresji i niepokoju.</li>
+                <li><strong>Czarna żółć (gr. melaina chole): Melancholik.</strong> Jej nadmiar odpowiada za smutek, lękliwość, apatię, powolność i skłonność do stanów depresyjnych. Melancholia stała się w późniejszych wiekach symbolem cierpiących geniuszy i artystów.</li>
+                <li><strong>Flegma (gr. phlegma): Flegmatyk.</strong> Przewaga tego płynu skutkuje chłodem emocjonalnym, spowolnieniem, obojętnością, ale także stabilnością i trudnością w wyprowadzeniu z równowagi.</li>
+            </ul>
+            <p>Dla Galena terapia emocjonalna polegała na interwencji fizycznej: zmianie diety, trybu życia, klimatu czy podawaniu ziół w celu przywrócenia balansu humoralnego.</p>
+
+            <h3>3. Podejście metafizyczne: Neoplatonizm (Plotyn)</h3>
+            <p>Zupełnie inny biegun myślenia w późnym antyku reprezentował neoplatonizm (m.in. Plotyn, III w. n.e.). Plotyn zbudował system oparty na hierarchii bytu, na której szczycie znajduje się absolutnie doskonałe Jedno, od którego poprzez emanacje powstają kolejne warstwy: Umysł (Nous), Dusza, aż po Materię.</p>
+            <ul>
+                <li><strong>Materia jako źródło afektów:</strong> Ciało i materia stoją najniżej w hierarchii (są wręcz brakiem dobra/światła). Emocje, żądze i namiętności cielesne są traktowane negatywnie – jako łańcuchy, które wiążą boską iskrę duszy z mrocznym światem materialnym.</li>
+                <li><strong>Katharsis i Ekstaza:</strong> Celem ludzkiego życia jest odwrócenie się od zmysłów. Plotyn postuluje proces <span class="term-badge">katharsis</span> (oczyszczenia) polegający na intelektualnym wyciszeniu namiętności. Ostatecznym punktem tej drogi nie jest zimna racjonalność, lecz <strong>ekstaza</strong> (wyjście z siebie) – mistyczne, bezpojęciowe i afektywne zjednoczenie z najwyższym Jednem.</li>
+            </ul>
+
+            <div class="extra-material">
+                <h4>Materiał dodatkowy: Paralele ze współczesną nauką i kulturą</h4>
+                <p>Zarówno system Galena, jak i mistyka neoplatońska wciąż odbijają się szerokim echem w dzisiejszych dyscyplinach:</p>
+                <ul>
+                    <li><strong>Biologiczne podłoże emocji:</strong> Choć nikt dziś nie wierzy w dosłowne "humory", idea Galena była prorocza. Współczesna psychiatria biologiczna bada zaburzenia nastroju (depresję, manię) jako zaburzenia neuroprzekaźnictwa (nadmiar lub niedobór serotoniny, dopaminy czy noradrenaliny). Leki psychotropowe są dokładnym odpowiednikiem dawnych galenowych terapii "przywracających równowagę płynów".</li>
+                    <li><strong>Psychologia osobowości:</strong> Galenowska czwórka temperamentów przetrwała aż do XX wieku. Znany psycholog Hans Eysenck w swojej teorii osobowości (PEN) wprost nałożył stare nazwy na wymiary Introwersji/Ekstrawersji oraz Neurotyzmu/Stabilności (np. choleryk to neurotyczny ekstrawertyk, melancholik to neurotyczny introwertyk).</li>
+                    <li><strong>Psychologia transpersonalna:</strong> Podejście Plotyna znajduje kontynuację we współczesnej psychologii transpersonalnej i badaniach nad odmiennymi stanami świadomości, gdzie całkowite "wyłączenie" zmysłów, codziennych bodźców i emocji ma pozwalać na doświadczanie poczucia absolutnej jedności ze Wszechświatem (zbliżone stany obserwuje się dziś m.in. w badaniach neuroteologicznych nad mózgami medytujących mnichów).</li>
+                </ul>
+                <div class="references">Źródła dodatkowe: Plotyn, <em>Enneady</em>; H. Eysenck, <em>The Biological Basis of Personality</em>; A. Newberg, <em>Neurotheology</em>; Galen, <em>De temperamentis</em>.</div>
+            </div>
+        </section>
+
+        <!-- WYKŁAD 7 -->
+        <section id="w7" class="card-section w7-color">
+            <h2>W7. Św. Augustyn – Afekty jako poruszenia woli (Woluntaryzm)</h2>
+
+            <h3>1. Chrześcijańska rewolucja: Odrzucenie stoickiej apatii</h3>
+            <p>Św. Augustyn z Hippony (354–430 n.e.) dokonuje radykalnego przełomu w postrzeganiu ludzkiej emocjonalności. Całkowicie odrzuca stoicki ideał <span class="term-badge">apatheia</span> (wyzbycia się afektów), uznając go za nieludzki, nienaturalny i sprzeczny z duchem chrześcijaństwa.</p>
+            <p>Augustyn argumentuje, że sam Chrystus odczuwał smutek, gniew i płakał, co ostatecznie sankcjonuje emocje jako integralną, dobrą część ludzkiej natury stworzonej przez Boga. Problem nie leży w samym odczuwaniu emocji, lecz w ich moralnym ukierunkowaniu. Jak pisze w <em>Państwie Bożym</em>: prawi obywatele "boją się i pragną, smucą się i radują, a ponieważ miłość ich jest prawa, wszystkie te uczucia są w nich prawe".</p>
+
+            <h3>2. Woluntaryzm afektywny: Emocje jako akty woli</h3>
+            <p>W przeciwieństwie do Platona i Arystotelesa, którzy umiejscawiali emocje w niższych, nieracjonalnych lub zmysłowych częściach duszy, Augustyn przenosi środek ciężkości na <strong>wolę</strong> (<span class="term-badge">voluntas</span>). Zgodnie z jego koncepcją, afekty (łatyńskie <span class="term-badge">passiones</span> lub <span class="term-badge">affectiones</span>) nie są ślepymi, zwierzęcymi popędami, lecz <strong>aktywnymi poruszeniami samej woli</strong>.</p>
+            <p>Wola nie jest tu tylko chłodnym "narzędziem decyzyjnym", ale posiada swój własny, afektywny dynamizm. Emocja jest aktem woli, która zgadza się na coś (przyciąganie) lub coś odrzuca (odpychanie).</p>
+
+            <h3>3. Miłość jako korzeń wszystkich emocji</h3>
+            <p>Najważniejszym punktem egzaminacyjnym z psychologii Augustyna jest twierdzenie, że <strong>wszystkie emocje są w swojej istocie modyfikacjami miłości</strong> (<span class="term-badge">amor</span>). Wola to nic innego jak miłość. Cztery podstawowe afekty (zapożyczone od stoików, lecz zredefiniowane) wynikają z tego, jak zachowuje się nasza miłość wobec przedmiotu:</p>
+            <ul>
+                <li><strong>Pożądanie (Cupiditas/Desiderium):</strong> Miłość dążąca do posiadania przedmiotu.</li>
+                <li><strong>Radość (Laetitia):</strong> Miłość, która już posiada przedmiot i w nim spoczywa.</li>
+                <li><strong>Strach (Timor):</strong> Miłość uciekająca przed tym, co mogłoby ją pozbawić przedmiotu.</li>
+                <li><strong>Smutek (Tristitia):</strong> Miłość cierpiąca z powodu utraty przedmiotu.</li>
+            </ul>
+
+            <h3>4. Dwa porządki (Wektory) Miłości</h3>
+            <p>Skoro emocje to formy miłości, ich wartość moralna zależy wyłącznie od tego, <em>co</em> kochamy i <em>jak</em> kochamy. Augustyn dzieli miłość na dwa zasadnicze porządki:</p>
+            <ul>
+                <li><span class="term-badge">Caritas</span> <strong>(Miłość uporządkowana / Boża):</strong> Skierowana ku Bogu jako dobru najwyższemu, a ku stworzeniom jedynie ze względu na Boga. Afekty z niej wypływające (np. smutek z powodu własnych grzechów, radość ze sprawiedliwości) są cnotami i budują <em>Civitas Dei</em> (Państwo Boże).</li>
+                <li><span class="term-badge">Cupiditas</span> <strong>(Miłość nieuporządkowana / Własna):</strong> Skierowana ku dobrom doczesnym, materialnym i egoistycznym, traktowanym jako cel ostateczny. Generuje ona toksyczny lęk przed stratą, zazdrość, pychę i buduje <em>Civitas Terrena</em> (Państwo Ziemskie).</li>
+            </ul>
+
+            <div class="extra-material">
+                <h4>Materiał dodatkowy: Dziedzictwo św. Augustyna w psychoterapii i kulturze</h4>
+                <p>Myśl św. Augustyna ukształtowała zachodnie rozumienie wnętrza człowieka (tzw. psychologia głębi) i znajduje odzwierciedlenie we współczesności:</p>
+                <ul>
+                    <li><strong>Egzystencjalizm i Terapia oparta na wartościach:</strong> Odkrycie Augustyna, że nasz niepokój emocjonalny wynika z niewłaściwego "ulokowania" naszej miłości, jest fundamentem m.in. logoterapii Viktora Frankla. Frankl dowodził, że nerwice mają często charakter "noogenny" (duchowy) – wynikają z pogoni za płytkimi wartościami (odpowiednik <em>cupiditas</em>), a zdrowie psychiczne odzyskuje się poprzez znalezienie ostatecznego, wyższego sensu.</li>
+                    <li><strong>Inteligencja afektywna a moralność:</strong> Zamiast leczyć pacjentów z emocji (jak proponowali stoicy), współczesne podejścia humanistyczne (np. Carl Rogers) podążają śladem Augustyna: traktują emocje (nawet te bolesne) jako autentyczny wyraz tego, na czym człowiekowi najbardziej zależy. Smutek czy strach nie są "błędami poznawczymi", lecz kompasem wskazującym, gdzie leży nasze serce.</li>
+                </ul>
+                <div class="references">Źródła zewnętrzne i wiedza akademicka: Św. Augustyn, <em>O Państwie Bożym</em> (Księga XIV - traktat o afektach); Św. Augustyn, <em>Wyznania</em>; E. Gilson, <em>Wprowadzenie do nauki świętego Augustyna</em>, Warszawa 1953; V. Frankl, <em>Człowiek w poszukiwaniu sensu</em>.</div>
+            </div>
+        </section>
+
+        <!-- WYKŁAD 8 -->
+        <section id="w8" class="card-section w8-color">
+            <h2>W8. Anzelm z Canterbury i Bernard z Clairvaux – Wola i mistyczna miłość</h2>
+
+            <h3>1. Św. Anzelm z Canterbury: Woluntaryzm i podwójna struktura woli</h3>
+            <p>Św. Anzelm (1033–1109) wnosi ogromny wkład w rozumienie ludzkiej decyzyjności i emocjonalności poprzez pogłębioną analizę samej woli. W przeciwieństwie do myślicieli, którzy traktowali wolę jako pojedynczą, jednorodną siłę dążącą po prostu do "dobra", Anzelm zauważa w niej fundamentalne pęknięcie. Twierdzi, że ludzka wola posiada dwie wrodzone, ścierające się ze sobą skłonności (afekty).</p>
+
+            <h3>2. Dwa pierwotne afekty woli (Pigułka Egzaminacyjna)</h3>
+            <p>W traktacie <em>O zgodności przedwiedzy i predestynacji z wolną wolą</em> Anzelm definiuje te dwie siły napędowe:</p>
+            <ul>
+                <li><span class="term-badge">Affectio commodi</span> <strong>(Afekt korzyści):</strong> Naturalne, wpisane w biologię i psychikę dążenie do własnego dobrostanu, szczęścia, przyjemności i unikania cierpienia. Anzelm zaznacza, że ten afekt nie jest sam w sobie zły – nie możemy chcieć być nieszczęśliwi. Jednak pozostawiony sam sobie, łatwo degeneruje się w ślepy egoizm.</li>
+                <li><span class="term-badge">Affectio iustitiae</span> <strong>(Afekt sprawiedliwości):</strong> Wyższa skłonność woli, która pozwala nam chcieć rzeczy dobrych i obiektywnie słusznych <em>ze względu na nie same</em>, a nie dlatego, że przynoszą nam korzyść.</li>
+            </ul>
+            <p>Wolność moralna według Anzelma polega na zdolności do podporządkowania <em>affectio commodi</em> (własnej korzyści i emocji) rygorom <em>affectio iustitiae</em> (sprawiedliwości). Człowiek wolny to ten, kto potrafi zrezygnować z osobistego szczęścia w imię tego, co słuszne.</p>
+
+            <h3>3. Św. Bernard z Clairvaux: Cysterska mistyka afektu</h3>
+            <p>Św. Bernard (1090–1153) reprezentuje nieco inny, wybitnie afektywny i mistyczny nurt filozofii monastycznej. Przeciwstawiał się rodzącej się w miastach chłodnej, akademickiej scholastyce. Uważał, że Boga (i najwyższego dobra) nie poznaje się poprzez suche, intelektualne spekulacje, ale <strong>poprzez doświadczenie miłości</strong> (<span class="term-badge">experientia</span>). Emocje i uczucia zostają tu uszlachetnione jako główne narzędzie poznania i zjednoczenia z Absolutem.</p>
+
+            <h3>4. Cztery stopnie miłości (Kluczowy podział na egzamin)</h3>
+            <p>W dziele <em>O miłowaniu Boga</em> Bernard precyzyjnie opisuje psychologiczną i duchową ewolucję ludzkich afektów, zaczynając od biologicznego egoizmu, a kończąc na mistycznej ekstazie. Wyróżnia cztery etapy:</p>
+            <ol>
+                <li><strong>Miłość człowieka do samego siebie (ze względu na siebie):</strong> Stan natury. Człowiek jest skupiony na własnym przetrwaniu i potrzebach cielesnych.</li>
+                <li><strong>Miłość do Boga ze względu na własną korzyść:</strong> Miłość najemnika. Zaczynamy kochać Boga/innych, ale tylko dlatego, że doświadczamy z tego powodu korzyści, pomocy i opieki (miłość interesowna).</li>
+                <li><strong>Miłość do Boga ze względu na Niego samego:</strong> Miłość synowska. Odkrywamy obiektywną wartość i piękno Dobra. Kochamy Boga nie za to, co nam daje, ale za to, kim jest (miłość bezinteresowna).</li>
+                <li><strong>Miłość człowieka do samego siebie wyłącznie ze względu na Boga:</strong> Stopień mistyczny, rzadko osiągany na ziemi. Człowiek całkowicie wyzbywa się ego. Kocha siebie i własne życie tylko dlatego, że jest ono częścią większego, boskiego planu. Następuje zatracenie własnej woli (kropla wody wlana do wina przyjmuje jego smak i kolor).</li>
+            </ol>
+
+            <div class="extra-material">
+                <h4>Materiał dodatkowy: Echa średniowiecza we współczesnej psychologii</h4>
+                <p>Koncepcje Anzelma i Bernarda w zadziwiający sposób antycypują kluczowe teorie nowożytnej i współczesnej psychologii:</p>
+                <ul>
+                    <li><strong>Debata o altruizmie a "Affectio Iustitiae":</strong> Rozróżnienie Anzelma jest filozoficznym rdzeniem współczesnych debat w psychologii ewolucyjnej o to, czy istnieje "czysty altruizm" (zbliżony do afektu sprawiedliwości), czy też każda pomoc innym ostatecznie wynika z chęci poprawy własnego samopoczucia – tzw. egoizm psychologiczny (afekt korzyści). Anzelmiański podział strukturalnie przypomina również koncepcję pragnień wyższego rzędu u współczesnego filozofa Harry'ego Frankfurta.</li>
+                    <li><strong>Piramida potrzeb i rozwój moralny:</strong> Stopnie miłości Bernarda z Clairvaux można czytać jako wczesnośredniowieczny odpowiednik Piramidy Potrzeb Abrahama Maslowa. Stopień pierwszy to potrzeby fizjologiczne i bezpieczeństwa (skupienie na biologii), stopień drugi to potrzeby przynależności (relacje transakcyjne), stopień trzeci to samorealizacja, a stopień czwarty dokładnie odpowiada dodanemu pod koniec życia Maslowa etapowi <strong>autotranscendencji</strong> (przekroczenia własnego "ja" w imię wyższych wartości). Podobnie rezonuje to z etapami rozwoju moralnego Lawrence'a Kohlberga (od moralności przedkonwencjonalnej/unikania kar do moralności postkonwencjonalnej opartej na uniwersalnych zasadach).</li>
+                </ul>
+                <div class="references">Źródła zewnętrzne i wiedza akademicka: Św. Anzelm z Canterbury, <em>O zgodności przedwiedzy i predestynacji z wolną wolą</em>; Św. Bernard z Clairvaux, <em>O miłowaniu Boga</em>; A. Maslow, <em>Motywacja i osobowość</em>, Warszawa 2006; H. Frankfurt, <em>Wolność woli i pojęcie osoby</em>.</div>
+            </div>
+        </section>
+
+		<!-- WYKŁAD 9 -->
+        <section id="w9" class="card-section w9-color">
+            <h2>W9. Cystersi i Wiktoryni – Afekt jako narzędzie poznania (Mistyka XII wieku)</h2>
+
+            <h3>1. Kontekst: Bunt przeciwko chłodnej scholastyce</h3>
+            <p>W XII wieku, równolegle do rozwijającej się w miastach i na wczesnych uniwersytetach logiki oraz "suchej" scholastyki, w klasztorach rodzi się potężny nurt <strong>mistyki afektywnej</strong>. Przedstawiciele zakonu cystersów oraz kanonicy ze szkoły św. Wiktora w Paryżu (wiktoryni) twierdzą, że czysto intelektualne poznanie Boga i człowieka jest niewystarczające. Wprowadzają radykalną tezę teologiczną i psychologiczną: <strong>sama miłość jest formą poznania</strong>.</p>
+
+            <h3>2. Szkoła Cysterska: Przyjaźń i miłość poznająca</h3>
+            <p>Oprócz św. Bernarda z Clairvaux (omawianego wcześniej), kluczowymi myślicielami tego nurtu, na których należy zwrócić uwagę, są:</p>
+            <ul>
+                <li><strong>Wilhelm ze Saint-Thierry:</strong> Twórca słynnej maksymy <span class="term-badge">Amor ipse intellectus est</span> (Sama miłość jest intelektem/poznaniem). Twierdził, że tam, gdzie ludzki rozum napotyka mur i nie może pójść dalej, miłość potrafi go przekroczyć. Afekt staje się "okiem duszy", które widzi więcej niż chłodna logika.</li>
+                <li><strong>Aelred z Rievaulx:</strong> Nazywany "św. Bernardem Północy". W swoim dziele <em>O przyjaźni duchowej</em> (<span class="term-badge">De spiritali amicitia</span>) jako pierwszy tak mocno dowartościowuje ludzkie, poziome relacje. Uważa, że głęboka, uczuciowa przyjaźń między ludźmi nie jest odciąganiem uwagi od Boga, ale <strong>treningiem miłości</strong> i pierwszym stopniem do zjednoczenia z Absolutem.</li>
+            </ul>
+
+            <h3>3. Szkoła Wiktoryńska: Psychologia "gwałtownej miłości"</h3>
+            <p>Wiktoryni (m.in. Hugon i Ryszard ze św. Wiktora) łączyli mistykę z precyzyjną, niemal naukową analizą stanów psychicznych. Najważniejszym tekstem z perspektywy egzaminacyjnej jest traktat Ryszarda ze św. Wiktora o dynamice silnych emocji.</p>
+            
+            <p><strong>Cztery stopnie gwałtownej miłości Ryszarda ze św. Wiktora (Pigułka egzaminacyjna):</strong></p>
+            <ol>
+                <li><span class="term-badge">Insuperabilis</span> <strong>(Miłość niepokonana):</strong> Uczucie jest tak silne, że nie da się go stłumić innymi myślami. Dominacja afektu nad umysłem.</li>
+                <li><span class="term-badge">Inseparabilis</span> <strong>(Miłość nierozłączna):</strong> Umysł nie potrafi już w ogóle przestać myśleć o ukochanym przedmiocie. Myśl jest z nim "związana" na stałe.</li>
+                <li><span class="term-badge">Singularis</span> <strong>(Miłość wyłączna):</strong> Wykluczenie wszystkiego innego. Człowiek nie potrafi już kochać niczego ani nikogo innego; wszystko inne traci znaczenie.</li>
+                <li><span class="term-badge">Insatiabilis</span> <strong>(Miłość nienasycona):</strong> Stan mistycznego "szaleństwa" i ekstazy. Pragnienie, które rośnie tym bardziej, im bardziej jest zaspokajane. Miłość nieustannie żąda więcej.</li>
+            </ol>
+
+            <div class="extra-material">
+                <h4>Materiał dodatkowy: Echa XII-wiecznej mistyki we współczesności</h4>
+                <p>Średniowieczne intuicje cystersów i wiktorynów znajdują fascynujące potwierdzenie w dzisiejszej psychologii i neurobiologii:</p>
+                <ul>
+                    <li><strong>Epistemologia afektywna:</strong> Teza Wilhelma ze Saint-Thierry ("miłość jest poznaniem") rezonuje ze współczesnymi badaniami neurobiologicznymi (np. Antonio Damasio), które dowodzą, że to emocje kierują naszą uwagą i pozwalają "widzieć" to, co istotne. Bez odpowiedniego nacechowania emocjonalnego bodźców, ludzki mózg jest niezdolny do podejmowania racjonalnych decyzji.</li>
+                    <li><strong>Teoria przywiązania:</strong> Nacisk Aelreda z Rievaulx na to, że relacja z Bogiem buduje się na matrycy dobrych, bezpiecznych relacji ludzkich (przyjaźni), jest zdumiewająco spójny ze współczesną teorią przywiązania Johna Bowlby'ego. Współczesna psychologia religii potwierdza, że nasze "style przywiązania" (bezpieczny, lękowy, unikający) wypracowane z bliskimi ludźmi przenoszą się na to, jak emocjonalnie przeżywamy relację z "figurą absolutną" (Bogiem).</li>
+                    <li><strong>Psychologia uzależnień i miłości romantycznej:</strong> Cztery stopnie Ryszarda ze św. Wiktora są dziś czytane przez psychologów jako jeden z najdoskonalszych przednowożytnych opisów psychologii głębokiego zauroczenia (limerencji) lub wręcz mechanizmów nałogowych – gdzie obiekt pożądania całkowicie anektuje uwagę i wyklucza inne aktywności.</li>
+                </ul>
+                <div class="references">Źródła zewnętrzne i wiedza akademicka: Ryszard ze św. Wiktora, <em>Cztery stopnie gwałtownej miłości</em>; Aelred z Rievaulx, <em>O przyjaźni duchowej</em>; E. Gilson, <em>Historia filozofii chrześcijańskiej w wiekach średnich</em>, Warszawa 1987; J. Bowlby, <em>Przywiązanie</em>, Warszawa 2007.</div>
+            </div>
+        </section>
+		
+		<!-- WYKŁAD 10 -->
+        <section id="w10" class="card-section w10-color">
+            <h2>W10. Św. Bonawentura i Franciszkanie – Prymat woli i wierzchołek duszy</h2>
+
+            <h3>1. Nurt Franciszkański: Woluntaryzm przeciwko intelektualizmowi</h3>
+            <p>W XIII wieku na uniwersytetach dochodzi do wielkiego starcia dwóch szkół. Z jednej strony mamy dominikanów (św. Tomasz z Akwinu), którzy głoszą intelektualizm (rozum jest najważniejszy i kieruje wolą). Z drugiej strony stają <strong>franciszkanie</strong>, na czele ze św. Bonawenturą (1217–1274), którzy bronią <strong>woluntaryzmu</strong>. Dla franciszkanów to <strong>wola (zdolność do miłości i wyboru) jest najwyższą i najszlachetniejszą władzą człowieka</strong>, górującą nad intelektem.</p>
+            <p>Według Bonawentury samo poznanie prawdy nie zbawia i nie daje pełni szczęścia. Można wiedzieć bardzo dużo o dobru, ale go nie kochać. Prawdziwe poznanie (mądrość) musi być przeniknięte afektem – stąd franciszkański nacisk na doświadczenie i miłość.</p>
+
+            <h3>2. Droga duszy do Boga (Itinerarium mentis in Deum)</h3>
+            <p>Najsłynniejsze dzieło św. Bonawentury, <em>Przewodnik duszy w drodze do Boga</em>, to nie tylko traktat teologiczny, ale mistrzowska analiza psychologii religii. Bonawentura opisuje w niej trójetapowy (podzielony na sześć stopni) proces wznoszenia się ludzkiej psychiki i afektów:</p>
+            <ul>
+                <li><span class="term-badge">Extra nos</span> <strong>(Poza nami):</strong> Poznanie Boga poprzez ślady (<em>vestigia</em>) w świecie materialnym. Franciszkańska zachwyt nad pięknem stworzenia, przyrodą i harmonią kosmosu.</li>
+                <li><span class="term-badge">Intra nos</span> <strong>(W nas samych):</strong> Zwrócenie się do wnętrza. Odkrywanie Boga jako obrazu (<em>imago</em>) odbitego w ludzkiej duszy, w jej władzach: pamięci, intelekcie i woli.</li>
+                <li><span class="term-badge">Supra nos</span> <strong>(Ponad nami):</strong> Przekroczenie samego siebie. Ekstatyczne zjednoczenie (<em>similitudo</em>), w którym ustaje działalność rozumu, a działa już tylko czysta miłość.</li>
+            </ul>
+
+            <h3>3. Kluczowe pojęcia psychologii Bonawentury (Pigułka Egzaminacyjna)</h3>
+            <p>Na egzaminie z filozofii/psychologii franciszkańskiej absolutnie kluczowe są dwa terminy opisujące szczytowe możliwości ludzkiego afektu:</p>
+            <ol>
+                <li><strong>Synderesis (Praprawe sumienie / Iskra woli):</strong> Według Bonawentury jest to wrodzona, naturalna i niezniszczalna skłonność woli (afektu) do najwyższego dobra. Nawet u największego grzesznika <em>synderesis</em> nie gaśnie całkowicie – zawsze pcha człowieka w stronę światła, wywołując wyrzuty sumienia, gdy czyni zło.</li>
+                <li><strong>Apex mentis (Wierzchołek umysłu / Wierzchołek duszy):</strong> Najwyższy punkt ludzkiej psychiki. Dla dominikanów "wierzchołkiem" był intelekt. Dla Bonawentury <em>apex mentis</em> ma charakter na wskroś <strong>afektywny</strong>. To mistyczna zdolność duszy do bezpośredniego "dotknięcia" Boga poprzez płomienną miłość, w momencie, gdy zawodzą już wszelkie pojęcia i argumenty racjonalne.</li>
+            </ol>
+
+            <div class="extra-material">
+                <h4>Materiał dodatkowy: Franciszkanizm a współczesne paradygmaty</h4>
+                <p>Franciszkańskie podejście do człowieka i świata wyprzedziło wiele współczesnych nurtów psychologicznych i społecznych:</p>
+                <ul>
+                    <li><strong>Inteligencja emocjonalna nad IQ:</strong> Woluntaryzm Bonawentury i prymat miłości nad suchą wiedzą doskonale współgra z dzisiejszymi odkryciami z zakresu psychologii (np. Daniela Golemana), wedle których to kompetencje emocjonalne i wolicjonalne (samokontrola, empatia, zdolność do budowania relacji), a nie samo IQ, decydują o pełnym, satysfakcjonującym życiu.</li>
+                    <li><strong>Ekopsychologia:</strong> Nurt zapoczątkowany przez św. Franciszka z Asyżu, a usystematyzowany teologicznie przez Bonawenturę (szukanie <em>vestigia</em> – śladów – w naturze), jest dzisiaj fundamentem ekopsychologii. Zakłada ona, że ludzka psychika jest nierozerwalnie związana ze środowiskiem naturalnym, a alienacja od przyrody prowadzi do głębokich kryzysów psychicznych (tzw. zespół deficytu natury).</li>
+                    <li><strong>Psychologia woli i motywacji:</strong> Nacisk na <em>synderesis</em> jako wewnętrzny, niezniszczalny pęd ku dobru znajduje odzwierciedlenie w humanistycznej psychologii Carla Rogersa, która zakłada, że w każdym człowieku istnieje naturalna tendencja do samorealizacji i "aktualizacji" swojego dobrego potencjału.</li>
+                </ul>
+                <div class="references">Źródła dodatkowe i wiedza akademicka: Św. Bonawentura, <em>Przewodnik duszy w drodze do Boga (Itinerarium mentis in Deum)</em>; E. Gilson, <em>Filozofia św. Bonawentury</em>, Warszawa 1933; D. Goleman, <em>Inteligencja emocjonalna</em>, Poznań 1997.</div>
+            </div>
+        </section>
+		
+		<!-- WYKŁAD 11 -->
+        <section id="w11" class="card-section w11-color">
+            <h2>W11. Św. Tomasz z Akwinu – Intelektualizm i scholastyczna systematyka uczuć</h2>
+
+            <h3>1. Arystotelizm chrześcijański i jedność psychofizyczna</h3>
+            <p>Św. Tomasz z Akwinu (1225–1274), w opozycji do franciszkanów, reprezentował <strong>intelektualizm</strong> – pogląd, według którego to rozum jest najwyższą władzą człowieka i to on powinien kierować wolą. W swoim głównym dziele, <em>Summa theologiae</em>, stworzył najbardziej rozbudowany i precyzyjny w średniowieczu traktat o emocjach (<span class="term-badge">De passionibus animae</span>).</p>
+            <p>Tomasz wraca do arystotelesowskiego hylemorfizmu (jedności duszy i ciała). Uczucia (namiętności) nie są dla niego wyłącznie aktami woli, lecz <strong>zjawiskami psychofizycznymi</strong>. Odbywają się w zmysłowej władzy pożądawczej (w psychice) i zawsze towarzyszy im jakaś zmiana fizjologiczna w ciele (np. przyspieszone bicie serca w gniewie czy zmiana temperatury ciała).</p>
+
+            <h3>2. Podział na władzę pożądliwą i gniewliwą</h3>
+            <p>Fundamentem tomaszowej psychologii emocji jest podział ludzkiego aparatu pożądania zmysłowego na dwie władze, które reagują na przedmioty w otoczeniu na dwa różne sposoby:</p>
+            <ul>
+                <li><span class="term-badge">Vis concupiscibilis</span> <strong>(Władza pożądliwa):</strong> Reaguje na to, co zmysłowo postrzega jako dobre (przyjemne) lub złe (bolesne) w sposób bezpośredni i prosty, tzn. gdy dobro jest łatwe do osiągnięcia, a zło łatwe do uniknięcia.</li>
+                <li><span class="term-badge">Vis irascibilis</span> <strong>(Władza gniewliwa):</strong> Uruchamia się w sytuacjach trudnych i kryzysowych. Reaguje na tzw. <em>bonum arduum</em> (dobro trudne do zdobycia) lub zło trudne do pokonania, wymagające walki, wysiłku i mobilizacji organizmu.</li>
+            </ul>
+
+            <h3>3. Wielka klasyfikacja 11 uczuć (Pigułka Egzaminacyjna)</h3>
+            <p>Na bazie powyższego podziału Tomasz wymienia dokładnie 11 podstawowych emocji, z których wynikają wszystkie inne stany afektywne ludzkiej psychiki. To absolutny "pewniak" na egzaminach z tego okresu.</p>
+            
+            <p><strong>Uczucia władzy pożądliwej (6 uczuć) – występują parami:</strong></p>
+            <ol>
+                <li><strong>Miłość</strong> (<span class="term-badge">amor</span>) – pierwsza i podstawowa sympatia do dobra. / <strong>Nienawiść</strong> (<span class="term-badge">odium</span>) – fundamentalna odraza do zła.</li>
+                <li><strong>Pragnienie</strong> (<span class="term-badge">desiderium</span>) – ruch w kierunku dobra, którego jeszcze nie mamy. / <strong>Unikanie, wstręt</strong> (<span class="term-badge">fuga/abominatio</span>) – ucieczka przed złem, które nam grozi.</li>
+                <li><strong>Radość</strong> (<span class="term-badge">gaudium/delectatio</span>) – spoczynek i przyjemność z już posiadanego dobra. / <strong>Smutek</strong> (<span class="term-badge">tristitia</span>) – przygnębienie z powodu obecnego, doświadczanego zła.</li>
+            </ol>
+
+            <p><strong>Uczucia władzy gniewliwej (5 uczuć) – związane z przeszkodą:</strong></p>
+            <ol start="4">
+                <li><strong>Nadzieja</strong> (<span class="term-badge">spes</span>) – dążenie do trudnego dobra, które uznajemy za możliwe do zdobycia. / <strong>Rozpacz</strong> (<span class="term-badge">desperatio</span>) – wycofanie się, gdy trudne dobro wydaje się nieosiągalne.</li>
+                <li><strong>Odwaga, zuchwalstwo</strong> (<span class="term-badge">audacia</span>) – uderzenie na zło, z którym można wygrać. / <strong>Strach</strong> (<span class="term-badge">timor</span>) – ucieczka przed złem, które wydaje się nie do pokonania.</li>
+                <li><strong>Gniew</strong> (<span class="term-badge">ira</span>) – jedyne uczucie, które nie ma swojego bezpośredniego przeciwieństwa. Jest to gwałtowna reakcja na obecne zło z chęcią wzięcia sprawiedliwego odwetu lub zadośćuczynienia.</li>
+            </ol>
+
+            <h3>4. Moralna ocena emocji (Złoty środek)</h3>
+            <p>Tomasz, idąc za Arystotelesem, zdecydowanie odrzuca stoickie potępienie emocji. Uważa, że uczucia same w sobie są <strong>moralnie obojętne</strong>. Stają się dobre lub złe dopiero wtedy, gdy podlegają (lub wymykają się) kontroli wyższych władz: rozumu i woli. Emocje ukierunkowane przez rozum są czymś wysoce pożądanym – wzmacniają bowiem nasze działanie na rzecz dobra (np. sprawiedliwy gniew dodaje siły do walki w obronie słabszych, a miłość napędza do opieki).</p>
+
+            <div class="extra-material">
+                <h4>Materiał dodatkowy: Tomasz z Akwinu jako prekursor współczesnej psychologii</h4>
+                <p>Niezwykła precyzja scholastycznego traktatu Tomasza sprawiła, że jego echa brzmią wyraźnie we współczesnych badaniach nad emocjami:</p>
+                <ul>
+                    <li><strong>Teoria oceny poznawczej (Appraisal Theory):</strong> Jedna z najważniejszych teorii psychologicznych XX wieku, sformułowana przez Magdę Arnold i rozwijana przez Richarda Lazarusa, wprost opiera się na koncepcji Tomasza z Akwinu. Arnold (będąca badaczką katolicką) przeniosła do współczesnej psychologii myśl Tomasza, że aby wywołać emocję, organizm najpierw musi "ocenić" (appraisal) bodziec jako korzystny, szkodliwy lub trudny do pokonania – co idealnie pokrywa się z rozróżnieniem na dobro zmysłowe proste (<em>concupiscibilis</em>) i trudne (<em>arduum</em>).</li>
+                    <li><strong>Reakcja "Fight or Flight":</strong> Tomaszowa koncepcja <em>vis irascibilis</em> (władzy gniewliwej) i przypisanych jej uczuć strachu (ucieczka) oraz odwagi/gniewu (walka), stanowi starożytno-średniowieczny, filozoficzny odpowiednik odkrytej przez Waltera Cannona w latach 20. XX w. reakcji "walcz lub uciekaj", aktywowanej przez układ współczulny w sytuacjach zagrożenia.</li>
+                </ul>
+                <div class="references">Źródła zewnętrzne i wiedza akademicka: Św. Tomasz z Akwinu, <em>Suma teologiczna</em> (I-II, q. 22-48); M. Arnold, <em>Emotion and Personality</em>, Nowy Jork 1960; R. Lazarus, <em>Emotion and Adaptation</em>, Oksford 1991.</div>
+            </div>
+        </section>
+		
+		<!-- WYKŁAD 12 -->
+        <section id="w12" class="card-section w12-color">
+            <h2>W12. Duns Szkot, Ockham i Burydan – Triumf woli i rozbicie scholastyki</h2>
+
+            <h3>1. Jan Duns Szkot (Doctor Subtilis) i radykalny woluntaryzm</h3>
+            <p>Jan Duns Szkot (ok. 1266–1308) idzie o krok dalej niż św. Bonawentura, odrywając całkowicie wolę od przymusu intelektu. W systemie św. Tomasza wola musiała podążać za tym, co rozum uznał za dobre. Dla Szkota to niedopuszczalne ograniczenie ludzkiej wolności.</p>
+            <ul>
+                <li><strong>Wola jako absolutna królowa:</strong> Wola jest pierwszą i jedyną przyczyną swoich aktów (nie determinuje jej ani intelekt, ani obiekty zewnętrzne). Intelekt pełni jedynie rolę "doradczą" – pokazuje różne opcje i motywy, ale ostateczna decyzja zawsze należy do woli.</li>
+                <li><span class="term-badge">Haecceitas</span> <strong>(Tożsamość / Zasada jednostkowienia):</strong> Szkot odrzuca skupienie na uniwersaliach (ogólnikach). Wprowadza pojęcie <em>haecceitas</em> (od łac. <em>haec</em> – "ta oto rzecz"), dowodząc, że najważniejsza jest unikalna, niepowtarzalna jednostka. To potężny fundament pod późniejszy indywidualizm psychologiczny.</li>
+            </ul>
+
+            <h3>2. Wilhelm z Ockhama (Venerabilis Inceptor) i nominalizm</h3>
+            <p>Wilhelm z Ockhama (ok. 1285–1347) dokonuje największej rewolucji XIV wieku, niszcząc fundamenty starej scholastyki. Twierdzi, że w rzeczywistości istnieją <strong>wyłącznie konkretne jednostki</strong>, a pojęcia ogólne (np. "człowieczeństwo", "dobro") to tylko nazwy (łac. <em>nomina</em> – stąd <span class="term-badge">nominalizm</span>), które tworzy nasz umysł, by łatwiej katalogować świat.</p>
+            <ul>
+                <li><strong>Brzytwa Ockhama (Pigułka Egzaminacyjna):</strong> Najsłynniejsza zasada metodologiczna brzmiąca: <em>Entia non sunt multiplicanda praeter necessitatem</em> (Bytów nie należy mnożyć ponad konieczność). Jeśli jakieś zjawisko da się wyjaśnić prościej, bez wprowadzania dodatkowych pojęć i pośredników, należy wybrać to prostsze wyjaśnienie.</li>
+                <li><strong>Psychologia Ockhama:</strong> Używając swojej "brzytwy", Ockham usuwa skomplikowane średniowieczne drabiny poznawcze. Twierdzi, że poznajemy świat bezpośrednio intuicyjnie. Dusza nie ma rozbudowanych "władz" – jest po prostu jednym bytem, który raz myśli, a raz pożąda. Wola u Ockhama staje się jeszcze bardziej ślepa i arbitralna niż u Szkota.</li>
+            </ul>
+
+            <h3>3. Jan Burydan i determinizm intelektualny</h3>
+            <p>Jan Burydan (ok. 1295–1362) reprezentował nurt opozycyjny wobec Ockhama i Szkota. Próbował bronić determinizmu intelektualnego, twierdząc, że wola człowieka musi wybrać to, co rozum przedstawia jej jako większe dobro. Jeśli rozum widzi dwie opcje, z których jedna jest obiektywnie lepsza, wola automatycznie za nią podąży.</p>
+            <ul>
+                <li><span class="term-badge">Osioł Burydana</span> <strong>(Eksperyment myślowy):</strong> Aby obśmiać poglądy Burydana, jego krytycy (prawdopodobnie ockhamiści) wymyślili słynny paradoks. Wyobraźmy sobie całkowicie racjonalnego osła, który stoi dokładnie pośrodku między dwoma identycznymi, równie apetycznymi stogami siana. Skoro stogi są identyczne, intelekt osła nie może ocenić, który jest lepszy. Ponieważ wola jest zdeterminowana przez ocenę intelektu, nie może podjąć żadnej decyzji. Wynik? Racjonalny osioł umiera z głodu.</li>
+                <li><strong>Sens paradoksu:</strong> Krytycy pokazywali tym samym, że wolna wola ludzka (według woluntarystów) musi działać spontanicznie i niezależnie od racjonalnych kalkulacji, bo inaczej bylibyśmy sparaliżowani w obliczu równorzędnych wyborów.</li>
+            </ul>
+
+            <div class="extra-material">
+                <h4>Materiał dodatkowy: Echa XIV wieku w nauce i psychologii współczesnej</h4>
+                <p>Koncepcje późnego średniowiecza do dziś kształtują nasz sposób myślenia o świecie i sobie samych:</p>
+                <ul>
+                    <li><strong>Brzytwa Ockhama w nauce (Zasada parsymonii):</strong> Jest to dziś absolutny fundament metodologii naukowej, od fizyki kwantowej po biologię ewolucyjną i uczenie maszynowe. W sztucznej inteligencji i statystyce zasada ta manifestuje się tym, że prostsze modele teoretyczne (z mniejszą liczbą parametrów) uważa się za lepsze i mniej podatne na błąd tzw. przeuczenia (overfitting).</li>
+                    <li><strong>Paraliż analityczny i "Osioł Burydana":</strong> Współczesna psychologia konsumencka i behawioralna badają zjawisko znane jako <br><em>paradox of choice</em> (paradoks wyboru - Barry Schwartz). Gdy mamy zbyt wiele równorzędnych lub trudnych do porównania opcji (jak osioł Burydana), nasz aparat decyzyjny ulega "przegrzaniu" – wpadamy w paraliż analityczny (<em>analysis paralysis</em>), co skutkuje zaniechaniem działania lub stresem. Woluntaryzm okazuje się tu ratunkiem: czasami najlepszą strategią jest wybór losowy (czysty akt woli) zamiast endless computations.</li>
+                    <li><strong>Haecceitas a egzystencjalizm:</strong> Szkotystyczne uwielbienie dla niepowtarzalnej jednostkowości (<em>haecceitas</em>) było inspiracją dla XX-wiecznego personalizmu i egzystencjalizmu (m.in. Jean-Paul Sartre, Martin Heidegger), które stawiały konkretną, "wrzuconą w świat" egzystencję jednostki ponad ogólne i abstrakcyjne definicje "natury ludzkiej".</li>
+                </ul>
+                <div class="references">Źródła zewnętrzne i wiedza akademicka: F. Copleston, <em>Historia filozofii, t. 2-3</em>, Warszawa 2000; B. Schwartz, <em>Paradoks wyboru. Dlaczego więcej oznacza mniej</em>, Warszawa 2013; R.H. Thaler, C.R. Sunstein, <em>Impuls (Nudge)</em>, Poznań 2012.</div>
+            </div>
+        </section>
+		
+		<!-- WYKŁAD 13 -->
+        <section id="w13" class="card-section w13-color">
+            <h2>W13. Mistycyzm – Afekt, pustka i "dno duszy"</h2>
+
+            <h3>1. Mistyka Nadreńska: Odwrót od rozumu</h3>
+            <p>W XIV wieku, gdy na uniwersytetach nominaliści toczą jałowe spory logiczne, w klasztorach dominikańskich w dolinie Renu rozwija się potężny nurt tzw. mistyki nadreńskiej (jej główni przedstawiciele to Mistrz Eckhart, Jan Tauler i Henryk Suzo). Mistycy ci uznali, że intelektualne aparaty pojęciowe są niewystarczające w kontakcie z Absolutem. Prawdziwe poznanie dokonuje się poprzez głębokie, wewnętrzne doświadczenie afektywne i całkowite ogołocenie z ludzkich wyobrażeń.</p>
+
+            <h3>2. Kluczowe pojęcia (Pigułka Egzaminacyjna)</h3>
+            <p>Na egzaminie z mistyki późnośredniowiecznej niemal na pewno pojawią się specyficzne niemieckie/łacińskie terminy ukute przez Mistrza Eckharta:</p>
+            <ul>
+                <li><span class="term-badge">Seelengrund / Scintilla animae</span> <strong>(Dno duszy / Iskra duszy):</strong> Eckhart twierdził, że na samym dnie ludzkiej psychiki znajduje się punkt, w którym dusza styka się z Bogiem. Jest to "iskra" wolna od czasu, przestrzeni, zmysłów i myśli. W tym najgłębszym punkcie człowiek i Stwórca stanowią jedność.</li>
+                <li><span class="term-badge">Gelassenheit</span> <strong>(Odwiązanie / Pozostawienie):</strong> Absolutnie fundamentalna postawa mistyczna. To radykalne "odpuszczenie" – pozbycie się nie tylko dóbr materialnych, ale ego, własnej woli, pragnień, a nawet wyobrażeń o samym Bogu. Według Eckharta człowiek musi stać się całkowicie "pusty", aby Bóg mógł go wypełnić.</li>
+                <li><strong>Teologia negatywna (Apofatyzm):</strong> Przekonanie, że o Bogu łatwiej i prawdziwiej jest powiedzieć, czym <em>nie jest</em>, niż czym jest. Wszelkie ludzkie słowa (np. "Bóg jest dobry") są ograniczone, dlatego mistyk wybiera milczenie i "wkracza w boską ciemność".</li>
+            </ul>
+
+            <h3>3. Paradoks afektu: Kochać Boga bez Boga</h3>
+            <p>Mistycy nadreńscy stworzyli koncepcję miłości bezinteresownej do granic możliwości. Prawdziwy mistyk nie kocha Boga dla nagrody (zbawienia), nie szuka też duchowych "słodyczy" ani cudownych wizji. Eckhart posuwa się wręcz do radykalnego twierdzenia: należy "prosić Boga, aby uwolnił nas od Boga" – to znaczy pozbyć się naszych ciasnych, ludzkich wyobrażeń na Jego temat, by móc doświadczyć Go w sposób czysty i nagi.</p>
+
+            <div class="extra-material">
+                <h4>Materiał dodatkowy: Mistycyzm a współczesne nauki o człowieku</h4>
+                <p>Koncepcje Eckharta, choć w średniowieczu otarły się o oskarżenia o herezję, wywarły gigantyczny wpływ na współczesną psychologię i filozofię:</p>
+                <ul>
+                    <li><strong>Erich Fromm i psychologia humanistyczna:</strong> Jeden z najwybitniejszych psychologów XX wieku, Erich Fromm, oparł swoją słynną książkę <em>Mieć czy być?</em> bezpośrednio na tekstach Mistrza Eckharta. Fromm utożsamia mistyczne "odwiązanie" (<em>Gelassenheit</em>) z psychologiczną postawą "bycia" – wolną od egocentryzmu, chciwości i neurotycznej potrzeby kontrolowania rzeczywistości (postawy "mieć").</li>
+                    <li><strong>Neuroteologia i DMN (Default Mode Network):</strong> Współczesne badania mózgu u osób w głębokich stanach medytacyjnych i mistycznych wykazują silne hamowanie tzw. sieci stanu spoczynkowego (DMN), odpowiedzialnej za generowanie naszego "ego", narracji o sobie i poczucia oddzielenia od otoczenia. Biologicznie potwierdza to eckhartowski opis "ogołocenia" – mistyczne poczucie jedności ze światem (zanurzenie w "dnie duszy") jest skorelowane z wyłączeniem mózgowych struktur podtrzymujących iluzję oddzielonego "Ja".</li>
+                    <li><strong>Psychologia transpersonalna:</strong> Ken Wilber czy C.G. Jung uważali zjawiska mistyczne nie za patologię, lecz za naturalny, najwyższy szczebel ewolucji ludzkiej świadomości, w którym człowiek przekracza (transcenduje) uwarunkowania swojej wąskiej osobowości.</li>
+                </ul>
+                <div class="references">Źródła dodatkowe i wiedza akademicka: Mistrz Eckhart, <em>Kazania i traktaty</em>; E. Fromm, <em>Mieć czy być?</em>, Poznań 1996; A. Newberg, <em>NeuroTheology</em>, 2018; C.G. Jung, <em>Psychologia a religia</em>.</div>
+            </div>
+        </section>
+		
+		<!-- WYKŁAD 14 -->
+        <section id="w14" class="card-section w14-color">
+            <h2>W14. Kartezjusz i Spinoza – U progu nowożytności: Mechanika ciał i geometria afektów</h2>
+
+            <h3>1. René Descartes (Kartezjusz) – Dualizm i maszyna ciała</h3>
+            <p>Kartezjusz (1596–1650) to ojciec nowożytnej filozofii, który radykalnie zrywa z arystotelesowską jednością psychofizyczną. Wprowadza ścisły <strong>dualizm</strong>, dzieląc człowieka na dwie zupełnie odrębne substancje:</p>
+            <ul>
+                <li><span class="term-badge">Res cogitans</span> <strong>(Rzecz myśląca):</strong> Niematerialna, nieprzestrzenna dusza (umysł), w której zachodzą świadome procesy wolicjonalne i poznawcze.</li>
+                <li><span class="term-badge">Res extensa</span> <strong>(Rzecz rozciągła):</strong> Materialne ciało, które działa jak precyzyjny mechanizm (maszyna), podlegający wyłącznie prawom fizyki.</li>
+            </ul>
+            <p><strong>Fizjologia namiętności:</strong> W swoim dziele <em>Namiętności duszy</em> Kartezjusz twierdzi, że emocje powstają na skutek ruchu tzw. <strong>tchnień życiowych</strong> (<em>spiritus animales</em>) – mikroskopijnych, materialnych cząsteczek krążących we krwi i nerwach. Jedynym miejscem, gdzie niematerialna dusza styka się z materialnym ciałem i może z nim oddziaływać, jest <strong>gruczoł szyszynkowy</strong> (szyszynka) w mózgu.</p>
+            <p>Kartezjusz wyróżnia 6 podstawowych namiętności (reszta to ich kombinacje): Zdziwienie (jedyna emocja czysto intelektualna, bez zmian fizjologicznych), Miłość, Nienawiść, Pragnienie, Radość i Smutek.</p>
+
+            <h3>2. Baruch Spinoza – Monizm i determinizm</h3>
+            <p>Spinoza (1632–1677) uważał dualizm Kartezjusza za nielogiczny (jak to, co niematerialne, miałoby poruszać szyszynką?). W swoim dziele <em>Etyka w porządku geometrycznym dowiedziona</em> proponuje rozwiązanie radykalne – <strong>monizm</strong>.</p>
+            <ul>
+                <li><span class="term-badge">Deus sive Natura</span> <strong>(Bóg czyli Natura):</strong> Istnieje tylko jedna, nieskończona Substancja (którą możemy nazwać Bogiem lub Wszechświatem). Umysł i ciało to nie dwie osobne rzeczy, lecz tylko dwa różne <em>atrybuty</em> (sposoby przejawiania się) tej samej jednej substancji. Zjawiska psychiczne i fizyczne biegną równolegle (paralelizm).</li>
+                <li><span class="term-badge">Conatus</span> <strong>(Wysiłek / Pęd):</strong> Fundamentalne pojęcie psychologii Spinozy. Jest to naturalna siła, wrodzona tendencja każdej istoty do tego, aby <strong>trwać w swoim istnieniu</strong>. Zwiększenie <em>conatus</em> odczuwamy jako Radość, a jego zmniejszenie (osłabienie sił życiowych) jako Smutek.</li>
+            </ul>
+            <p><strong>Iluzja wolnej woli:</strong> Spinoza jest twardym deterministą. Twierdzi, że w świecie wszystko wynika z konieczności. Wydaje nam się, że mamy wolną wolę, tylko dlatego, że <strong>jesteśmy świadomi naszych pragnień, ale nie znamy przyczyn, które je wywołały</strong>. Rozwiązaniem nie jest walka z emocjami, ale ich rozumienie. Kiedy w pełni zrozumiemy przyczynę naszego afektu (np. gniewu), przestajemy być jego niewolnikami, a afekt zmienia się w czystą ideę.</p>
+
+            <h3>3. Pigułka Egzaminacyjna: Starcie Gigantów</h3>
+            <table>
+                <tr>
+                    <th>Cecha</th>
+                    <th>Kartezjusz</th>
+                    <th>Spinoza</th>
+                </tr>
+                <tr>
+                    <td><strong>Ontologia człowieka</strong></td>
+                    <td>Dualizm (ciało i umysł to odrębne substancje)</td>
+                    <td>Monizm (ciało i umysł to ta sama substancja z różnych perspektyw)</td>
+                </tr>
+                <tr>
+                    <td><strong>Wolna wola</strong></td>
+                    <td>Istnieje (wolność woli jest absolutna i nieskończona)</td>
+                    <td>Nie istnieje (iluzja wynikająca z niewiedzy, skrajny determinizm)</td>
+                </tr>
+                <tr>
+                    <td><strong>Zarządzanie afektami</strong></td>
+                    <td>Walka i mechaniczne opanowanie przez wole w szyszynce</td>
+                    <td>Zrozumienie ich przyczyn (poznanie racjonalne wyzwala z bierności)</td>
+                </tr>
+            </table>
+
+            <div class="extra-material">
+                <h4>Materiał dodatkowy: Echa XVII wieku w dzisiejszej neurobiologii</h4>
+                <p>Niezwykłe jest to, jak spór Kartezjusza ze Spinozą ożył we współczesnej nauce o mózgu, a wszystko za sprawą wybitnego neurologa, Antonio Damasio:</p>
+                <ul>
+                    <li><strong>Błąd Kartezjusza:</strong> W swojej słynnej książce <em>Błąd Kartezjusza</em> Damasio uderza w kartezjański dualizm dowodząc, że oddzielenie "czystego rozumu" od ciała i emocji to fikcja. Pacjenci z uszkodzonymi ośrodkami emocjonalnymi w mózgu (np. w korze przedczołowej) tracą zdolność racjonalnego podejmowania decyzji społecznych i życiowych. Umysł jest głęboko ucieleśniony.</li>
+                    <li><strong>Triumf Spinozy:</strong> Z kolei w książce <em>W poszukiwaniu Spinozy</em> Damasio uznaje tego filozofa za genialnego wizjonera i prekursora współczesnej neurobiologii. Spinozjańskie pojęcie <em>conatus</em> jest dziś biologiczną "homeostazą" (pędem organizmu do zachowania równowagi i przetrwania). Ponadto podział Spinozy na afekty bierne i czynne idealnie odpowiada współczesnemu neurologicznemu rozróżnieniu na ewolucyjnie starsze <em>emocje</em> (nieświadome, biologiczne reakcje ciała) oraz ewolucyjnie młodsze <em>uczucia</em> (świadome mapowanie tych stanów ciała w mózgu).</li>
+                </ul>
+                <div class="references">Źródła dodatkowe i wiedza akademicka: R. Descartes, <em>Namiętności duszy</em>; B. Spinoza, <em>Etyka</em>; A. Damasio, <em>Błąd Kartezjusza</em>, Poznań 1999; A. Damasio, <em>W poszukiwaniu Spinozy. Radość, smutek i czujący mózg</em>, Poznań 2005.</div>
+            </div>
+        </section>
+		
+		
+        <h2 class="section-main-title" id="cwiczenia-sekcja">Analizy Tekstów Źródłowych (Ćwiczenia)</h2>
+
+        <!-- ĆWICZENIA 1 -->
+        <section id="cw1" class="card-section cw1-color">
+            <h2>Cw1. Platon (Fileb) – Przyjemność, ból i natura afektów</h2>
+
+            <h3>1. Oś sporu: Rozum czy przyjemność?</h3>
+            <p>Dialog <em>Fileb</em> to jedno z najpóźniejszych i najbardziej analitycznych dzieł Platona. Osią dyskusji jest spór między <strong>Sokratesem</strong> (twierdzącym, że najwyższym dobrem jest rozum, wiedza i mądrość) a tytułowym <strong>Filebem</strong> i jego obrońcą Protarchosem (którzy uważają, że absolutnym dobrem jest przyjemność i rozkosz). Wnioskiem z dialogu jest koncepcja "życia zmieszanego" – dobre życie wymaga i rozumu, i przyjemności, ale to rozum jest czynnikiem wyższym, nadającym miarę i proporcję.</p>
+
+            <h3>2. Fizjologia i psychologia afektów (Pigułka Egzaminacyjna)</h3>
+            <p>Zamiast traktować emocje wyłącznie jako przeszkodę, Platon w <em>Filebie</em> przeprowadza niezwykle precyzyjną analizę mechanizmu powstawania bólu i przyjemności, z których wyrastają wszystkie ludzkie afekty:</p>
+            <ul>
+                <li><strong>Zaburzenie i powrót do harmonii:</strong> Platon definiuje ból (cierpienie) jako <strong>zniszczenie naturalnej harmonii</strong> organizmu (np. głód, pragnienie, choroba, rozpad tkanki). Przyjemność natomiast to proces <strong>powrotu do tej naturalnej równowagi</strong> (np. jedzenie, picie, zdrowienie). Zatem przyjemność ma zawsze charakter procesu (uzupełniania braku).</li>
+                <li><span class="term-badge">Oczekiwanie (Nadzieja i Strach)</span><strong>:</strong> Platon zauważa, że przyjemność i ból nie dotyczą tylko bieżącego stanu ciała. Dusza za pomocą pamięci potrafi wybiegać w przyszłość. Oczekiwanie na przywrócenie harmonii to przyjemność duszy (nadzieja), a oczekiwanie na zaburzenie to ból duszy (strach).</li>
+                <li><strong>Fałszywe przyjemności:</strong> Jako jeden z pierwszych myślicieli Platon zauważa, że stany afektywne mogą być "fałszywe". Nasza przyjemność z wyobrażania sobie czegoś może opierać się na błędnych założeniach o rzeczywistości. Dowodzi to nierozerwalnego związku emocji z procesami poznawczymi.</li>
+            </ul>
+
+            <h3>3. Mieszanina bólu i przyjemności (Kluczowy punkt ćwiczeń)</h3>
+            <p>Najważniejszym wkładem <em>Fileba</em> do teorii afektów jest pionierska koncepcja <strong>mieszaniny (stopu) bólu i przyjemności</strong>. Platon udowadnia, że wiele naszych emocji nie jest czysto pozytywnych ani negatywnych, lecz występują one symultanicznie:</p>
+            <ul>
+                <li><strong>Gniew i tęsknota:</strong> W gniewie (który sam w sobie jest bolesnym napięciem) kryje się ukryta przyjemność z wyobrażania sobie zemsty i wyrównania rachunków. W tęsknocie z kolei ból fizycznego braku drugiej osoby miesza się z przyjemnością płynącą ze wspomnień o niej.</li>
+                <li><strong>Odbiór sztuki (Tragedia i Komedia):</strong> Widz w teatrze płacze na tragedii, ale jednocześnie odczuwa z tego płaczu swoistą przyjemność i ulgę. Z kolei oglądając komedię odczuwamy <span class="term-badge">Phthonos</span> (zawiść / złośliwą radość) – śmiejemy się (przyjemność) z cudzej słabości lub głupoty, co w swej istocie ukrywa ból naszej własnej zawiści wobec innych.</li>
+            </ul>
+
+            <div class="extra-material">
+                <h4>Materiał dodatkowy: "Fileb" a współczesna nauka i biologia</h4>
+                <p>Obserwacje Platona z tego dialogu wyprzedziły naukę o ponad dwa tysiąclecia, znajdując bezpośrednie odbicie w nowożytnych i współczesnych paradygmatach:</p>
+                <ul>
+                    <li><strong>Homeostaza i "Drive-Reduction":</strong> Platońska definicja bólu jako zaburzenia harmonii organizmu i przyjemności jako powrotu do niej to filozoficzna antycypacja koncepcji <strong>homeostazy</strong> (Claude Bernard, Walter Cannon). Idealnie wpisuje się to w XX-wieczną teorię redukcji popędów (<em>drive-reduction theory</em> Clarka Hulla), gdzie odchylenia od normy biologicznej są sygnalizowane jako bolesne napięcie, a zaspokojenie potrzeby jako nagroda/przyjemność.</li>
+                    <li><strong>Ocena poznawcza (Appraisal Theory):</strong> Koncepcja "fałszywych przyjemności" i oczekiwań (nadziei/strachu) to wczesna wersja współczesnych, poznawczych teorii emocji (np. Richarda Lazarusa). Dowodzi to, że nasze emocje nie są tylko ślepym odruchem fizjologicznym, ale wynikiem oceny (czasem błędnej) danej sytuacji i informacji docierających z pamięci.</li>
+                    <li><strong>Ambiwalencja emocjonalna:</strong> Platońska "mieszanina" jest dziś badana przez psychologów pod pojęciem emocji ambiwalentnych (np. stan <em>bittersweet</em> - słodko-gorzki). Dowodzi to słuszności intuicji Platona, że afekty pozytywne i negatywne nie są po prostu dwoma przeciwległymi końcami jednej, płaskiej skali (gdzie wykluczają się nawzajem), ale mogą być przetwarzane i odczuwane w mózgu w tym samym czasie.</li>
+                </ul>
+                <div class="references">Źródła zewnętrzne i wiedza akademicka: Platon, <em>Fileb</em> (przeł. W. Witwicki, różne wydania); D. Frede, <em>Plato's Philebus</em>, 1993; R. Lazarus, <em>Emotion and Adaptation</em>, 1991.</div>
+            </div>
+        </section>
+
+		<!-- ĆWICZENIA 2 -->
+        <section id="cw2" class="card-section cw2-color">
+            <h2>Ćw 2. Arystoteles – "Retoryka" (Księga II, rozdz. 1-12)</h2>
+
+            <h3>1. Cel Retoryki: Zarządzanie osądem słuchaczy</h3>
+            <p>Księga II <em>Retoryki</em> to jeden z najważniejszych tekstów w historii psychologii. Arystoteles udowadnia w nim, że skuteczny mówca polityczny lub sądowy nie może opierać się wyłącznie na suchej logice (<em>logos</em>). O sukcesie perswazji decydują równie mocno: wiarygodność mówcy (<em>ethos</em> – wynikająca z jego rozsądku, szlachetności i życzliwości) oraz <strong>emocje słuchaczy (pathos)</strong>.</p>
+            <p>Arystoteles definiuje afekty (emocje) jako stany, pod wpływem których ludzie <strong>zmieniają swoje decyzje i osądy</strong>, i którym zawsze towarzyszy uczucie przykrości lub przyjemności. Zdenerwowany sędzia wyda zupełnie inny wyrok niż sędzia zrelaksowany i życzliwy.</p>
+
+            <h3>2. Poznawczy wymiar emocji (Teoria Appraisal)</h3>
+            <p>Kluczem do zrozumienia Arystotelesa (i absolutnym "pewniakiem" egzaminacyjnym) jest to, że traktuje on emocje jako <strong>sądy o świecie oparte na przekonaniach (<span class="term-badge">doxa</span>)</strong>. Oznacza to, że mówca może zmienić emocje tłumu, po prostu zmieniając jego sposób postrzegania faktów. Aby skutecznie obudzić lub wyciszyć konkretną emocję, mówca musi przeanalizować ją w trzech wymiarach:</p>
+            <ol>
+                <li><strong>Stan umysłu:</strong> W jakim usposobieniu znajdują się ludzie podatni na tę emocję?</li>
+                <li><strong>Obiekt:</strong> Przeciwko komu najczęściej ją kierują?</li>
+                <li><strong>Powód:</strong> Z jakich konkretnie przyczyn się ona rodzi?</li>
+            </ol>
+
+            <h3>3. Katalog Emocji (Pigułka Egzaminacyjna z rozdz. 2-11)</h3>
+            <p>Arystoteles zestawia większość emocji w pary (afekt i jego przeciwieństwo), co ułatwia mówcy manewrowanie nastrojem tłumu:</p>
+            
+            <ul>
+                <li><strong>Gniew i Łagodność:</strong> 
+                    <br><em>Gniew</em> to żądza odwetu złączona z bólem, wywołana przez jawną, nieuzasadnioną pogardę (lekceważenie, szyderstwo, zniewagę) wobec nas lub naszych bliskich. Towarzyszy mu ukryta przyjemność płynąca z nadziei na zemstę. 
+                    <br><em>Łagodność</em> (uśmierzenie) pojawia się, gdy sprawca działał bez premedytacji, przeprasza, jest uniżony, lub gdy po prostu upłynie czas.</li>
+                
+                <li><strong>Przyjaźń i Nienawiść:</strong> 
+                    <br><em>Przyjaźń</em> to życzenie komuś dobra ze względu na niego samego i dzielenie z nim radości i smutków. 
+                    <br><em>Nienawiść</em> różni się od gniewu tym, że gniew dotyczy konkretnej osoby i mija, a nienawiść może dotyczyć całych grup (np. "złodziei"), jest nieuleczalna i dąży nie do zadośćuczynienia, lecz do całkowitego zniszczenia wroga.</li>
+                
+                <li><strong>Strach i Odwaga:</strong> 
+                    <br><em>Strach</em> to niepokój wywołany wyobrażeniem <strong>bliskiego</strong> nieszczęścia, niosącego zgubę. Nie boją się ludzie całkowicie zrujnowani (nie mają nic do stracenia) ani skrajnie szczęśliwi (w swej pysze nie wierzą w upadek). 
+                    <br><em>Odwaga</em> to nadzieja oparta na przekonaniu, że ocalenie jest blisko, a zagrożenie daleko.</li>
+                
+                <li><strong>Wstyd i Bezwstyd:</strong> 
+                    <br><em>Wstyd</em> to lęk przed zniesławieniem wynikającym z naszych wad (np. tchórzostwa, chciwości). Ponieważ "wstyd mieszka w oczach", odczuwamy go tylko wobec osób, na których opinii nam zależy.
+                    <br><em>Bezwstyd</em> to pogarda i zobojętnienie wobec opinii innych.</li>
+                
+                <li><strong>Życzliwość (<span class="term-badge">Charis</span>):</strong> 
+                    <br>Bezinteresowna pomoc człowiekowi w potrzebie. Mówca może zniszczyć czyjąś aurę życzliwości, dowodząc, że akt pomocy wynikał z egoistycznego interesu, przymusu lub był tylko zwykłym rewanżem.</li>
+
+                <li><strong>Litość i Oburzenie (Społeczne poczucie sprawiedliwości):</strong> 
+                    <br><em>Litość</em> to ból na widok niezasłużonego nieszczęścia, które mogłoby spotkać nas samych. 
+                    <br>Jej przeciwieństwem jest <em>oburzenie</em> (<span class="term-badge">Nemesis</span>) – uzasadniony gniew na widok niezasłużonego szczęścia lub bogactwa kogoś, kto na to nie zapracował (np. nowobogackich). Obie te emocje cechują człowieka szlachetnego.</li>
+
+                <li><strong>Zawiść i Ambicja:</strong> 
+                    <br><em>Zawiść</em> to niska emocja – ból z powodu sukcesów osób nam równych, połączony z pragnieniem, aby to stracili. 
+                    <br><em>Ambicja/Gorliwość</em> to emocja szlachetna – ból z powodu braku dóbr, które mają nasi równi, motywujący nas do ciężkiej pracy, aby je zdobyć (bez życzenia im źle).</li>
+            </ul>
+
+            <h3>4. Psychologia wieku (Młodość)</h3>
+            <p>W rozdziale 12 Arystoteles przechodzi do analizy charakterów (<em>ethos publiczności</em>). Wskazuje, że ludzie <strong>młodzi</strong> są całkowicie zdominowani przez namiętności (zwłaszcza erotyczne). Żyją nadzieją, a nie wspomnieniami, ponieważ ich przyszłość jest długa, a przeszłość krótka. Ponad wszystko cenią zwycięstwo i honor, lekceważąc pieniądze, ponieważ nie doświadczyli jeszcze biedy i trudów życia.</p>
+
+            <div class="extra-material">
+                <h4>Materiał dodatkowy: Retoryka a współczesna psychologia</h4>
+                <p>Arystoteles w Księdze II <em>Retoryki</em> stworzył podwaliny pod nowoczesną psychologię społeczną i kognitywistykę:</p>
+                <ul>
+                    <li><strong>Prekursor teorii Appraisal:</strong> Twierdzenie Arystotelesa, że zmiana oceny sytuacji (przekonania) automatycznie zmienia emocję (np. przejście od gniewu do łagodności, gdy dowiadujemy się, że zniewaga nie była celowa), to fundament sformułowanej w XX wieku psychologicznej <strong>teorii oceny poznawczej</strong> (M. Arnold, R. Lazarus).</li>
+                    <li><strong>Podstawa Terapii Poznawczo-Behawioralnej (CBT):</strong> Cały terapeutyczny model CBT opiera się na arystotelesowskim założeniu: jeśli cierpisz z powodu toksycznego lęku lub gniewu, musisz zidentyfikować i zmienić fałszywe przekonania, które go napędzają.</li>
+                    <li><strong>Zarządzanie tłumem i PR:</strong> Złota zasada PR-u i marketingu politycznego pochodzi z tego właśnie tekstu: argumenty logiczne nie wygrywają wyborów ani spraw sądowych, jeśli nie są wsparte dogłębnym zrozumieniem bolączek, lęków i nadziei grupy docelowej (analiza <em>pathos</em>).</li>
+                </ul>
+                <div class="references">Źródła wewnętrzne i poszerzone: Arystoteles, <em>Retoryka</em>, Księga II; R. Lazarus, <em>Emotion and Adaptation</em>, 1991; A. T. Beck, <em>Terapia poznawcza</em>.</div>
+            </div>
+        </section>
+		
+				<!-- ĆWICZENIA 0 -->
+        <section id="cw0" class="card-section cw0-color">
+            <h2>Cw 4. Epiktet – "Diatryby" (Księga I i III) – Stoicka terapia afektów</h2>
+			<h3>Bonus - tego nie było na ćwiczeniach, ale było w SYLABUSIE</h3>
+            <h3>1. Architektura wolności: Dychotomia kontroli jako filtr afektywny</h3>
+            <p>U podstaw psychologii Epikteta leży radykalny podział rzeczywistości na dwie sfery (Księga I, rozdz. 1):</p>
+            <ul>
+                <li><strong>Rzeczy zależne od nas (<em>ta eph' hemin</em>):</strong> Nasze sądy (<em>dogmata</em>), pragnienia, dążenia, akty odmowy – czyli wszystko, co jest wytworem naszej psychiki.</li>
+                <li><strong>Rzeczy niezależne od nas (<em>ta ouk eph' hemin</em>):</strong> Ciało, majątek, opinia innych ludzi, sława, choroba, śmierć.</li>
+            </ul>
+            <p><strong>Źródło cierpienia i afektów:</strong> Epiktet dowodzi, że emocje destrukcyjne (strach, smutek, zawiść) nie są wywoływane przez same wydarzenia zewnętrzne, ale przez nasz wewnętrzny błąd poznawczy. Afekt rodzi się wtedy, gdy rzeczom niezależnym od nas przypisujemy absolutną wartość (dobro lub zło) i próbujemy je kontrolować, zapominając o własnym wnętrzu.</p>
+
+            <h3>2. Serce psychologii stoickiej: Władza wyboru (<span class="term-badge">Prohairesis</span>)</h3>
+            <p>W <em>Diatrybach</em> kluczowym pojęciem jest <strong>Prohairesis</strong> – autonomiczna, moralna instancja decyzyjna człowieka, utożsamiana z czystym rozumem. 
+            <br>To jedyna władza, która potrafi oceniać samą siebie i właściwie posługiwać się wyobrażeniami (<em>chresis ton phantasion</em>). Epiktet powtarza, że nikt nie może zmusić naszej <em>prohairesis</em> do przyjęcia jakiegoś sądu – jesteśmy w tej sferze absolutnie wolni. Jeśli ktoś nas obraża, a my wpadamy w gniew, to nie ta osoba nas skrzywdziła, lecz nasza własna władza wyboru wydała błędny osąd: <em>"Stało mi się coś złego"</em>.</p>
+
+            <h3>3. Anatomia powstawania afektu: Od impulsu do namiętności (Pigułka Egzaminacyjna)</h3>
+            <p>Wzorując się na klasycznym stoicyzmie (do którego nawiązuje plik 04_Stoicyzm_slajdy_2), Epiktet w Księdze I i III pokazuje precyzyjną, trzystopniową ścieżkę powstawania emocji:</p>
+            <ol>
+                <li><strong>Przed-emocja (<em>Propatheia</em>):</strong> Czysto fizjologiczny, mimowolny impuls (np. zblednięcie na widok zagrożenia, drżenie serca przy nagłym huku). Epiktet zaznacza, że mdrzec również tego doświadcza – ciało reaguje automatycznie i nie jest to jeszcze afekt ani grzech.</li>
+                <li><strong>Przyzwolenie (<em>Synkatathesis</em>):</strong> Moment krytyczny. Rozum analizuje wyobrażenie i podejmuje decyzję, czy się z nim zgodzić. Jeśli powiesz impulsowi "tak", akceptujesz sąd, że sytuacja jest obiektywnie katastrofalna.</li>
+                <li><strong>Afekt / Namiętność (<em>Pathos</em>):</strong> Świadome ulegnięcie emocji, które paraliżuje racjonalne myślenie. Afekt jest zdefiniowany jako "poruszenie duszy przeciwne naturze i zbuntowane wobec rozumu".</li>
+            </ol>
+
+            <h3>4. Trzy toposy (Dziedziny ćwiczeń duchowych) – Księga III</h3>
+            <p>W Księdze III Epiktet wprowadza genialny program terapeutyczny, dzieląc rozwój emocjonalny na trzy etapy ćwiczeń (<em>topoi</em>):</p>
+            <ul>
+                <li><strong>Dziedzina pragnień i odraz (<em>Orexis / Ekklisis</em>):</strong> Ćwiczenie mające na celu opanowanie namiętności. Uczeń uczy się pragnąć wyłącznie tego, co zależy od niego (cnoty), a unikać tego, co zależy od losu. Daje to stan niewzruszoności (<em>apatheia</em>).</li>
+                <li><strong>Dziedzina dążeń i odmów (<em>Horme / Aphorame</em>):</strong> Dotyczy naszych działań społecznych i obowiązków wobec innych. Uczy, jak działać z intencją (tzw. klauzula rezerwowa: <em>"Zrobię to, o ile los nie przeszkodzi"</em>), aby uniknąć frustracji i gniewu.</li>
+                <li><strong>Dziedzina unikania błędu i pochopności (<em>Synkatathesis</em>):</strong> Najwyższy stopień wtajemniczenia – dbałość o to, by nigdy nie wydać fałszywego osądu i nie dać się zwieść pozorom rzeczywistości.</li>
+            </ul>
+
+            <div class="extra-material">
+                <h4>Materiał dodatkowy: Epiktet jako ojciec współczesnej psychoterapii poznawczej</h4>
+                <p>Myśl Epikteta nie jest zakurzonym antykiem; to bezpośredni fundament rewolucji poznawczej w psychologii XX i XXI wieku:</p>
+                <ul>
+                    <li><strong>Twórca REBT (Albert Ellis):</strong> Albert Ellis, twórca Racjonalno-Emotywnej Terapii Zachowań (REBT), wprost pisał, że główną inspiracją dla jego systemu był Epiktet. Słynny model Ellisa <strong>ABC</strong> (<em>Activating event</em> &rarr; <em>Belief</em> &rarr; <em>Consequence</em>) to wierna kopia dychotomii kontroli. Zdarzenie (A) nie wywołuje bezpośrednio emocji (C) – to nasze przekonanie i wewnętrzny sąd (B) decydują o tym, jak się czujemy.</li>
+                    <li><strong>Terapia poznawczo-behawioralna (CBT) Aarona Becka:</strong> Współczesna restrukturyzacja poznawcza (technika polegająca na identyfikowaniu i podważaniu automatycznych, zniekształconych myśli pacjenta) to nic innego jak tomaszowe i epiktetowe badanie wyobrażeń. Gdy terapeuta pyta pacjenta z depresją: <em>"Czy fakt, że straciłeś pracę, obiektywnie oznacza, że jesteś bezwartościowy, czy to tylko Twój sąd?"</em>, stosuje narzędzia wypracowane w <em>Diatrybach</em>.</li>
+                    <li><strong>Trening odporności psychicznej (Resilience):</strong> Współczesny trening psychologiczny dla żołnierzy jednostek specjalnych czy menedżerów (koncepcja <em>mental toughness</em>) opiera się na stoickim rozróżnianiu czynników, na które mamy wpływ (własne przygotowanie, oddech, skupienie), od tych, które musimy zaakceptować (pogoda, decyzje przeciwnika, kryzys rynkowy).</li>
+                </ul>
+                <div class="references">Źródła zewnętrzne i wiedza akademicka: Epiktet, <em>Diatryby. Enchiridion</em>, tłum. L. Joachimowicz, PWN; A. Ellis, <em>A Guide to Rational Living</em>, 1961; P. Hadot, <em>Twierdza wewnętrzna. Wprowadzenie do Rozmyślań Marka Aureliusza</em> (analiza systemu Epikteta), 1992.</div>
+            </div>
+        </section>
+		
+        <!-- ĆWICZENIA 3 -->
+        <section id="cw3" class="card-section cw3-color">
+            <h2>Cw 3. Św. Augustyn – "Wyznania" (Księga VIII, rozdz. 5–12)</h2>
+
+            <h3>1. Oś dramatu: Psychologia rozdrubgotanej woli (<span class="term-badge">Voluntas</span>)</h3>
+            <p>W rozdziałach 5–12 doświadczamy psychologicznego punktu zwrotnego w życiu Augustyna. Zna on już prawdę intelektualną, jednak nie potrafi podjąć działania. Augustyn odrzuca tu manichejski dualizm (koncepcję, że walczą w nas dwie niezależne dusze: dobra i zła). Dowodzi, że <strong>dusza jest jedna, ale jej wola jest głęboko rozdarta</strong>. Chce i jednocześnie nie chce (<em>vult et non vult</em>), co rodzi potężną frustrację i cierpienie psychiczne.</p>
+
+            <h3>2. Anatomia nawyku i zniewolenia (Pigułka Egzaminacyjna)</h3>
+            <p>Augustyn tworzy genialny, sekwencyjny model powstawania psychologicznego uzależnienia od namiętności (tzw. łańcuch grzechu i nawyku w rozdziale 5):</p>
+            <blockquote>
+                "Z wypaczonej woli rodzi się pożądanie (<em>libido</em>), z ulegania pożądaniu powstaje nawyk (<em>consuetudo</em>), a gdy nawykowi się nie sprzeciwiamy, obraca się on w konieczność (<em>necessitas</em>)."
+            </blockquote>
+            <ul>
+                <li><strong>Cielesny łańcuch:</strong> Stare nawyki (związane z pożądaniem seksualnym i ambicją światową) trzymają go jak uwięzionego w żelaznych okowach. Ciało, poprzez pamięć emocjonalną, domaga się dawnych przyjemności, blokując duszę przed transformacją.</li>
+                <li><strong>Prokrastynacja afektywna:</strong> Lęk przed zmianą rodzi stan paraliżu decyzyjnego. Słynna modlitwa Augustyna z tamtego okresu idealnie oddaje ten stan: <em>"Daj mi czystość i wstrzemięźliwość, ale jeszcze nie teraz!"</em>. Dawne przyjemności szeptem pytają go: <em>"Czy myślisz, że od tej chwili już nigdy...?"</em>.</li>
+            </ul>
+
+            <h3>3. Kulminacja emocjonalna: Scena w ogrodzie (Rozdziały 11–12)</h3>
+            <p>Rozdziały te to opis potężnego kryzysu afektywnego, w którym skrajne emocje stają się katalizatorem wewnętrznego oczyszczenia:</p>
+            <ul>
+                <li><strong>Wstyd (<span class="term-badge">Pudor</span>) i Samoodraza:</strong> Gdy Pontycjan opowiada Augustynowi o młodych urzędnikach, którzy natychmiast porzucili wszystko dla Boga, Augustyn widzi jaskrawy kontrast ze swoją wieloletnią prokrastynacją. Wstyd i poczucie winy uderzają w niego z pełną mocą, zmuszając do ucieczki w głąb ogrodu.</li>
+                <li><strong>Burza afektywna (Tristitia i Lacrimae):</strong> Kryzys osiąga apogeum pod drzewem figowym. Augustyn opisuje "potężną nawałnicę, która przyniosła olbrzymią ulewę łez". Płacz nie jest tu oznaką słabości, lecz głęboką, afektywną formą ekspresji bezradności woli wobec własnego zniewolenia.</li>
+                <li><strong>Personifikacja Powściągliwości:</strong> W stanie skrajnego napięcia Augustyn wizualizuje Powściągliwość (<em>Continentia</em>) jako czystą, radosną postać, która nie szydzi z niego, lecz z miłością zachęca: <em>"Rzuć się w Jego ramiona, nie bój się!"</em>. To psychologiczne przesunięcie od lęku do zaufania.</li>
+                <li><strong>Rezolicja: Głos dziecka i pokój (<em>Pax</em>):</strong> Słysząc z sąsiedniego domu powtarzający się śpiew dziecka: <em>"Tolle lege! Tolle lege!"</em> (Weź i czytaj!), Augustyn otwiera List do Rzymian (13:13-14). W ułamku sekundy cała burza emocjonalna znika. Światło pewności zalewa jego serce, a "cały mrok wątpienia pierzchnął". Stało się to poprzez nagłe zintegrowanie woli.</li>
+            </ul>
+
+            <div class="extra-material">
+                <h4>Materiał dodatkowy: Augustyn a współczesna psychologia uzależnień i konwersji</h4>
+                <p>Opis z VIII Księgi <em>Wyznań</em> wyprzedza nowoczesną wiedzę o dynamice ludzkich zachowań i procesów terapeutycznych:</p>
+                <ul>
+                    <li><strong>Neurobiologia pętli nawyku:</strong> Platońsko-augustiańska analiza przejścia od *libido*, przez *consuetudo*, aż do *necessitas* to niemal idealne odzwierciedlenie mechanizmu współczesnej <strong>pętli nawyku</strong> (wskazówka &rarr; zwyczaj &rarr; nagroda) badanej przez Charlesa Duhigga oraz procesów neuroplastycznych w uzależnieniach. Mózg pod wpływem powtarzanych bodźców (u Augustyna: uleganie żądzom) dosłownie przebudowuje drogi dopaminergiczne, czyniąc dany nawyk "koniecznością" biologiczną.</li>
+                    <li><strong>Dysonans poznawczy:</strong> Stan, w którym Augustyn cierpi pod drzewem figowym, to podręcznikowy przykład ekstremalnego <strong>dysonansu poznawczego</strong> Leona Festingera. Wzrost wiedzy o tym, jak *powinien* żyć, przy jednoczesnym braku zmiany zachowania, generuje potężne napięcie psychiczne (afektywną burzę), które domaga się natychmiastowego rozstrzygnięcia.</li>
+                    <li><strong>Psychologia konwersji (William James):</strong> W swoim klasycznym dziele <em>Doświadczenia religijne</em> (1902) William James analizuje przypadek Augustyna jako fundamentalny wzorzec psychologiczny tzw. "jaźni rozdartej" (<em>divided self</em>). Zgromadzone przez lata napięcie emocjonalne i poczucie winy ulegają nagłemu rozładowaniu (katarsis) poprzez poddanie się zewnętrznemu impulsowi (głos dziecka), co prowadzi do błyskawicznej reorganizacji całej osobowości wokół nowego centrum wartości.</li>
+                </ul>
+                <div class="references">Źródła zewnętrzne i wiedza akademicka: Św. Augustyn, <em>Wyznania</em>, Księga VIII; W. James, <em>The Varieties of Religious Experience</em>, 1902; C. Duhigg, <em>Siła nawyku</em>, 2013.</div>
+            </div>
+        </section>
+
+        <!-- ĆWICZENIA 4 -->
+        <section id="cw4" class="card-section cw4-color">
+            <h2>Ćw 4. Św. Tomasz z Akwinu – "Suma Teologiczna" (Psychologia i etyka gniewu)</h2>
+
+            <h3>1. Architektura afektów: Miejsce gniewu w strukturze duszy</h3>
+            <p>Św. Tomasz definiuje emocje jako <strong>pasje duszy</strong> (<em>passiones animae</em>), które lokują się we władzy zmysłowej (<em>appetitus sensitivus</em>). Dzieli ten apetyt na dwie podstawowe władze (wgląd kluczowy dla egzaminu):</p>
+            <ul>
+                <li><strong>Władza pożądliwa (<em>appetitus concupiscibilis</em>):</strong> Reaguje na proste dobro lub zło (np. miłość, nienawiść, pożądanie, smutek).</li>
+                <li><strong>Władza gniewliwa (<em>appetitus irascibilis</em>):</strong> Uruchamia się, gdy na drodze do dobra pojawia się trudność lub przeszkoda (np. nadzieja, rozpacz, strach, odważne stawianie czoła).</li>
+            </ul>
+            <p><strong>Gniew (<span class="term-badge">Ira</span>)</strong> jest pasją wyjątkową i najbardziej złożoną. Należy do władzy gniewliwej, ale rodzi się ze smutku (władzy pożądliwej) wywołanego doznaną krzywdą i dąży do dobra, jakim jest przywrócenie sprawiedliwości poprzez odwet.</p>
+
+            <h3>2. Anatomia pasji gniewu (Sth I-II, q. 46–48)</h3>
+            <p>W tych kwestiach Tomasz rozkłada mechanizm gniewu na czynniki pierwsze pod kątem psychologicznym i somatycznym:</p>
+            <ul>
+                <li><strong>Brak pasji przeciwnej (q. 46):</strong> Podczas gdy inne pasje mają swoje naturalne przeciwieństwa (np. strach vs. odwaga), gniew nie ma w sferze zmysłowej jednej przeciwnej pasji. Jego uśmierzanie (łagodność) nie jest nowym afektem, lecz wygaszaniem i cofaniem się gniewu.</li>
+                <li><strong>Gniew a Nienawiść:</strong> Tomasz stawia tu ostrą granicę. Gniew szuka ukarania sprawcy <em>pod pozorem sprawiedliwości</em> (zagniewany chce, by winny poczuł ból i zrozumiał swój błąd). Nienawiść natomiast chce absolutnego i ostatecznego zniszczenia wroga jako zła samego w sobie, bez względu na sprawiedliwość.</li>
+                <li><strong>Przyczyny gniewu (q. 47):</strong> Głównym motorem gniewu jest <strong>zniewaga / zlekceważenie (<em>parvipensio</em>)</strong>. Gniewamy się najbardziej wtedy, gdy ktoś uderza w naszą godność niesprawiedliwie.</li>
+                <li><strong>Skutki fizjologiczne i poznawcze (q. 48):</strong> Tomasz akcentuje jedność psychofizyczną człowieka. Gniew powoduje dosłowne, organiczne "rozpalenie krwi wokół serca" (<em>accensio sanguinis circa cor</em>). Pod kątem poznawczym gniew częściowo słucha rozumu (dostrzega niesprawiedliwość), ale jest tak gwałtowny, że "wyprzedza nakaz rozumu" i rzuca się do ślepego działania, paraliżując logiczne myślenie i mowę.</li>
+            </ul>
+
+            <h3>3. Etyczny wymiar gniewu: Wada a Cnota (Sth II-II, q. 158)</h3>
+            <p>W przeciwieństwie do stoików, którzy uważali gniew za absolutne zło i chorobę duszy, Akwinata (za Arystotelesem) twierdzi, że <strong>gniew sam w sobie jest moralnie obojętny</strong>. O jego wartości moralnej decyduje relacja do rozumu:</p>
+            <ul>
+                <li><strong>Gniew słuszny / święty (<em>Ira per zelum</em>):</strong> To gniew kontrolowany przez rozum, zrodzony z miłości do sprawiedliwości (np. oburzenie na krzywdę słabszych). Jeśli rozum posługuje się gniewem jako narzędziem do egzekwowania dobra, gniew staje się cnotą (gorliwością). Brak takiego gniewu w obliczu zła Tomasz nazywa wadą (grzechem zaniedbania).</li>
+                <li><strong>Gniew grzeszny (<em>Ira per vitium</em>):</strong> Staje się wadą główną, gdy wymyka się spod kontroli rozumu. Może to nastąpić na trzy sposoby: gdy gniewamy się na niewłaściwą osobę, gdy nasz gniew jest zbyt gwałtowny (nieproporcjonalny) lub gdy trwa zbyt długo (zamienia się w urazę i mściwość).</li>
+                <li><strong>Cnota Łagodności (<em>Mansuetudo</em>):</strong> To cnota, która nie polega na całkowitym wykorzenieniu gniewu, lecz na jego temperowaniu i podporządkowaniu osądowi rozumu.</li>
+            </ul>
+
+            <div class="extra-material">
+                <h4>Materiał dodatkowy: Tomasz z Akwinu a współczesna kognitywistyka i medycyna</h4>
+                <p>Scholastyczna analiza Akwinaty idealnie współgra z nowoczesnymi modelami neuropsychologicznymi:</p>
+                <ul>
+                    <li><strong>Pobudzenie somatowisceralne:</strong> Tomaszowe "zagotowanie krwi wokół serca" pod wpływem gniewu to intuicyjny, genialny opis aktywacji <strong>współczulnego układu nerwowego</strong> (reakcja <em>walcz lub uciekaj</em>). Współczesna neurobiologia potwierdza, że wyrzut adrenaliny i kortyzolu powoduje nagły wzrost ciśnienia krwi, przyspieszenie akcji serca i napięcie mięśniowe – dokładnie tak, jak opisywał to Akwinata.</li>
+                    <li><strong>Porwanie amigdaliczne (Amygdala Hijack):</strong> Twierdzenie Tomasza, że gniew "wyprzedza rozum" (nie czeka na pełny osąd intelektu), to psychologiczny opis zjawiska sformułowanego przez Daniela Golemana jako "porwanie emocjonalne". Bodziec emocjonalny (zniewaga) trafia bezpośrednio do ciała migdałowatego (odpowiedzialnego za szybkie afekty zmysłowe), omijając korę przedczołową (tomaszowy wyższy rozum), co skutkuje impulsywną reakcją zanim człowiek zdąży racjonalnie przeanalizować sytuację.</li>
+                    <li><strong>Agresja reaktywna vs. instrumentalna:</strong> Rozróżnienie między *ira per zelum* (gniewem zintegrowanym z rozumem) a *ira per vitium* (żądzą ślepego odwetu) odpowiada współczesnemu podziałowi na agresję instrumentalną (zarządzaną celowo, np. w obronie prawa) oraz agresję reaktywną (czysty, destrukcyjny afekt impulsywny).</li>
+                </ul>
+                <div class="references">Źródła wewnętrzne i akademickie: Św. Tomasz z Akwinu, <em>Suma Teologiczna</em>, I-II, q. 46-48; II-II, q. 158; D. Goleman, <em>Inteligencja emocjonalna</em>; J. LeDoux, <em>Emocjonalny mózg</em>.</div>
+            </div>
+        </section>
+
+        <!-- ĆWICZENIA 5 -->
+        <section id="cw5" class="card-section cw5-color">
+            <h2>Cw 5. Baruch Spinoza – "Etyka" (Część III: O pochodzeniu i naturze wzruszeń)</h2>
+
+            <h3>1. Naturalizacja afektów: Emocje jako prawa geometrii</h3>
+            <p>Spinoza dokonuje całkowitego przewrotu antropologicznego. Odrzuca kartezjański dualizm (podział na niezależną duszę i ciało) i koncepcję wolnej woli. Dla Spinozy człowiek nie jest "państwem w państwie", które rządzi się osobnymi prawami, lecz integralną częścią jednej Przyrody (Boga/Substancji). Afekty (<em>affectus</em>) podlegają tym samym niezmiennym prawom natury, co mechanika ciał. Można i należy analizować je racjonalnie.</p>
+
+            <h3>2. Dynamiczny fundament człowieka: Twierdzenia 1–11</h3>
+            <p>W pierwszej grupie twierdzeń Spinoza buduje ontologiczną podstawę swojej psychologii, wprowadzając kluczowe rozróżnienia:</p>
+            <ul>
+                <li><strong>Działanie (Aktywność) vs. Doznawanie (Pasywność) [T1–T3]:</strong> Nasz umysł <strong>działa</strong> (jest aktywny), gdy posiada idee adekwatne (jasne, wyraźne i zrozumiałe). Staje się natomiast <strong>pasywny</strong> i podlega namiętnościom, gdy posiada idee nieadekwatne (skrawki wiedzy, złudzenia zmysłowe).</li>
+                <li><strong>Zasada Conatus [T4–T8]:</strong> To absolutny fundament spinozjanizmu. <strong>Conatus</strong> to dążenie każdej rzeczy do wytrwania w swoim istnieniu. Nie jest to chwilowy impuls, ale sama esencja człowieka. 
+                    <br>&bull; Gdy odnosi się tylko do umysłu, nazywa się <strong>Wolą</strong> (<em>voluntas</em>).
+                    <br>&bull; Gdy odnosi się równocześnie do umysłu i ciała, jest <strong>Popędem</strong> (<em>appetitus</em>).
+                    <br>&bull; Gdy popęd jest uświadomiony, staje się <strong>Pożądaniem/Pragnieniem</strong> (<em>cupiditas</em>).
+                </li>
+                <li><strong>Trzy afekty pierwotne [T9–T11]:</strong> Spinoza redukuje całą skomplikowaną psychologię ludzką do trzech fundamentalnych składowych:
+                    <ol>
+                        <li><strong>Pożądanie (<em>Cupiditas</em>):</strong> Wspomniana wyżej uświadomiona esencja człowieka dążącego do samozachowania.</li>
+                        <li><strong>Radość (<em>Laetitia</em>):</strong> Afekt, przez który umysł przechodzi do <strong>większej doskonałości</strong> (zwiększa się nasza moc działania).</li>
+                        <li><strong>Smutek (<em>Tristitia</em>):</strong> Afekt, przez który umysł przechodzi do <strong>mniejszej doskonałości</strong> (nasza moc działania zostaje zablokowana lub zmniejszona).</li>
+                    </ol>
+                    <p>Wszystkie inne ludzkie emocje (miłość, nienawiść, nadzieja, zazdrość) są jedynie kombinacjami Radości lub Smutku nakierowanymi na konkretne obiekty zewnętrzne.</p>
+                </li>
+            </ul>
+
+            <h3>3. Socjologia afektów i empatia: Twierdzenia 27–33</h3>
+            <p>W twierdzeniach 27–33 Spinoza przechodzi do genialnej analizy intersubiektywnej – wyjaśnia, jak emocje przenoszą się między ludźmi w społeczeństwie:</p>
+            <ul>
+                <li><strong>Naśladownictwo afektów (<em>Imitatio affectuum</em>) [T27]:</strong> Jeśli wyobrażamy sobie, że istota podobna do nas doznaje jakiegoś afektu, my również zaczynamy go doznawać (mimo że wcześniej nie żywiliśmy do niej żadnych uczuć). To czysto mechaniczne, przedracjonalne wyjaśnienie <strong>empatii i zarażania emocjonalnego</strong>. Widząc czyjś smutek – smutniejemy; widząc radość – cieszymy się.</li>
+                <li><strong>Dążenie do harmonii i akceptacji [T28–T30]:</strong> Nasz <em>conatus</em> zmusza nas do urzeczywistniania wszystkiego, co sprzyja radości naszej i innych, oraz do niszczenia tego, co niesie smutek. Z tego powodu dążymy do robienia rzeczy, które podobają się innym ludziom (<strong>Ambicja</strong>), i odczuwamy radość z samych siebie, gdy zyskujemy ich aprobatę (<strong>Chwała</strong>).</li>
+                <li><strong>Wojna afektów i Zawiść [T31–T33]:</strong> Chcemy, aby inni kochali to, co my kochamy, i nienawidzili tego, co my nienawidzimy. To buduje wspólnotę. Pojawia się jednak tragiczny zgrzyt (T32): jeśli dwie osoby kochają rzecz, której nie da się podzielić (np. tę samą osobę, unikalne dobro, władzę), naśladownictwo afektów rodzi destrukcyjną <strong>Zawiść (<em>Invidia</em>)</strong>. Miłość do rzeczy zamienia się wtedy w nienawiść do konkurenta.</li>
+            </ul>
+
+            <div class="extra-material">
+                <h4>Materiał dodatkowy: Spinoza jako prorok neurobiologii i psychologii współczesnej</h4>
+                <p>Monistyczna koncepcja Spinozy przez stulecia była potępiana, jednak współczesna nauka przyznaje mu absolutną rację:</p>
+                <ul>
+                    <li><strong>Antonio Damasio i Homeostaza:</strong> Jeden z najwybitniejszych współczesnych neurobiologów, Antonio Damasio, poświęcił Spinozie całą książkę (<em>"W poszukiwaniu Spinozy"</em>). Udowadnia w niej, że spinozjański <strong>Conatus</strong> to nic innego jak biologiczny mechanizm <strong>homeostazy</strong>. Emocje nie są "wrogami rozumu", ale zaprogramowanymi przez ewolucję stanami organizmu, które mają na celu obronę i przetrwanie ciała, sygnalizując spadek lub wzrost jego żywotności (dokładnie tak jak radość i smutek w <em>Etyce</em>).</li>
+                    <li><strong>Odkrycie neuronów zwierciadlanych:</strong> Sformułowane w Twierdzeniu 27 <em>Imitatio affectuum</em> (automatyczne współodczuwanie stanów istot podobnych do nas) znalazło swoje fizjologiczne potwierdzenie pod koniec XX wieku w postaci odkrycia <strong>neuronów zwierciadlanych</strong> przez zespół Giacomo Rizzolattiego. Nasz mózg dosłownie odwzorowuje i symuluje emocje oraz działania obserwowane u innych ludzi.</li>
+                    <li><strong>Psychoterapia poznawcza:</strong> Spinoza jako pierwszy zauważył, że afekt-namiętność (czyli emocja, która nas niszczy i paraliżuje) przestaje być namiętnością, gdy tylko uświadomimy sobie jej przyczyny (stworzymy ideę adekwatną). To fundamentalne założenie współczesnego nurtu psychoterapii racjonalno-emotywnej (REBT) Alberta Ellisa i terapii poznawczej.</li>
+                </ul>
+                <div class="references">Źródła zewnętrzne i wiedza akademicka: Baruch Spinoza, <em>Etyka w porządku geometrycznym dowiedziona</em>, Część III; A. Damasio, <em>W poszukiwaniu Spinozy. Radość, smutek i czujący mózg</em>, 2003; G. Rizzolatti, <em>Lustra w mózgu</em>, 2006.</div>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
